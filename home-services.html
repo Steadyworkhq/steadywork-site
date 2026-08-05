@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steadywork — Never Miss Another Job</title>
+<meta name="description" content="Steadywork sets up automatic missed-call text-back, lead follow-up, and booking for home-service companies. Set up in a week. You own everything.">
+<meta property="og:title" content="Steadywork — Never Miss Another Job">
+<meta property="og:description" content="Automatic missed-call text-back, lead follow-up, and booking for home-service companies. Set up in about a week.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://steadyworkhq.com/home-services.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e8641f'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='800' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --navy:#12283c; --navy2:#1b3a55; --orange:#e8641f; --orange-dark:#c9520f;
+    --paper:#faf8f5; --ink:#22303c; --muted:#5b6b78; --line:#e3ddd4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  header{background:var(--navy);color:#fff;padding:18px 0}
+  .nav{display:flex;justify-content:space-between;align-items:center}
+  .logo{font-size:1.35rem;font-weight:800;letter-spacing:-0.02em}
+  .logo span{color:var(--orange)}
+  .nav a.cta{background:var(--orange);color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:700;font-size:.95rem}
+  .nav a.cta:hover{background:var(--orange-dark)}
+
+  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:72px 0 80px}
+  .hero h1{font-size:clamp(2rem,5vw,3.1rem);line-height:1.12;font-weight:800;letter-spacing:-0.02em;max-width:720px}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .hero p.sub{margin-top:20px;font-size:1.15rem;max-width:640px;color:#cfdae4}
+  .hero .btns{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;padding:14px 26px;border-radius:6px;font-weight:700;font-size:1rem}
+  .btn.primary{background:var(--orange);color:#fff}
+  .btn.primary:hover{background:var(--orange-dark)}
+  .btn.ghost{border:2px solid #ffffff55;color:#fff}
+  .btn.ghost:hover{border-color:#fff}
+  .hero .micro{margin-top:14px;font-size:.85rem;color:#9fb2c2}
+
+  .stats{background:#fff;border-bottom:1px solid var(--line)}
+  .stats .row{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .stat{padding:28px 20px;text-align:center;border-left:1px solid var(--line)}
+  .stat:first-child{border-left:none}
+  .stat b{display:block;font-size:1.9rem;color:var(--navy);font-weight:800}
+  .stat span{font-size:.9rem;color:var(--muted)}
+
+  section{padding:64px 0}
+  h2{font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin-bottom:12px}
+  .lede{color:var(--muted);font-size:1.08rem;max-width:640px;margin-bottom:36px}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px}
+  .step .num{width:38px;height:38px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .step h3{font-size:1.05rem;color:var(--navy);margin-bottom:8px}
+  .step p{font-size:.95rem;color:var(--muted)}
+
+  .calc{background:var(--navy);color:#fff;border-radius:14px;padding:40px;display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
+  .calc h2{color:#fff}
+  .calc .lede{color:#cfdae4;margin-bottom:0}
+  .calc .controls label{display:block;font-size:.85rem;font-weight:700;margin:18px 0 6px;color:#cfdae4}
+  .calc input[type=range]{width:100%;accent-color:var(--orange)}
+  .calc .val{font-weight:800;color:var(--orange);font-size:1.05rem}
+  .calc .result{margin-top:26px;background:#ffffff12;border:1px solid #ffffff2a;border-radius:10px;padding:20px;text-align:center}
+  .calc .result b{display:block;font-size:2rem;color:var(--orange);font-weight:800}
+  .calc .result span{font-size:.85rem;color:#cfdae4}
+
+  .offers{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+  .proofband{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .offer{background:#fff;border:1px solid var(--line);border-radius:10px;padding:30px;position:relative}
+  .offer.hot{border:2px solid var(--orange)}
+  .offer .tag{position:absolute;top:-12px;left:24px;background:var(--orange);color:#fff;font-size:.72rem;font-weight:800;letter-spacing:.06em;padding:4px 10px;border-radius:4px;text-transform:uppercase}
+  .offer h3{color:var(--navy);font-size:1.15rem}
+  .offer .price{font-size:1.9rem;font-weight:800;color:var(--navy);margin:10px 0 4px}
+  .offer .price small{font-size:.85rem;color:var(--muted);font-weight:400}
+  .offer ul{list-style:none;margin:16px 0 22px}
+  .offer li{padding:6px 0 6px 26px;position:relative;font-size:.95rem;color:var(--ink)}
+  .offer li::before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800}
+  .offer .btn{width:100%;text-align:center}
+
+  .about{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .about .row{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center}
+  .headshot{width:200px;height:200px;border-radius:12px;background:linear-gradient(160deg,var(--navy),var(--navy2));display:flex;align-items:center;justify-content:center;color:#9fb2c2;font-size:.8rem;text-align:center;padding:12px}
+  .about p{color:var(--ink);max-width:600px}
+  .about p + p{margin-top:12px}
+
+  .faq details{background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:10px;padding:16px 20px}
+  .faq summary{font-weight:700;color:var(--navy);cursor:pointer}
+  .faq details p{margin-top:10px;color:var(--muted);font-size:.95rem}
+
+  .final{background:var(--navy);color:#fff;text-align:center;padding:72px 0}
+  .final h2{color:#fff}
+  .final p{color:#cfdae4;max-width:540px;margin:0 auto 28px}
+
+  footer{background:#0d1e2e;color:#7d92a5;font-size:.85rem;padding:26px 0;text-align:center}
+  footer a{color:#9fb2c2}
+
+  @media(max-width:760px){
+    .stats .row{grid-template-columns:1fr}
+    .stat{border-left:none;border-top:1px solid var(--line)}
+    .steps,.offers{grid-template-columns:1fr}
+    .calc{grid-template-columns:1fr;padding:28px}
+    .about .row{grid-template-columns:1fr;justify-items:center;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html" style="color:#fff;text-decoration:none">Steady<span>work</span></a>
+    <a class="cta" href="#book">Book a call</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Your phone rang.<br>Nobody answered.<br><em>That job just called your competitor.</em></h1>
+    <p class="sub">Steadywork sets up automatic missed-call text-back, lead follow-up, and job booking for home-service companies — so every call turns into work, even when your hands are full.</p>
+    <div class="btns">
+      <a class="btn primary" href="#book">Get your missed calls fixed →</a>
+      <a class="btn ghost" href="#calc">See what missed calls cost you</a>
+    </div>
+    <p class="micro">Set up in about a week &nbsp;·&nbsp; Flat monthly price &nbsp;·&nbsp; No contracts &nbsp;·&nbsp; You own everything we build</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap row">
+    <div class="stat"><b>30–40%</b><span>of calls to home-service businesses go unanswered in peak season</span></div>
+    <div class="stat"><b>Most won't</b><span>leave a voicemail — younger callers simply dial the next company</span></div>
+    <div class="stat"><b>Minutes matter</b><span>the first company to respond usually wins the job</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="lede">No new phone system. No software for your crew to learn. It runs quietly behind the number you already have.</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>We find the leaks</h3><p>A 45-minute call. We map where jobs slip away — missed calls, web leads nobody chases, quotes that never get a follow-up.</p></div>
+      <div class="step"><div class="num">2</div><h3>We build the catch</h3><p>Missed call? The caller gets a text in seconds and a conversation starts. Web lead? Answered instantly. Quote sent? Followed up automatically until they book or say no.</p></div>
+      <div class="step"><div class="num">3</div><h3>We keep it running</h3><p>Automations break silently — numbers change, apps update. We monitor it, fix it, and send you a plain-English monthly report: calls caught, jobs booked.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="calc">
+  <div class="wrap">
+    <div class="calc">
+      <div>
+        <h2>What are missed calls costing you?</h2>
+        <p class="lede">Drag the sliders. Most owners guess low on the first number — check your phone log for one week.</p>
+      </div>
+      <div class="controls">
+        <label>Missed calls per week: <span class="val" id="mcVal">10</span></label>
+        <input type="range" id="mc" min="1" max="40" value="10">
+        <label>Calls that would've become jobs: <span class="val" id="crVal">30%</span></label>
+        <input type="range" id="cr" min="10" max="70" value="30">
+        <label>Average job value: <span class="val" id="jvVal">$450</span></label>
+        <input type="range" id="jv" min="100" max="5000" step="50" value="450">
+        <div class="result">
+          <b id="loss">$5,850</b>
+          <span>estimated revenue walking away every month</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proofband">
+  <div class="wrap">
+    <h2>Built on a factory floor, not in a pitch deck</h2>
+    <p class="lede">Before Steadywork was a company, it was a fix for a real problem. At a manufacturing company in Ogden, Utah, every production manager spent 2–4 hours a week building the schedule by hand — 12–16 hours of management time, gone, every week — and the schedule went stale the moment a single date moved.</p>
+    <div class="steps">
+      <div class="step"><div class="num">✓</div><h3>12–16 hours a week, back</h3><p>The auto-scheduler pulls order data straight from QuickBooks and builds the schedule itself. Managers went back to managing.</p></div>
+      <div class="step"><div class="num">✓</div><h3>Never stale again</h3><p>When a date changes, the live schedule updates and the change reaches everyone affected — nobody chasing people down with new versions.</p></div>
+      <div class="step"><div class="num">✓</div><h3>Smarter than a whiteboard</h3><p>The schedule now includes constraints no human scheduler could juggle — things that simply weren't possible by hand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Pick your starting point</h2>
+    <p class="lede">Start small. If it doesn't pay for itself, cancel — there's no contract holding you.</p>
+    <div class="offers">
+      <div class="offer hot">
+        <div class="tag">Most popular</div>
+        <h3>Missed-Call Rescue</h3>
+        <div class="price">$199<small>/month + $250 one-time setup</small></div>
+        <ul>
+          <li>Automatic text-back within seconds of any missed call</li>
+          <li>Two-way texting from your existing business number</li>
+          <li>Web-form leads answered instantly, 24/7</li>
+          <li>Monthly report: calls caught, conversations started</li>
+          <li>Set up in about a week — we do all of it</li>
+        </ul>
+        <a class="btn primary" href="#book">Fix my missed calls</a>
+      </div>
+      <div class="offer">
+        <h3>Admin Automation Audit</h3>
+        <div class="price">$750<small> one-time</small></div>
+        <ul>
+          <li>45-minute working session on your actual operation</li>
+          <li>Written report: where hours and jobs are leaking</li>
+          <li>Priority list — what to automate first and what it returns</li>
+          <li>Tool recommendations that fit what you already use</li>
+          <li>Credited toward your first build if you move ahead</li>
+        </ul>
+        <a class="btn primary" style="background:var(--navy)" href="#book">Book my audit</a>
+      </div>
+      <div class="offer">
+        <h3>Scheduling Autopilot</h3>
+        <div class="price">from $6,500<small> + $750/mo to keep it running</small></div>
+        <ul>
+          <li>Your schedule builds itself from the systems you already use</li>
+          <li>Jobs, crews, and date changes pushed to everyone affected — automatically</li>
+          <li>Handles constraints no whiteboard or spreadsheet can</li>
+          <li>Born on a factory floor: 12–16 manager-hours a week recovered</li>
+          <li>Starts with the $750 audit — credited toward the build</li>
+        </ul>
+        <a class="btn primary" style="background:var(--navy)" href="#book">Automate my scheduling</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap row">
+    <div class="headshot">[ Photo of Alex —<br>on a job site or at<br>a client's shop,<br>not a stock suit ]</div>
+    <div>
+      <h2>The person behind it</h2>
+      <p>I'm Alex. Steadywork started as a fix for my own team: at a manufacturing company in Ogden, our managers were spending 12–16 hours a week building schedules by hand, so I built a system that does it for them — and it's still running. Almost every owner I talk to is in the same spot those managers were: they've heard AI could help, they've maybe poked at ChatGPT, and nothing in their business actually changed. The tools are real — someone just has to do the work of wiring them into <em>your</em> phone, <em>your</em> schedule, <em>your</em> invoices.</p>
+      <p>That's what I do. No jargon, no twelve-month contract, and you own every system I build — if we part ways, it keeps working and it's yours.</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <h2>Straight answers</h2>
+    <details><summary>Do I have to change my phone number or phone company?</summary><p>No. The text-back system works alongside your existing number and provider. Your crew doesn't learn anything new — calls work exactly like they do today.</p></details>
+    <details><summary>We already use Jobber / Housecall Pro / ServiceTitan.</summary><p>Good — keep it. We build around the tools you already run, connecting them so leads and jobs flow without anyone retyping things. We're not here to sell you new software.</p></details>
+    <details><summary>What if a customer replies to the text?</summary><p>You (or your office) see it and reply from a simple app — or we set up automatic answers for the common questions ("do you service my area?", "are you open Saturday?") and hand off to a human the moment it matters.</p></details>
+    <details><summary>How fast is setup?</summary><p>Missed-Call Rescue: about a week from our first call. Bigger builds get a written timeline before you pay anything.</p></details>
+    <details><summary>What happens if I cancel?</summary><p>You keep everything. The systems are built in accounts you own, documented, with a video walkthrough. No hostages.</p></details>
+  </div>
+</section>
+
+<section class="final" id="book">
+  <div class="wrap">
+    <h2>Stop paying for calls you never answer</h2>
+    <p>Book a 15-minute call. Bring last week's phone log — we'll count the missed calls together and you'll know in fifteen minutes whether this pays for itself.</p>
+    <a class="btn primary" href="[CALENDLY-LINK]">Book a 15-minute call</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Steadywork · Your admin, on autopilot · [CITY], Colorado · <a href="mailto:[EMAIL]">[EMAIL]</a> · [PHONE] · <a href="index.html">All services</a></div>
+</footer>
+
+<script>
+  const mc=document.getElementById('mc'),cr=document.getElementById('cr'),jv=document.getElementById('jv');
+  const mcVal=document.getElementById('mcVal'),crVal=document.getElementById('crVal'),jvVal=document.getElementById('jvVal'),loss=document.getElementById('loss');
+  function fmt(n){return '$'+Math.round(n).toLocaleString('en-US')}
+  function update(){
+    mcVal.textContent=mc.value;
+    crVal.textContent=cr.value+'%';
+    jvVal.textContent=fmt(jv.value);
+    loss.textContent=fmt(mc.value*(cr.value/100)*jv.value*4.33);
+  }
+  [mc,cr,jv].forEach(el=>el.addEventListener('input',update));
+  update();
+</script>
+
+</body>
+</html>
