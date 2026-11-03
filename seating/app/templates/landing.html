@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Wedding seating chart, place cards & QR seat finder — {{ brand }}{% endblock %}
+{% block body %}
+<section class="hero"><div class="wrap">
+  <span class="label">Self-service · no calls needed</span>
+  <h1>Your guest list, turned into a finished seating chart, place cards and a QR seat finder.</h1>
+  <p class="muted" style="max-width:640px">You've already decided who sits where. Upload your spreadsheet (or paste it), check a preview with your real names, and download print-ready files in minutes. Fix a name later and everything regenerates to match.</p>
+  <p><a class="btn" href="/start">Upload your guest list</a> &nbsp; <span class="muted small">Free preview. Pay {{ price }} only when it looks right.</span></p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Three finished examples</h2>
+  <p class="muted small">These samples use fictional couples and computer-generated names, not real customers.</p>
+  <div class="grid3">
+  {% for k, d in designs.items() %}
+    <div class="card sample">
+      <h3>{{ d.label }}</h3>
+      <p class="small muted">{{ d.blurb }}</p>
+      <a href="/samples/{{ k }}/seating-chart.pdf"><img src="/samples/{{ k }}/chart.png" alt="{{ d.label }} sample seating chart" loading="lazy"></a>
+      <div class="grid2" style="gap:8px;margin-top:8px">
+        <a href="/samples/{{ k }}/place-cards.pdf"><img src="/samples/{{ k }}/cards.png" alt="{{ d.label }} sample place cards" loading="lazy"></a>
+        <a href="/samples/{{ k }}/qr-sign.pdf"><img src="/samples/{{ k }}/sign.png" alt="{{ d.label }} sample QR sign" loading="lazy"></a>
+      </div>
+      <p class="small" style="margin-top:10px"><a href="/samples/{{ k }}/seating-chart.pdf">Chart PDF</a> · <a href="/samples/{{ k }}/place-cards.pdf">Place cards PDF</a> · <a href="/samples/{{ k }}/qr-sign.pdf">QR sign PDF</a> · <a href="/demo/{{ k }}">Try the guest page</a></p>
+    </div>
+  {% endfor %}
+  </div>
+</div></section>
+
+<section><div class="wrap grid2">
+  <div class="card">
+    <div class="price">{{ price }} <span class="small muted">one time, per event</span></div>
+    <ul class="tick">
+      <li><b>Print-ready seating chart</b> at the exact size you pick: {% for k, s in sizes.items() %}{{ s[0] }}{{ ", " if not loop.last }}{% endfor %}. Grouped by table or alphabetical — you get both.</li>
+      <li><b>Matching place cards</b> on US Letter or A4 sheets, 4 tent cards per sheet, with crop marks and a printing &amp; folding guide.</li>
+      <li><b>QR “find your seat” sign</b> (8×10 in or A4) that opens a mobile page where guests type their name to see their table.</li>
+      <li><b>Printable backup list</b> for the welcome table if the venue has no signal.</li>
+      <li><b>Corrections until your event</b>: edit names or tables and download fresh files. The QR page updates instantly.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>How delivery works</h3>
+    <p><b>Instant digital download.</b> Files are ready the moment payment completes. Nothing is shipped; you print at home, at a local print shop, or online.</p>
+    <p>Up to {{ max_guests }} guests. Numbered or named tables. Accents and special characters are kept exactly as you type them.</p>
+    <p><b>We format the assignments you give us.</b> We don't choose seats for you, and we never merge look-alike names or fill in missing tables — we flag them for you to decide.</p>
+    <p class="small muted">Written support by email. No phone calls or consultations needed.</p>
+  </div>
+</div></section>
+
+<section><div class="wrap narrow faq">
+  <h2>Questions</h2>
+  <details><summary>What file can I upload?</summary><p>CSV or Excel (.xlsx) with a name column and a table column — or copy and paste straight from a spreadsheet, Google Sheets, or a list like “Ana López - 4”. First and last names in separate columns work too. You'll confirm which column is which.</p></details>
+  <details><summary>Who can see the QR page?</summary><p>Anyone who has the link (for example, by scanning the sign). The page doesn't list your guests; a visitor has to type a guest's full name to see that guest's table. It's hidden from search engines. Your editing page is separate and private.</p></details>
+  <details><summary>How long does the guest page stay online?</summary><p>Until {{ retention_days }} days after your event date. Then the page and your guest list are deleted automatically. You can delete everything sooner from your dashboard.</p></details>
+  <details><summary>What do you do with my guest list?</summary><p>Only what's needed to make your files and run your seat finder. We ask for names and tables only — no addresses, meal choices or other details. Your list is not sent to any AI service. See <a href="/privacy">privacy</a>.</p></details>
+  <details><summary>Can I fix a mistake after I pay?</summary><p>Yes. Edit names and tables any time before your event and download fresh files. Already-printed copies won't change, but the QR page updates immediately.</p></details>
+  <details><summary>Refunds?</summary><p>If the files have a defect we can't fix, we refund you. See <a href="/terms">terms</a>.</p></details>
+  <p style="margin-top:24px"><a class="btn" href="/start">Start with your guest list</a></p>
+</div></section>
+{% endblock %}

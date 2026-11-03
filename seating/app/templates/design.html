@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Design & details — {{ brand }}{% endblock %}
+{% block body %}
+<div class="wrap">
+  {% if ev.status != 'paid' %}{% set current = 'Design' %}{% include "_steps.html" %}{% endif %}
+  <h1>Choose a design</h1>
+  {% if error %}<div class="notice bad">{{ error }}</div>{% endif %}
+  <form method="post">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <div class="choices">
+      {% for k, d in designs.items() %}
+      <label class="choice"><input type="radio" name="design" value="{{ k }}" {{ 'checked' if ev.design == k }}><b>{{ d.label }}</b><br><span class="small muted">{{ d.blurb }}</span><img src="/samples/{{ k }}/chart.png" alt="" loading="lazy"></label>
+      {% endfor %}
+    </div>
+    <div class="card">
+      <h2>Event details</h2>
+      <div class="grid2">
+        <div class="row"><label for="title">Names on the chart</label><input id="title" type="text" name="title" maxlength="80" value="{{ ev.title }}" placeholder="Ava &amp; Jonah" required></div>
+        <div class="row"><label for="event_date">Event date</label><input id="event_date" type="date" name="event_date" value="{{ ev.event_date or '' }}" required></div>
+        <div class="row"><label for="venue">Venue or city (optional)</label><input id="venue" type="text" name="venue" maxlength="80" value="{{ ev.venue }}"></div>
+        <div class="row"><label for="region">Date style</label><select id="region" name="region"><option value="us" {{ 'selected' if ev.region=='us' }}>June 12, 2027</option><option value="intl" {{ 'selected' if ev.region=='intl' }}>12 June 2027</option></select></div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>Print settings</h2>
+      <div class="grid2">
+        <div class="row"><label for="chart_size">Seating chart size (exact print size)</label><select id="chart_size" name="chart_size">{% for k, s in sizes.items() %}<option value="{{ k }}" {{ 'selected' if ev.chart_size==k }}>{{ s[0] }}</option>{% endfor %}</select>
+          <p class="small muted">Portrait, trim size, white background (no bleed needed). For {{ n }} guests, 18 × 24 in or larger reads comfortably.</p></div>
+        <div class="row"><label for="chart_layout">Main chart layout</label><select id="chart_layout" name="chart_layout"><option value="table" {{ 'selected' if ev.chart_layout=='table' }}>Grouped by table</option><option value="alpha" {{ 'selected' if ev.chart_layout=='alpha' }}>Alphabetical with table numbers</option></select>
+          <p class="small muted">You receive both layouts; this one is the main chart.</p></div>
+        <div class="row"><label for="sort_by">Alphabetical order by</label><select id="sort_by" name="sort_by"><option value="last" {{ 'selected' if ev.sort_by=='last' }}>Last name (last word of each name, or your last-name column)</option><option value="first" {{ 'selected' if ev.sort_by=='first' }}>First name</option></select></div>
+        <div class="row"><label for="paper">Place cards &amp; sign paper</label><select id="paper" name="paper">{% for k, p in papers.items() %}<option value="{{ k }}" {{ 'selected' if ev.paper==k }}>{{ p[0] }}</option>{% endfor %}</select>
+          <p class="small muted">US Letter: 3.75 × 2.5 in folded cards, 8 × 10 in sign. A4: 90 × 60 mm cards, A4 sign.</p></div>
+        <div class="row"><label for="card_order">Place card order</label><select id="card_order" name="card_order"><option value="table" {{ 'selected' if ev.card_order=='table' }}>By table (easiest setup)</option><option value="alpha" {{ 'selected' if ev.card_order=='alpha' }}>Alphabetical</option></select></div>
+      </div>
+    </div>
+    <button class="btn block" type="submit">See my preview</button>
+  </form>
+</div>
+{% endblock %}

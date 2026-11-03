@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Check your list — {{ brand }}{% endblock %}
+{% block body %}
+<div class="wrap">
+  {% if ev.status != 'paid' %}{% set current = 'Check list' %}{% include "_steps.html" %}{% endif %}
+  <h1>{{ 'Edit names & tables' if ev.status == 'paid' else 'Check your list' }}</h1>
+  {% if manage_token and ev.status != 'paid' %}
+  <div class="notice info small">Save your progress: bookmark <a href="/m/{{ manage_token }}">this private link</a> to come back on any device. Don't share it — it lets someone edit your event.</div>
+  {% endif %}
+  {% if flash %}<div class="notice warn">{{ flash }}</div>{% endif %}
+  {% for n in notes %}<div class="notice warn small">{{ n }}</div>{% endfor %}
+  <p><b>{{ st.guests|length }}</b> guests at <b>{{ st.report.table_counts|length }}</b> tables.
+  {% if st.report.table_counts %}<span class="small muted">{% for t, c in st.report.table_counts.items() %}{{ table_display(t) }}: {{ c }}{{ ' · ' if not loop.last }}{% endfor %}</span>{% endif %}</p>
+
+  {% if st.report.too_many %}<div class="notice bad">This package supports up to {{ max_guests }} guests. Please remove {{ st.guests|length - max_guests }}.</div>{% endif %}
+
+  {% if st.missing_rows %}
+  <div class="card" id="missing">
+    <h2>{{ st.missing_rows|length }} guest{{ 's' if st.missing_rows|length != 1 }} without a table</h2>
+    <p class="muted small">We never guess tables. Assign each one, or remove the guest if they're not attending.</p>
+    <form method="post">
+      <input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="action" value="assign"><input type="hidden" name="anchor" value="missing">
+      <div class="scroll"><table class="t">
+      {% for r in st.missing_rows %}<tr><td>{{ r.name }}</td><td style="width:40%"><input type="text" name="table_{{ r.id }}" placeholder="Table (e.g. 4 or Rosemary)" list="tables"></td></tr>{% endfor %}
+      </table></div>
+      <datalist id="tables">{% for t in st.report.table_counts %}<option value="{{ t }}">{% endfor %}</datalist>
+      <button class="btn" type="submit" style="margin-top:10px">Save tables</button>
+    </form>
+    {% for r in st.missing_rows %}
+      <form method="post" class="inline"><input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="action" value="remove"><input type="hidden" name="guest_id" value="{{ r.id }}"><input type="hidden" name="anchor" value="missing"><button class="btn link small" type="submit">Remove {{ r.name }}</button></form>{{ ' · ' if not loop.last }}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% if st.too_long_rows %}<div class="notice bad">Some names or table labels are unusually long (over 120 / 40 characters). Please shorten: {% for r in st.too_long_rows %}{{ r.name[:60] }}…{{ ', ' if not loop.last }}{% endfor %}</div>{% endif %}
+
+  {% if st.missing_glyph %}<div class="notice bad">We can't print some characters in: {% for n in st.missing_glyph %}<b>{{ n }}</b>{{ ', ' if not loop.last }}{% endfor %}. Please edit these names or email {{ support_email }} before buying — we won't print a name with missing letters.</div>{% endif %}
+
+  {% if st.dup_groups %}
+  <div class="card" id="dups">
+    <h2>Possible duplicates</h2>
+    <p class="muted small">These look like the same name (ignoring capitals, accents and punctuation). Two different guests can share a name — tell us which it is. We never merge names for you.</p>
+    {% for d in st.dup_groups %}
+      <div class="card" style="margin:10px 0">
+        {% for r in d.rows %}<div style="display:flex;justify-content:space-between;gap:10px;align-items:center;padding:4px 0"><span><b>{{ r.name }}</b> — {{ table_display(r.table_label) if r.table_label else 'no table' }}</span>
+          <form method="post" class="inline"><input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="action" value="remove"><input type="hidden" name="guest_id" value="{{ r.id }}"><input type="hidden" name="anchor" value="dups"><button class="btn secondary small" type="submit">Remove this row</button></form></div>{% endfor %}
+        {% if d.acked %}<div class="notice ok small">Marked as different people.</div>{% else %}
+        <form method="post"><input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="action" value="keep_both"><input type="hidden" name="sig" value="{{ d.sig }}"><input type="hidden" name="anchor" value="dups"><button class="btn small" type="submit">These are different people — keep all</button></form>{% endif %}
+      </div>
+    {% endfor %}
+    <p class="small muted">Tip: if two guests share a name, consider adding a distinction such as “Jr.” in the editor below so they can tell their cards apart.</p>
+  </div>
+  {% endif %}
+
+  {% if st.fallback %}<div class="notice info small">{{ st.fallback|length }} name{{ 's' if st.fallback|length != 1 }} use{{ 's' if st.fallback|length == 1 }} characters this design's font doesn't include, so {{ 'it prints' if st.fallback|length == 1 else 'they print' }} in a matching fallback font: {{ st.fallback[:5]|join(', ') }}{{ '…' if st.fallback|length > 5 }}. Check them in the preview.</div>{% endif %}
+
+  {% if st.ready %}
+    <div class="notice ok">Your list is ready. Every guest has a table{{ ' and duplicates are resolved' if st.dup_groups }}.</div>
+    <p><a class="btn" href="/e/{{ ev.id }}{{ '/design' if ev.status != 'paid' else '' }}">{{ 'Continue to design' if ev.status != 'paid' else 'Back to dashboard' }}</a>
+    {% if ev.status == 'paid' %}<a class="btn secondary" href="/e/{{ ev.id }}/preview">Preview changes</a>{% endif %}</p>
+  {% else %}
+    <div class="notice warn">Resolve the items above to continue.</div>
+  {% endif %}
+
+  <div class="card" id="editor">
+    <h2>All guests</h2>
+    <p class="muted small">Names print exactly as written here.</p>
+    <form method="post">
+      <input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="action" value="save_all"><input type="hidden" name="anchor" value="editor">
+      <div class="scroll"><table class="t"><tr><th>Name</th><th style="width:30%">Table</th><th></th></tr>
+      {% for r in st.rows %}<tr><td><input type="text" name="name_{{ r.id }}" value="{{ r.name }}" aria-label="Name"></td><td><input type="text" name="tbl_{{ r.id }}" value="{{ r.table_label }}" list="tables" aria-label="Table"></td>
+        <td><button class="btn link small" type="submit" form="rm{{ r.id }}">Remove</button></td></tr>{% endfor %}
+      </table></div>
+      <button class="btn" type="submit" style="margin-top:10px">Save changes</button>
+    </form>
+    {% for r in st.rows %}<form id="rm{{ r.id }}" method="post" class="inline"><input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="action" value="remove"><input type="hidden" name="guest_id" value="{{ r.id }}"><input type="hidden" name="anchor" value="editor"></form>{% endfor %}
+    <h3 style="margin-top:18px">Add a guest</h3>
+    <form method="post" class="grid2" style="align-items:end">
+      <input type="hidden" name="csrf" value="{{ csrf }}"><input type="hidden" name="action" value="add"><input type="hidden" name="anchor" value="editor">
+      <div><label for="nn">Name</label><input id="nn" type="text" name="new_name"></div>
+      <div><label for="nt">Table</label><input id="nt" type="text" name="new_table" list="tables"></div>
+      <div><button class="btn secondary" type="submit">Add guest</button></div>
+    </form>
+  </div>
+  {% if ev.status != 'paid' %}<p class="small muted">Wrong file? <a href="/start">Upload a different list</a> (starts a new draft).</p>{% endif %}
+</div>
+{% endblock %}

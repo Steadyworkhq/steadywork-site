@@ -1,0 +1,2 @@
+{% set order = ['Upload','Columns','Check list','Design','Preview','Pay'] %}
+<ol class="steps">{% for s in order %}<li class="{{ 'on' if s == current else ('done' if loop.index0 < order.index(current) else '') }}">{{ loop.index }}. {{ s }}</li>{% endfor %}</ol>
