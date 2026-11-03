@@ -7,7 +7,7 @@ from app.guestlist import parse_upload, suggest_mapping, apply_mapping
 from app.render import EventInfo, render_chart, render_place_cards, render_qr_sign, render_backup_list
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = os.environ.get("BASE_URL", "http://localhost:5000").rstrip("/")
+BASE = os.environ.get("BASE_URL", "https://kindlyseatedco.com").rstrip("/")
 SAMPLES = {
     "minimal": ("Ava Lindqvist & Jonah Mercer", date(2027, 6, 12), "Portland, Oregon", "small-numbered-64.csv", "18x24", "table", "letter"),
     "classic": ("Eleanor Hartwell & Samuel Okoro", date(2027, 9, 18), "Charleston", "medium-named-120.csv", "18x24", "table", "letter"),

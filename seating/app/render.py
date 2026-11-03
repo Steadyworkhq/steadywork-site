@@ -163,8 +163,8 @@ def new_canvas(w, h, title):
     buf = io.BytesIO()
     c = rl_canvas.Canvas(buf, pagesize=(w, h), pageCompression=1, initialFontName="Jost", initialFontSize=10)
     c.setTitle(title)
-    c.setAuthor("Seating package")
-    c.setCreator("Seating package renderer")
+    c.setAuthor("Kindly Seated")
+    c.setCreator("Kindly Seated (kindlyseatedco.com)")
     return c, buf
 
 

@@ -172,6 +172,11 @@ def create_app(test_config: dict | None = None) -> Flask:
         db.track("visit", source=(request.args.get("utm_source") or request.args.get("ref") or "")[:40] or None)
         return render_template("landing.html", designs=D.DESIGNS, sizes=CHART_SIZES)
 
+    @app.route("/healthz")
+    def healthz():
+        db.q1("SELECT 1")
+        return "ok"
+
     @app.route("/privacy")
     def privacy():
         return render_template("privacy.html")

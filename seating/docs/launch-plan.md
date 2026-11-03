@@ -41,7 +41,7 @@ The guest page is read only on the wedding day and in the days just before and a
 Fixed costs (proposals; see `research.md` §5–6):
 
 - Hosting about $2–7/month: Fly.io about $2–3 with a 1 GB volume, Render about $7.25.
-- Domain: $0 if we use a subdomain of steadyworkhq.com.
+- Domain: kindlyseatedco.com, about $10–22/year at Squarespace.
 - Email: $0 on Resend's free tier.
 - **Call it $10/month all-in for planning.**
 
@@ -159,11 +159,9 @@ There is no third-party analytics script. That's deliberate for privacy. Add one
 
 ## 7. Approvals and decisions I need from you
 
-1. **Brand and domain:**
-   - `seating.steadyworkhq.com` under the "Steadywork Seating" name, or
-   - a separate consumer name. Tell me the name and I'll set `BRAND_NAME`.
+1. ~~Brand and domain~~ **Decided:** Kindly Seated, kindlyseatedco.com.
 2. **Stripe account** in test mode, plus the two keys described in the README. I'll then run the real test-mode purchase and re-send the webhook.
-3. **Hosting:** approve Fly.io (about $2–3/month) or name another host, then approve a public deploy.
+3. **Hosting:** Render (decided). Still needs your approval to make the site public.
 4. **Retention:** 30 days after the event (§2). Approve it or change it.
 5. **Support email address** for the site and receipts.
 6. **Acquisition:**

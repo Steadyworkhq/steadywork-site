@@ -11,8 +11,8 @@ def _bool(name, default=False):
 
 
 class Config:
-    BRAND_NAME = os.environ.get("BRAND_NAME", "Steadywork Seating")
-    SUPPORT_EMAIL = os.environ.get("SUPPORT_EMAIL", "support@example.com")
+    BRAND_NAME = os.environ.get("BRAND_NAME", "Kindly Seated")
+    SUPPORT_EMAIL = os.environ.get("SUPPORT_EMAIL", "hello@kindlyseatedco.com")
     BASE_URL = os.environ.get("BASE_URL", "http://localhost:5000").rstrip("/")
     DATA_DIR = os.environ.get("DATA_DIR", os.path.join(os.path.dirname(os.path.dirname(__file__)), "data"))
     PRODUCTION = _bool("PRODUCTION", False)

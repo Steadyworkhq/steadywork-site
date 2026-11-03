@@ -8,7 +8,7 @@ Self-service product: a customer uploads a guest list with table assignments the
 4. A plain alphabetical backup list for the welcome table, for venues with poor signal.
 5. A private management link to correct names and tables and re-download. The guest QR page updates right away.
 
-This lives in `seating/` inside the existing Steadywork site repo. The static site at the repo root is unchanged.
+Brand: **Kindly Seated**, at **kindlyseatedco.com**. The code currently lives in `seating/` inside the Steadywork site repo. Move it to its own repo before merging anything to `main` here, or GitHub Pages will publish the internal docs on steadyworkhq.com. The static site at the repo root is unchanged.
 
 ## Stack and why
 
@@ -50,17 +50,13 @@ The QR decode test needs `zxing-cpp` (it's in `requirements-dev.txt`). See `docs
    - For local testing, run `stripe listen --forward-to localhost:5000/webhooks/stripe` and use the secret it prints.
    - Set `PAYMENTS_MODE=stripe STRIPE_SECRET_KEY=sk_test_… STRIPE_WEBHOOK_SECRET=whsec_…`.
    - Buy once with the test card 4242 4242 4242 4242, then re-send the event from the Stripe dashboard to confirm it is not fulfilled twice.
-2. **Hosting** (proposal: Fly.io with a 1 GB volume, about $2–3/month per `docs/research.md`; a $4–6 VPS also works).
-   - Set `PRODUCTION=1`, `SECRET_KEY` (a long random value), `BASE_URL=https://…`, `DATA_DIR=/data`, `ADMIN_TOKEN`, `SUPPORT_EMAIL` and the Stripe variables.
-   - Run with `gunicorn -w 2 -b 0.0.0.0:8080 'app.server:create_app()'`.
-   - Back up `DATA_DIR/seating.db` daily.
-   - In production the app refuses to start with mock payments or a non-https URL.
-3. **Domain.** Suggested: a subdomain such as `seating.steadyworkhq.com` (a CNAME at Squarespace). Or pick a separate consumer brand, since Steadywork is a B2B admin-automation brand. Set `BRAND_NAME`.
+2. **Hosting on Render** (decided). `render.yaml` defines the service; follow `docs/deploy-render.md`. Expected cost is about $7/month for the Starter plan plus about $0.25 for a 1 GB disk; check current pricing. In production the app refuses to start with mock payments or a non-https URL. Back up `/data/seating.db`.
+3. **Domain:** `kindlyseatedco.com`, registered at Squarespace, with DNS pointed at Render. The steps are in `docs/deploy-render.md`.
 4. **Email (optional for launch).**
    - Set `RESEND_API_KEY` and `EMAIL_FROM` to send a receipt with the guest link.
    - Without these, the receipt is only logged. Customers still see their links on screen right after paying.
    - A lost management link currently needs a support email. A follow-up is an emailed sign-in link.
-5. **Rebuild the samples for the public URL.** Their demo QR codes currently point to localhost. Run `BASE_URL=https://your-domain python scripts/build_samples.py`.
+5. **Samples** are built for `https://kindlyseatedco.com`, so their QR codes open `/demo/<design>` there. They'll scan to a working page once the site is live.
 6. **Review the drafts** of `/privacy` and `/terms`, and the refund wording, before going live.
 
 ## Environment variables
