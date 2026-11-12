@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Admin{% endblock %}
+{% block body %}
+<div class="wrap"><h1>Funnel</h1>
+<table class="t"><tr><th>Step</th><th>Events</th><th>Distinct drafts</th></tr>{% for k, v in counts.items() %}<tr><td>{{ k }}</td><td>{{ v.c }}</td><td>{{ v.e }}</td></tr>{% endfor %}</table>
+<h2>Visit sources (?utm_source= or ?ref=)</h2><table class="t">{% for s in sources %}<tr><td>{{ s.s }}</td><td>{{ s.c }}</td></tr>{% endfor %}</table>
+<h2>Orders</h2><table class="t"><tr><th>Event</th><th>Date</th><th>Amount</th><th>Versions</th><th>Flag</th></tr>{% for o in orders %}<tr><td>{{ o.title }}</td><td>{{ o.event_date }}</td><td>{{ '%.2f'|format(o.amount/100) }}</td><td>{{ o.version }}</td><td>{{ 'DUPLICATE — refund' if o.duplicate }}</td></tr>{% endfor %}</table>
+</div>
+{% endblock %}

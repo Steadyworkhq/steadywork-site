@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Terms & refunds — {{ brand }}{% endblock %}
+{% block body %}
+<div class="wrap narrow">
+  <h1>Terms &amp; refunds</h1>
+  <p class="small muted">Draft — to be reviewed before launch.</p>
+  <h2>What you're buying</h2>
+  <p>A one-time digital package ({{ price }}) for one event: print-ready PDF files generated from the guest names and table assignments you provide, plus a hosted find-your-seat page until {{ retention_days }} days after your event date. Nothing is shipped. Printing is not included.</p>
+  <h2>Your responsibilities</h2>
+  <p>You choose the seating and check the preview. We print names exactly as you supply them and flag missing tables and possible duplicates, but you're responsible for the final list. Corrections are free until your event.</p>
+  <h2>Refunds</h2>
+  <p>If a file is defective (for example a name is cut off, missing or garbled) and we can't fix it within 2 business days of your email, we'll refund you in full. Because files are delivered instantly, we don't otherwise offer refunds after download. If you're charged twice by mistake, we refund the duplicate.</p>
+  <h2>Availability</h2>
+  <p>We aim to keep the guest page available but can't guarantee venue internet or phone signal — that's why the package includes a printed chart and a backup list.</p>
+  <h2>Contact</h2>
+  <p>{{ support_email }}</p>
+</div>
+{% endblock %}

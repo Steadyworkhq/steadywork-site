@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest>=8
+pypdf>=4
+zxing-cpp>=2.2
