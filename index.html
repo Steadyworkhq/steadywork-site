@@ -3,177 +3,118 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Steadywork — Your Admin, On Autopilot</title>
-<meta name="description" content="Steadywork automates the admin work eating your week — intake, follow-up, paperwork, invoicing, reporting. For home services, property management, insurance, legal, accounting, title, staffing, contractors, and manufacturers in northern Utah.">
-<meta property="og:title" content="Steadywork — Your Admin, On Autopilot">
-<meta property="og:description" content="We find the admin work eating your week, automate it, and keep it running. You own everything we build.">
+<title>Steadywork — Tell it about your week. It takes the busywork.</title>
+<meta name="description" content="Steadywork interviews you about your week, ranks what's worth automating, and runs automations that prepare the emails, reminders and reports for you. Nothing goes out until you approve it.">
+<meta property="og:title" content="Steadywork — Tell it about your week. It takes the busywork.">
+<meta property="og:description" content="A short interview, a ranked list of what to automate, and automations that hand you drafts to approve. Nothing is sent without your say-so.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://steadyworkhq.com/">
 <link rel="canonical" href="https://steadyworkhq.com/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e8641f'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='800' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <style>
-  :root{
-    --navy:#12283c; --navy2:#1b3a55; --orange:#e8641f; --orange-dark:#c9520f;
-    --paper:#faf8f5; --ink:#22303c; --muted:#5b6b78; --line:#e3ddd4;
-  }
+  :root{--navy:#12283c;--orange:#e8641f;--orange-dark:#c9520f;--paper:#fbfaf8;--ink:#1f2a35;--muted:#66747f;--line:#e8e3db;--soft:#f3f0ea}
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-  header{background:var(--navy);color:#fff;padding:18px 0;position:sticky;top:0;z-index:10}
-  .nav{display:flex;justify-content:space-between;align-items:center;gap:18px}
-  .logo{font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;color:#fff;text-decoration:none}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55;font-size:16px}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  a{color:var(--orange-dark)}
+
+  header{background:rgba(251,250,248,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;height:52px}
+  .logo{font-size:1.08rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);text-decoration:none}
   .logo span{color:var(--orange)}
-  .nav .links{display:flex;gap:22px;align-items:center}
-  .nav .links a{color:#cfdae4;text-decoration:none;font-size:.92rem;font-weight:600}
-  .nav .links a:hover{color:#fff}
-  .nav a.cta{background:var(--orange);color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:700;font-size:.95rem}
-  .nav a.cta:hover{background:var(--orange-dark)}
+  .links{display:flex;gap:2px;align-items:center}
+  .links a{color:var(--navy);text-decoration:none;font-size:.84rem;font-weight:600;padding:5px 11px;border-radius:999px;white-space:nowrap}
+  .links a:hover{background:var(--soft)}
+  .links a.cta{background:var(--orange);color:#fff;margin-left:6px}
+  .links a.cta:hover{background:var(--orange-dark)}
+  .links a.out{border:1px solid #cfd6dc}
+  @media(max-width:760px){.links a.sec{display:none}}
 
-  .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#fff;padding:80px 0 88px}
-  .hero .kicker{color:var(--orange);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;margin-bottom:14px}
-  .hero h1{font-size:clamp(2.1rem,5.5vw,3.4rem);line-height:1.1;font-weight:800;letter-spacing:-0.02em;max-width:760px}
-  .hero p.sub{margin-top:20px;font-size:1.18rem;max-width:660px;color:#cfdae4}
-  .hero .btns{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
-  .btn{display:inline-block;text-decoration:none;padding:14px 26px;border-radius:6px;font-weight:700;font-size:1rem}
-  .btn.primary{background:var(--orange);color:#fff}
-  .btn.primary:hover{background:var(--orange-dark)}
-  .btn.ghost{border:2px solid #ffffff55;color:#fff}
-  .btn.ghost:hover{border-color:#fff}
-  .btn.navy{background:var(--navy);color:#fff}
-  .hero .micro{margin-top:14px;font-size:.85rem;color:#9fb2c2}
+  .pill{display:inline-flex;align-items:center;text-decoration:none;font-size:.88rem;font-weight:600;padding:8px 18px;border-radius:999px;border:1px solid transparent;line-height:1.3}
+  .pill.primary{background:var(--orange);color:#fff}.pill.primary:hover{background:var(--orange-dark)}
+  .pill.ghost{background:#fff;color:var(--navy);border-color:#cfd6dc}.pill.ghost:hover{background:var(--soft)}
+  .tag{display:inline-block;font-size:.7rem;font-weight:700;border-radius:999px;padding:1px 9px;white-space:nowrap}
+  .tag.ai{background:#fdebd3;color:#8a4b08}.tag.fixed{background:#dff1e4;color:#1e6b36}.tag.new{background:var(--orange);color:#fff}
+  .kicker{display:inline-block;font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--orange-dark);background:#fdeee4;border-radius:999px;padding:3px 11px;margin-bottom:14px}
 
-  .stats{background:#fff;border-bottom:1px solid var(--line)}
-  .stats .row{display:grid;grid-template-columns:repeat(3,1fr)}
-  .stat{padding:28px 20px;text-align:center;border-left:1px solid var(--line)}
-  .stat:first-child{border-left:none}
-  .stat b{display:block;font-size:1.9rem;color:var(--navy);font-weight:800}
-  .stat span{font-size:.9rem;color:var(--muted)}
-  .stats .foot{text-align:center;font-size:.78rem;color:var(--muted);padding:0 20px 16px}
+  .hero{padding:56px 0 48px}
+  .hero .cols{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+  .hero h1{font-size:clamp(2rem,5vw,3rem);line-height:1.08;font-weight:800;letter-spacing:-.03em;color:var(--navy)}
+  .hero p.sub{margin-top:16px;font-size:1.08rem;color:var(--muted);max-width:520px}
+  .hero .btns{margin-top:24px;display:flex;gap:10px;flex-wrap:wrap}
+  .hero .micro{margin-top:14px;font-size:.82rem;color:var(--muted)}
+  @media(max-width:820px){.hero .cols{grid-template-columns:1fr;gap:30px}.hero{padding:36px 0 32px}}
 
-  section{padding:68px 0}
-  h2{font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin-bottom:12px}
-  .lede{color:var(--muted);font-size:1.08rem;max-width:660px;margin-bottom:36px}
+  /* the small product picture */
+  .mock{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 50px rgba(18,40,60,.10);padding:16px;font-size:.84rem}
+  .mock .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .mock .top b{color:var(--navy);font-size:.95rem}
+  .mock .note{background:#fff9e6;border:1px solid #f0e3b3;border-radius:10px;padding:8px 10px;margin-bottom:10px;color:#5c4a00;font-size:.8rem}
+  .mock .item{border:1px solid var(--line);border-radius:12px;padding:9px 11px;margin-top:7px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .mock .item span{color:var(--muted);font-size:.78rem;display:block}
+  .mock .item i{font-style:normal;font-size:.72rem;font-weight:700;color:#1e6b36;background:#dff1e4;border-radius:999px;padding:2px 9px;white-space:nowrap}
+  .mock .item i.wait{color:var(--muted);background:var(--soft)}
+  .mock .foot{display:flex;gap:6px;margin-top:12px;flex-wrap:wrap}
+  .mock .foot em{font-style:normal;font-size:.76rem;font-weight:600;border-radius:999px;padding:4px 12px}
+  .mock .foot em.go{background:#2e8b47;color:#fff}.mock .foot em.alt{border:1px solid #cfd6dc;color:var(--navy)}
 
-  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px}
-  .card .num{width:38px;height:38px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-  .card h3{font-size:1.05rem;color:var(--navy);margin-bottom:8px}
-  .card p{font-size:.95rem;color:var(--muted)}
-  .card .price{margin-top:12px;font-weight:800;color:var(--navy)}
-  .card .price small{color:var(--muted);font-weight:400}
+  section{padding:52px 0}
+  section.band{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  h2{font-size:clamp(1.35rem,3vw,1.75rem);font-weight:800;color:var(--navy);letter-spacing:-.02em;margin-bottom:8px}
+  .lede{color:var(--muted);font-size:1rem;max-width:620px;margin-bottom:26px}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(max-width:860px){.grid4{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}}
+  @media(max-width:560px){.grid4,.grid2{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .band .card{background:var(--paper)}
+  .card h3{font-size:.96rem;color:var(--navy);margin-bottom:5px;letter-spacing:-.01em}
+  .card p{font-size:.88rem;color:var(--muted)}
+  .card .n{display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--navy);color:#fff;font-size:.72rem;font-weight:700;align-items:center;justify-content:center;margin-bottom:9px}
+  .card .tag{margin-bottom:8px}
 
-  .proofband{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .plan{display:flex;flex-direction:column}
+  .plan .price{font-size:1.7rem;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin:4px 0 2px}
+  .plan .price small{font-size:.82rem;font-weight:500;color:var(--muted)}
+  .plan ul{list-style:none;margin:10px 0 0;font-size:.86rem;color:var(--ink)}
+  .plan li{padding:5px 0 5px 20px;position:relative;border-top:1px solid var(--line)}
+  .plan li:before{content:"";position:absolute;left:3px;top:11px;width:8px;height:4px;border-left:2px solid #2e8b47;border-bottom:2px solid #2e8b47;transform:rotate(-45deg)}
+  .plan.best{border-color:var(--orange);box-shadow:0 8px 26px rgba(232,100,31,.10)}
+  .fine{font-size:.82rem;color:var(--muted);margin-top:14px;max-width:720px}
 
-  .door{background:var(--navy);color:#fff;border-radius:14px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
-  .door h2{color:#fff;margin-bottom:6px}
-  .door p{color:#cfdae4;max-width:520px}
+  .story{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+  @media(max-width:820px){.story{grid-template-columns:1fr}}
+  .story p{color:var(--muted);font-size:.95rem;margin-bottom:10px}
 
-  .about{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .about .row{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center}
-  .headshot{width:200px;height:200px;border-radius:12px;background:linear-gradient(160deg,var(--navy),var(--navy2));display:flex;align-items:center;justify-content:center;color:#9fb2c2;font-size:.8rem;text-align:center;padding:12px}
-  .about p{color:var(--ink);max-width:620px}
-  .about p + p{margin-top:12px}
+  .bigger{background:var(--navy);color:#fff;border-radius:18px;padding:28px 30px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .bigger h2{color:#fff;margin-bottom:4px}
+  .bigger p{color:#cfdae4;max-width:560px;font-size:.95rem}
+  .bigger .pill.ghost{background:transparent;color:#fff;border-color:#ffffff66}.bigger .pill.ghost:hover{background:#ffffff14}
 
-  .faq details{background:#fff;border:1px solid var(--line);border-radius:8px;margin-bottom:10px;padding:16px 20px}
-  .faq summary{font-weight:700;color:var(--navy);cursor:pointer}
-  .faq details p{margin-top:10px;color:var(--muted);font-size:.95rem}
+  details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:8px;padding:0 16px}
+  details summary{cursor:pointer;font-weight:600;font-size:.94rem;color:var(--navy);padding:12px 0;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  details summary::-webkit-details-marker{display:none}
+  details summary:after{content:"";width:6px;height:6px;border-right:1.5px solid var(--muted);border-bottom:1.5px solid var(--muted);transform:rotate(45deg);transition:transform .12s;flex:none}
+  details[open] summary:after{transform:rotate(-135deg)}
+  details p{color:var(--muted);font-size:.92rem;padding-bottom:14px;max-width:760px}
 
-  .final{background:var(--navy);color:#fff;text-align:center;padding:76px 0}
-  .final h2{color:#fff}
-  .final p{color:#cfdae4;max-width:540px;margin:0 auto 28px}
-
-  footer{background:#0d1e2e;color:#7d92a5;font-size:.85rem;padding:26px 0;text-align:center}
-  footer a{color:#9fb2c2}
-
-  @media(max-width:820px){
-    .nav .links a:not(.cta){display:none}
-    .stats .row{grid-template-columns:1fr}
-    .stat{border-left:none;border-top:1px solid var(--line)}
-    .grid3,.grid2{grid-template-columns:1fr}
-    .about .row{grid-template-columns:1fr;justify-items:center;text-align:center}
-    .door{flex-direction:column;align-items:flex-start}
-  }
+  .end{text-align:center;padding:56px 0 64px}
+  .end p{color:var(--muted);max-width:520px;margin:0 auto 20px}
+  footer{border-top:1px solid var(--line);padding:22px 0;font-size:.8rem;color:var(--muted);text-align:center}
+  footer a{color:var(--muted)}
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
   "name": "Steadywork",
   "url": "https://steadyworkhq.com/",
   "email": "alex@steadyworkhq.com",
-  "description": "Steadywork automates the admin work eating your week — intake, follow-up, paperwork, invoicing, reporting. For home services, property management, insurance, legal, accounting, title, staffing, contractors, and manufacturers in northern Utah.",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Ogden",
-    "addressRegion": "UT",
-    "addressCountry": "US"
-  },
-  "areaServed": [
-    {"@type": "City", "name": "Ogden"},
-    {"@type": "City", "name": "Layton"},
-    {"@type": "City", "name": "Kaysville"},
-    {"@type": "City", "name": "Farmington"},
-    {"@type": "City", "name": "Brigham City"},
-    {"@type": "City", "name": "Logan"},
-    {"@type": "AdministrativeArea", "name": "Weber County"},
-    {"@type": "AdministrativeArea", "name": "Davis County"},
-    {"@type": "AdministrativeArea", "name": "Box Elder County"},
-    {"@type": "AdministrativeArea", "name": "Cache County"}
-  ],
-  "priceRange": "$79-$6,500+",
-  "founder": {
-    "@type": "Person",
-    "name": "Alex"
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Do we have to buy new software?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Almost never. We build around what you already run — QuickBooks, Jobber, your calendar, your phone provider — and connect it so information stops being retyped. When something genuinely earns a new tool (the texting platform behind missed-call rescue is one), you'll see the monthly cost next to it before you decide."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is our data safe?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Here's what we put in writing: client work runs only on business-tier AI services that don't train on your data, credentials are exchanged through an encrypted password manager (never email), and every system we build lives in accounts you own."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does it cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The audit is $1,500 for small teams, $2,500 for ops-heavy companies — $750 while we take on our first three founding clients — and it's credited toward your build whichever tier applies. Starter automations run from $79/mo fully managed, with no setup fee. Bigger builds get a fixed written quote priced against their estimated return — no hourly meters — with a monthly care plan from $450/mo sized to how much we're running for you. Third-party tool subscriptions are billed to you directly and disclosed up front. Everything is cancel-anytime."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How fast?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Starter automations: about a week of our work. Anything that texts your customers also needs one-time carrier approval for business texting — typically another week or two, outside anyone's control. We file it on day one, and your monthly fee doesn't start until you're live. Bigger workflow builds: a written timeline before you pay, typically a few weeks."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens if we cancel?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You keep everything — the systems, the documentation, the video walkthroughs. It all keeps running on accounts you own. No hostages."
-      }
-    }
-  ]
+  "description": "Steadywork interviews you about your week, ranks what's worth automating, and runs automations that prepare drafts for you to approve.",
+  "address": {"@type": "PostalAddress", "addressLocality": "Ogden", "addressRegion": "UT", "addressCountry": "US"},
+  "founder": {"@type": "Person", "name": "Alex"}
 }
 </script>
 </head>
@@ -183,140 +124,147 @@
   <div class="wrap nav">
     <a class="logo" href="index.html">Steady<span>work</span></a>
     <div class="links">
-      <a href="#services">What we automate</a>
-      <a href="#who">Who we help</a>
-      <a href="#how">How it works</a>
-      <a href="#proof">Results</a>
-      <a href="#about">About</a>
-      <a class="cta" href="https://cal.com/alex-johnstun-l5cang">Book a call</a>
+      <a class="sec" href="#how">How it works</a>
+      <a class="sec" href="#examples">What it does</a>
+      <a class="sec" href="#pricing">Pricing</a>
+      <a class="sec" href="#questions">Questions</a>
+      <a class="out" href="https://steadywork-rescue-ji0b.onrender.com/login">Log in</a>
+      <a class="cta" href="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A">Get an invitation</a>
     </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="wrap">
-    <div class="kicker">Admin automation for real businesses</div>
-    <h1>Your admin, on autopilot.</h1>
-    <p class="sub">Steadywork finds the administrative work eating your week — the phone, the paperwork, the follow-ups, the double data entry — then automates it and keeps it running. The goal is simple: give you your week back.</p>
-    <div class="btns">
-      <a class="btn primary" href="https://cal.com/alex-johnstun-l5cang">Book a 15-minute call</a>
-      <a class="btn ghost" href="#how">Start with the audit</a>
+  <div class="wrap cols">
+    <div>
+      <span class="kicker">Early access · by invitation</span>
+      <h1>Tell it about your week. It takes the busywork.</h1>
+      <p class="sub">Steadywork interviews you about the admin work that eats your time, ranks what's worth automating, and then does it: the reminders, the follow-ups, the weekly reports. It hands you drafts. You approve what goes out.</p>
+      <div class="btns">
+        <a class="pill primary" href="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A">Get an invitation</a>
+        <a class="pill ghost" href="#how">See how it works</a>
+      </div>
+      <p class="micro">Nothing is sent without your approval · Month to month · No new software to learn</p>
     </div>
-    <p class="micro">Flat pricing &nbsp;·&nbsp; Month to month, cancel anytime &nbsp;·&nbsp; You own everything we build</p>
-  </div>
-</section>
-
-<div class="stats">
-  <div class="wrap row">
-    <div class="stat"><b>58%</b><span>of small businesses say they use AI</span></div>
-    <div class="stat"><b>~18%</b><span>actually pay for any AI service — the rest is dabbling</span></div>
-    <div class="stat"><b>~2×</b><span>builds done with an outside partner succeed about twice as often as DIY</span></div>
-  </div>
-  <div class="wrap foot">Sources: U.S. Chamber of Commerce (2025) · JPMorgan Chase Institute (2025) · MIT State of AI in Business (2025)</div>
-</div>
-
-<section id="services">
-  <div class="wrap">
-    <h2>What we automate</h2>
-    <p class="lede">The painful administrative work — the retyping, the chasing, the paperwork, the "did anyone tell the crew?" It has to happen, but it doesn't need a person doing it. We wire it into the tools you already use — no rip-and-replace, and as little new to learn as possible.</p>
-    <div class="grid3">
-      <div class="card"><h3>Missed calls &amp; lead follow-up</h3><p>Missed calls get a text back in seconds. Leads get followed up automatically — with opt-out built in — until they book or say no.</p></div>
-      <div class="card"><h3>Invoicing, quotes &amp; paperwork</h3><p>Invoices go out on time, and reminders keep going until they're handled. Quotes, forms, and documents fill themselves in from information you've already entered once.</p></div>
-      <div class="card"><h3>Double entry &amp; retyping</h3><p>The same job details typed into three systems by three people. We connect what you run so it's entered once and flows to the systems that need it — no copy-paste, no version drift.</p></div>
-      <div class="card"><h3>Handoffs that keep stalling</h3><p>Work moving from sold to scheduled to done to invoiced without anyone shepherding it. Assignments, status changes, and updates reach the people affected on their own.</p></div>
-      <div class="card"><h3>Intake &amp; the questions you answer daily</h3><p>New callers, web forms, maintenance requests, certificate requests, referrals — captured and answered instantly, around the clock, with a human looped in the moment it matters.</p></div>
-      <div class="card"><h3>Reporting, notes &amp; the rest</h3><p>Calls and meetings logged automatically. The numbers that matter in plain English in your inbox. If a repetitive task eats your team's hours, it's a candidate — that's what the audit finds.</p></div>
+    <div class="mock" aria-label="Example: a batch of drafts waiting for approval">
+      <div class="top"><b>Invoice reminders</b><span class="tag new">3 new</span></div>
+      <div class="note"><strong>Nothing has been sent.</strong> Read them, change anything, approve the ones you're happy with.</div>
+      <div class="item"><div>Reminder: Acme Supply<span>ap@acme.example · Invoice 104, 21 days overdue</span></div><i>Approved</i></div>
+      <div class="item"><div>Reminder: Cedar Co<span>office@cedar.example · Invoice 109, 16 days overdue</span></div><i class="wait">Waiting</i></div>
+      <div class="item"><div>Reminder: Dee Ltd<span>d@dee.example · Invoice 110, 15 days overdue</span></div><i class="wait">Waiting</i></div>
+      <div class="foot"><em class="go">Approve all</em><em class="alt">Edit</em><em class="alt">Leave one out</em></div>
     </div>
   </div>
 </section>
 
-<section id="who">
-  <div class="wrap">
-    <h2>Who we help</h2>
-    <p class="lede">Different industries, same problem: the work that has to happen between the work. If your business is on this list, the pain next to it probably sounds familiar — and if it isn't, ask anyway. The pattern usually holds.</p>
-    <div class="grid3">
-      <div class="card"><h3>Home services</h3><p>HVAC, plumbing, electrical, roofing. Calls to voicemail after hours. Quotes sent that never get a second follow-up.</p></div>
-      <div class="card"><h3>Property management &amp; HOAs</h3><p>Maintenance requests arriving through three channels at 9pm. Tenants and owners chasing you for updates nobody had time to send.</p></div>
-      <div class="card"><h3>Insurance agencies</h3><p>Certificate requests that take days. Renewals that need reviewing before the date, not after. Quote comparisons rebuilt from scratch every time.</p></div>
-      <div class="card"><h3>Law firms</h3><p>Intake calls that arrive when the office is closed — and go to whoever answers first. Documents rebuilt from templates by hand.</p></div>
-      <div class="card"><h3>Accounting &amp; bookkeeping</h3><p>Half of tax season spent chasing clients for paperwork. Onboarding that repeats the same twelve steps for every new client.</p></div>
-      <div class="card"><h3>Title &amp; escrow</h3><p>Agent, lender, buyer, and seller all waiting on a status update somebody has to type four times.</p></div>
-      <div class="card"><h3>Staffing &amp; recruiting</h3><p>Candidates who never hear back — not because you don't care, but because nobody had the hours. Job orders that stall between intake and placement.</p></div>
-      <div class="card"><h3>Contractors &amp; remodelers</h3><p>Bids that die quietly. Change orders written at 10pm. Subs and owners asking where things stand.</p></div>
-      <div class="card"><h3>Manufacturing &amp; distribution</h3><p>Schedules built by hand every week and stale by Tuesday. Orders retyped between systems. Status nobody can see without asking.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="how" class="proofband">
+<section class="band" id="how">
   <div class="wrap">
     <h2>How it works</h2>
-    <p class="lede">Three steps. The first one tells you what's worth automating first, and gets credited toward your build if you move ahead.</p>
-    <div class="grid3">
-      <div class="card"><div class="num">1</div><h3>The audit — from $1,500</h3><p>A working session on your actual operation. You get a written report: where the hours and jobs are leaking, what to automate first, and each fix's estimated return. $1,500 for small teams, $2,500 for ops-heavy companies — and a founding-client rate of $750 for our first three clients. Credited toward your build.</p></div>
-      <div class="card"><div class="num">2</div><h3>The build</h3><p>Fixed quote in writing before you pay anything. Starter automations from $79/mo, fully managed. Bigger workflow builds — the kind that replace an entire manual process — from $6,500, plus a monthly care plan sized to your stack (from $450/mo), priced against their estimated return.</p></div>
-      <div class="card"><div class="num">3</div><h3>Keep it running</h3><p>Automations break silently — apps update, numbers change. We monitor, fix, and improve, with a plain-English monthly report. Cancel anytime; everything stays yours.</p></div>
+    <p class="lede">You don't need to know what can be automated. That's what the interview is for.</p>
+    <div class="grid4">
+      <div class="card"><span class="n">1</span><h3>It interviews you</h3><p>A short chat about your week: what you do, what repeats, what you dread. Your team can each do their own.</p></div>
+      <div class="card"><span class="n">2</span><h3>You get a ranked list</h3><p>Every repetitive task you described, grouped and ordered by the hours it takes and how well it suits automation.</p></div>
+      <div class="card"><span class="n">3</span><h3>You switch one on</h3><p>Say what it should prepare, in plain words. Point it at a report you already export, or connect a system.</p></div>
+      <div class="card"><span class="n">4</span><h3>You approve the drafts</h3><p>On schedule, it prepares the emails or the report and waits. Review them together, edit any, approve, and they go.</p></div>
     </div>
   </div>
 </section>
 
-<section id="proof">
+<section id="examples">
   <div class="wrap">
-    <h2>Built on a factory floor, not in a pitch deck</h2>
-    <p class="lede">Before Steadywork was a company, it was a fix for a real problem. At the Ogden manufacturer where Steadywork's founder worked, every production manager spent 2–4 hours a week building the schedule by hand — 12–16 hours of management time, gone, every week — and the schedule went stale the moment a single date moved.</p>
+    <h2>The kind of work it takes on</h2>
+    <p class="lede">Anything where you read a report, then write the same sort of message or summary every time. A few examples:</p>
     <div class="grid3">
-      <div class="card"><div class="num">✓</div><h3>12–16 hours a week, back</h3><p>The system pulls order data straight from QuickBooks and does the work itself. Managers went back to managing.</p></div>
-      <div class="card"><div class="num">✓</div><h3>No more stale schedule</h3><p>When something changes, the live version updates and the change reaches everyone affected — nobody chasing people down with new versions.</p></div>
-      <div class="card"><div class="num">✓</div><h3>Smarter than a whiteboard</h3><p>It now handles more constraints than anyone could juggle by hand.</p></div>
+      <div class="card"><h3>Chasing overdue invoices</h3><p>Reads your unpaid invoices and drafts a polite reminder to each customer who's past due, in your wording.</p></div>
+      <div class="card"><h3>The Monday numbers</h3><p>Totals what each customer owes, compares it with last week, and writes the one-page brief you'd otherwise build by hand.</p></div>
+      <div class="card"><h3>Quotes that went quiet</h3><p>Finds quotes with no reply after a set number of days and drafts the follow-up for each.</p></div>
+      <div class="card"><h3>What needs reordering</h3><p>Reads the stock report and lists what's below its reorder point, grouped by supplier, ready to send.</p></div>
+      <div class="card"><h3>Where the jobs stand</h3><p>Turns the open-jobs sheet into a status update for the crew, the customer or the owner.</p></div>
+      <div class="card"><h3>Whatever you describe</h3><p>If it starts from data you already have and ends in an email or a document, it's a candidate. The interview finds them.</p></div>
     </div>
-    <p class="lede" style="margin-top:26px;margin-bottom:0">One project, on our own floor — but it's the pattern we look for everywhere: find the manual process quietly eating hours, hand it to a system, keep it honest. Your numbers will differ; that's why the audit comes first.</p>
+    <p class="fine">It works from reports you upload or email in. Direct connections to QuickBooks, Microsoft 365 (Outlook) and Smartsheet are being added during early access.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <h2>Built so you can trust it</h2>
+    <p class="lede">Most people's worry about automation is the right one: what if it sends something wrong? So it can't.</p>
+    <div class="grid2">
+      <div class="card"><h3>Nothing happens without your approval</h3><p>It prepares; you decide. See the full list of what would go out and to whom, change any of it, then approve. You choose whether approved emails are sent for you, placed in your Drafts folder, or left for you to send.</p></div>
+      <div class="card"><h3>It tells you when AI is involved</h3><p>Every draft is labelled.<br><span class="tag ai">Written by AI</span> means read it carefully. <span class="tag fixed">Fixed program, no AI</span> means the same data always gives the same result.</p></div>
+      <div class="card"><h3>It learns from your corrections</h3><p>Keep removing the same customer, or fixing the same line? It notices the pattern and offers to make it a standing rule.</p></div>
+      <div class="card"><h3>It gets cheaper as it settles</h3><p>Once an automation has been right for a while, it can be written down as a fixed program. From then on it runs without AI and uses none of your allowance.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <p class="lede">A flat monthly fee that includes an allowance of AI use. Month to month.</p>
+    <div class="grid3">
+      <div class="card plan"><h3>Solo</h3><div class="price">$29 <small>a month</small></div><p>For one person.</p>
+        <ul><li>The interview and your ranked list</li><li>1,500 credits of AI use each month</li><li>Automations that run without AI are unlimited</li></ul></div>
+      <div class="card plan best"><h3>Team</h3><div class="price">$149 <small>a month</small></div><p>For up to 10 people.</p>
+        <ul><li>Everyone gets their own interview</li><li>One ranked list across the team</li><li>10,000 credits of AI use each month</li></ul></div>
+      <div class="card plan"><h3>Bring your own AI key</h3><div class="price">$19 <small>solo</small> · $99 <small>team</small></div><p>If you already have an Anthropic developer account.</p>
+        <ul><li>AI use is billed to you directly by Anthropic</li><li>No credits to track</li><li>Everything else the same</li></ul></div>
+    </div>
+    <p class="fine"><strong>What's a credit?</strong> A measure of AI use; one credit is one cent's worth. Each time the AI works for you it uses some, and your account shows exactly how many each automation takes. Need more? Extra credits are $10 per 1,000 and don't expire. If you run out, AI-written automations pause until you top up; nothing is charged without you choosing it.</p>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap story">
+    <div>
+      <h2>Where this came from</h2>
+      <p>I'm Alex. At a manufacturing company in Ogden, Utah, our production managers each spent 2 to 4 hours a week building the schedule by hand: 12 to 16 hours of management time, every week, on a document that went stale the moment a date moved.</p>
+      <p>I built a system that pulls the order data and does that work itself. It's still running, and the managers went back to managing.</p>
+    </div>
+    <div>
+      <h2>Why a tool, not a consultant</h2>
+      <p>Since then, almost every owner I meet has the same problem in a smaller size: a handful of weekly chores that a system should be doing. Most of them don't need a project. They need something they can sign up for, describe the chore to, and trust.</p>
+      <p>That's what Steadywork is now. One real project on our own floor is where it started; your numbers will differ.</p>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="door">
+    <div class="bigger">
       <div>
-        <h2>Run a home-service company?</h2>
-        <p>HVAC, plumbing, electrical, roofing — industry estimates put 30–40% of peak-season calls unanswered, and most callers won't leave a voicemail. Run your own numbers on what that could be costing you. (Not in the trades? The same math runs on any missed inquiry — bring yours to the call.)</p>
+        <h2>Need something bigger?</h2>
+        <p>Some problems want a person: several systems, a whole process, a team that needs walking through it. We still do that. It starts with an audit from $1,500, credited toward the build.</p>
       </div>
-      <a class="btn primary" href="home-services.html">Try the missed-call calculator →</a>
+      <a class="pill ghost" href="https://cal.com/alex-johnstun-l5cang">Book a 15-minute call</a>
     </div>
   </div>
 </section>
 
-<section id="about" class="about">
-  <div class="wrap row">
-    <div class="headshot">Alex<br>Steadywork · Ogden, Utah</div>
-    <div>
-      <h2>The person behind it</h2>
-      <p>I'm Alex. Steadywork started as a fix for my own team: at a manufacturing company in Ogden, our managers were spending 12–16 hours a week on work a system should have been doing, so I built the system — and it's still running. Almost every owner I talk to is in the same spot those managers were: they've heard AI could help, they've maybe poked at ChatGPT, and nothing in their business actually changed. The tools are real — someone just has to do the work of wiring them into <em>your</em> phone, <em>your</em> paperwork, <em>your</em> invoices.</p>
-      <p>That's what I do. No jargon, no twelve-month contract, and you own every system I build — if we part ways, it's all yours and keeps running on the accounts you hold.</p>
-    </div>
+<section class="band" id="questions">
+  <div class="wrap">
+    <h2 style="margin-bottom:16px">Straight answers</h2>
+    <details><summary>Can it send something without me?</summary><p>No. It prepares drafts and waits. Emails go out only for drafts you've approved, once each, and every send is recorded. You can also choose to have approved emails placed in your own Drafts folder, or to send them yourself.</p></details>
+    <details><summary>Do I have to buy or learn new software?</summary><p>No. It starts from reports you already export from the tools you run, sent in by upload or by email. You describe what you want in plain words.</p></details>
+    <details><summary>Is my data safe?</summary><p>Each account's data is kept apart from every other account's, and access to any system you connect is stored encrypted. Connections are read-only unless you choose to allow sending email. The AI work runs on Anthropic's Claude through its business service, which does not train on your data. Programs the AI writes for your account run in a sealed space with no access to the internet, your passwords or anyone else's data.</p></details>
+    <details><summary>What does the AI get wrong?</summary><p>It can misread a messy report or word something in a way you wouldn't. That's why every AI-written draft is labelled and waits for you, and why you can try any automation on your real data before saving it. When you correct the same thing twice, it offers to make that a rule.</p></details>
+    <details><summary>What if I run out of credits?</summary><p>Automations that the AI writes each time pause, and you get an email. Automations that run as fixed programs carry on, because they use none. You're never billed for extra use you didn't choose.</p></details>
+    <details><summary>Can I cancel?</summary><p>Any time. It's month to month, and you can take a copy of each automation's instructions, rules and program with you.</p></details>
+    <details><summary>Why is it invitation-only?</summary><p>We're bringing businesses on a few at a time so each one gets set up properly. Ask for an invitation and tell us what eats your week.</p></details>
   </div>
 </section>
 
-<section class="faq">
+<section class="end">
   <div class="wrap">
-    <h2>Straight answers</h2>
-    <details><summary>Do we have to buy new software?</summary><p>Almost never. We build around what you already run — QuickBooks, Jobber, your calendar, your phone provider — and connect it so information stops being retyped. When something genuinely earns a new tool (the texting platform behind missed-call rescue is one), you'll see the monthly cost next to it before you decide.</p></details>
-    <details><summary>Is our data safe?</summary><p>Here's what we put in writing: client work runs only on business-tier AI services that don't train on your data, credentials are exchanged through an encrypted password manager (never email), and every system we build lives in accounts you own.</p></details>
-    <details><summary>What does it cost?</summary><p>The audit is $1,500 for small teams, $2,500 for ops-heavy companies — $750 while we take on our first three founding clients — and it's credited toward your build whichever tier applies. Starter automations run from $79/mo fully managed, with no setup fee. Bigger builds get a fixed written quote priced against their estimated return — no hourly meters — with a monthly care plan from $450/mo sized to how much we're running for you. Third-party tool subscriptions are billed to you directly and disclosed up front. Everything is cancel-anytime.</p></details>
-    <details><summary>How fast?</summary><p>Starter automations: about a week of our work. Anything that texts your customers also needs one-time carrier approval for business texting — typically another week or two, outside anyone's control. We file it on day one, and your monthly fee doesn't start until you're live. Bigger workflow builds: a written timeline before you pay, typically a few weeks.</p></details>
-    <details><summary>What happens if we cancel?</summary><p>You keep everything — the systems, the documentation, the video walkthroughs. It all keeps running on accounts you own. No hostages.</p></details>
-  </div>
-</section>
-
-<section class="final" id="book">
-  <div class="wrap">
-    <h2>Find out what your week is worth</h2>
-    <p>Book a 15-minute call. Tell me what eats your time — I'll tell you honestly whether it's automatable and roughly what it could return. If it's not worth it, I'll say so.</p>
-    <a class="btn primary" href="https://cal.com/alex-johnstun-l5cang">Book a 15-minute call</a>
+    <h2>Find out what your week is hiding</h2>
+    <p>Ask for an invitation, do the interview, and see your own ranked list of what's worth handing over.</p>
+    <a class="pill primary" href="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A">Get an invitation</a>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">Steadywork · Your admin, on autopilot · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="home-services.html">For home services</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a></div>
+  <div class="wrap">Steadywork · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="home-services.html">Missed-call text-back for home services</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a></div>
 </footer>
 
 </body>
