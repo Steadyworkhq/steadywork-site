@@ -4,32 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Use — Steadywork</title>
-<meta name="description" content="The terms for using steadyworkhq.com — what this site is, what it isn't, and how actual services get sold.">
+<meta name="description" content="The terms for using the Steadywork app and steadyworkhq.com: accounts, approvals, billing, credits, and what we are and are not responsible for.">
 <link rel="canonical" href="https://steadyworkhq.com/terms.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e8641f'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='800' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <style>
-  :root{
-    --navy:#12283c; --navy2:#1b3a55; --orange:#e8641f; --orange-dark:#c9520f;
-    --paper:#faf8f5; --ink:#22303c; --muted:#5b6b78; --line:#e3ddd4;
-  }
+  :root{--navy:#12283c;--orange:#e8641f;--orange-dark:#c9520f;--paper:#fbfaf8;--ink:#1f2a35;--muted:#66747f;--line:#e8e3db;--soft:#f3f0ea}
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-  header{background:var(--navy);color:#fff;padding:18px 0;position:sticky;top:0;z-index:10}
-  .nav{display:flex;justify-content:space-between;align-items:center;gap:18px}
-  .logo{font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;color:#fff;text-decoration:none}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  a{color:var(--orange-dark)}
+
+  header{background:rgba(251,250,248,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;height:52px}
+  .logo{font-size:1.08rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);text-decoration:none}
   .logo span{color:var(--orange)}
-  .nav .links{display:flex;gap:22px;align-items:center}
-  .nav a.cta{background:var(--orange);color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:700;font-size:.95rem}
-  .nav a.cta:hover{background:var(--orange-dark)}
-  main{max-width:720px;margin:0 auto;padding:56px 24px 72px}
-  h1{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800;color:var(--navy);letter-spacing:-0.02em;line-height:1.15}
-  .dated{color:var(--muted);font-size:.95rem;margin:10px 0 36px}
-  h2{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin:34px 0 10px}
-  main p{margin-bottom:14px}
-  main a{color:var(--orange-dark)}
-  footer{background:#0d1e2e;color:#7d92a5;font-size:.85rem;padding:26px 0;text-align:center}
-  footer a{color:#9fb2c2}
+  .links{display:flex;gap:2px;align-items:center}
+  .links a{color:var(--navy);text-decoration:none;font-size:.84rem;font-weight:600;padding:5px 11px;border-radius:999px;white-space:nowrap}
+  .links a:hover{background:var(--soft)}
+  .links a.cta{background:var(--orange);color:#fff;margin-left:6px}
+  .links a.cta:hover{background:var(--orange-dark)}
+  .links a.out{border:1px solid #cfd6dc}
+  @media(max-width:760px){.links a.sec{display:none}}
+  @media(max-width:360px){.wrap{padding:0 14px}.links a{padding:5px 8px;font-size:.76rem}.links a.cta{margin-left:3px}}
+
+  main{max-width:760px;margin:0 auto;padding:44px 20px 64px;overflow-wrap:break-word}
+  h1{font-size:clamp(1.8rem,4.5vw,2.4rem);font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.12}
+  .dated{color:var(--muted);font-size:.9rem;margin:8px 0 24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+  .card h2{font-size:.96rem;margin:0 0 6px}
+  .card ul{margin-bottom:0}
+  .card li{font-size:.92rem}
+  .toc{font-size:.88rem}
+  .toc ol{columns:2;column-gap:28px;padding-left:20px;margin:0}
+  .toc li{margin-bottom:3px;break-inside:avoid}
+  .toc a{color:var(--navy);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  @media(max-width:560px){.toc ol{columns:1}}
+  h2{font-size:1.15rem;font-weight:800;color:var(--navy);letter-spacing:-.01em;margin:34px 0 8px;scroll-margin-top:68px}
+  main p{margin-bottom:12px}
+  main ul{margin:0 0 12px;padding-left:22px}
+  main li{margin-bottom:6px}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--soft);border-radius:5px;padding:1px 5px}
+
+  footer{border-top:1px solid var(--line);padding:22px 0;font-size:.8rem;color:var(--muted);text-align:center}
+  footer a{color:var(--muted)}
 </style>
 </head>
 <body>
@@ -38,54 +57,174 @@
   <div class="wrap nav">
     <a class="logo" href="index.html">Steady<span>work</span></a>
     <div class="links">
-      <a class="cta" href="https://cal.com/alex-johnstun-l5cang">Book a call</a>
+      <a class="sec" href="index.html#how">How it works</a>
+      <a class="sec" href="index.html#pricing">Pricing</a>
+      <a class="sec" href="privacy.html">Privacy</a>
+      <a class="out" href="https://steadywork-rescue-ji0b.onrender.com/login">Log in</a>
+      <a class="cta" href="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A">Get an invitation</a>
     </div>
   </div>
 </header>
 
 <main>
   <h1>Terms of Use</h1>
-  <p class="dated">Effective August 9, 2026</p>
+  <p class="dated">Last updated: November 14, 2026</p>
 
-  <h2>Who we are</h2>
-  <p>Steadywork is a sole-proprietor consulting business in Ogden, Utah. This site is steadyworkhq.com. You can reach us at <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a>.</p>
+  <div class="card">
+    <h2>The main points</h2>
+    <ul>
+      <li>The app prepares drafts. Nothing is sent or changed in your systems unless you approve that draft.</li>
+      <li>You are responsible for reading a draft before you approve it. AI can be wrong.</li>
+      <li>The plan is month to month. You can cancel at any time. We do not refund part months.</li>
+      <li>The app is in early access and is provided as it is.</li>
+    </ul>
+  </div>
 
-  <h2>What this site is</h2>
-  <p>This site is general information about what we do. It isn't professional advice, and reading it doesn't make you a client. Nothing on this website creates a service contract. Actual services are sold under a separate written services agreement signed by both of us.</p>
+  <nav class="card toc" aria-label="Sections">
+    <ol>
+      <li><a href="#who">Who we are</a></li>
+      <li><a href="#cover">What these terms cover</a></li>
+      <li><a href="#early">Early access</a></li>
+      <li><a href="#accounts">Accounts</a></li>
+      <li><a href="#does">What the app does</a></li>
+      <li><a href="#approval">Approval and your responsibility</a></li>
+      <li><a href="#advice">Not professional advice</a></li>
+      <li><a href="#data">Your data and connected systems</a></li>
+      <li><a href="#teams">Teams</a></li>
+      <li><a href="#use">Acceptable use</a></li>
+      <li><a href="#billing">Plans and billing</a></li>
+      <li><a href="#credits">Credits</a></li>
+      <li><a href="#ownkey">Using your own AI key</a></li>
+      <li><a href="#cancel">Cancelling and closing an account</a></li>
+      <li><a href="#consulting">Consulting work</a></li>
+      <li><a href="#textback">Missed-Call Rescue</a></li>
+      <li><a href="#site">This website</a></li>
+      <li><a href="#content">Our content</a></li>
+      <li><a href="#third">Other companies' services</a></li>
+      <li><a href="#warranty">No warranties</a></li>
+      <li><a href="#liability">Limit of liability</a></li>
+      <li><a href="#changes">Changes to these terms</a></li>
+      <li><a href="#law">Governing law</a></li>
+      <li><a href="#sever">If part of these terms doesn't hold up</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
 
-  <h2>The calculator</h2>
-  <p>The missed-call calculator on our home-services page produces an estimate computed entirely from the numbers you put into it. It is not a prediction, a quote, or a promise of results. It's a way to run your own math.</p>
+  <h2 id="who">Who we are</h2>
+  <p>Steadywork is a sole-proprietor business in Ogden, Utah. This site is steadyworkhq.com. You can reach us at <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a>.</p>
 
-  <h2>Prices on this site</h2>
-  <p>Prices shown here are our current list prices, and they can change. The price that counts is the one in a signed quote. Quotes are valid for 30 days.</p>
+  <h2 id="cover">What these terms cover</h2>
+  <p>These terms cover the Steadywork app and this website. By creating an account or using the app, you agree to them. If you use the app for a business, you agree on behalf of that business, and you confirm you are allowed to.</p>
+  <p>Two other things we sell have their own terms. Consulting work is covered by a signed services agreement. The Missed-Call Rescue text-back service has its own terms inside the app. Both are described briefly below.</p>
+  <p>Our <a href="privacy.html">Privacy Policy</a> explains what data we handle and who else handles it.</p>
 
-  <h2>Our content</h2>
-  <p>The words and design on this site belong to Steadywork. You're welcome to read, link, and share. Please don't copy our content and republish it as your own.</p>
+  <h2 id="early">Early access</h2>
+  <p>The app is in early access and is open by invitation. Features may change, be added, or be removed. Direct connections to other systems are being added during this period and may not all be available to you.</p>
 
-  <h2>Third-party links and services</h2>
-  <p>Booking happens through cal.com, a scheduling service we don't run. It has its own terms and privacy policy, and so does any other outside site we link to. When you use those services, their rules apply.</p>
+  <h2 id="accounts">Accounts</h2>
+  <p>You sign in with an email address and a password. You can reset your password by email. Keep your password private. You are responsible for what happens under your account. Tell us if you think someone else has used it.</p>
+  <p>The app is for business use. You must be at least 18 to hold an account.</p>
 
-  <h2>No warranties for the site itself</h2>
-  <p><strong>We work to keep this site accurate and available, but we provide it as-is. We don't promise it will always be up, error-free, or current.</strong></p>
+  <h2 id="does">What the app does</h2>
+  <p>The app does three things:</p>
+  <ul>
+    <li>It interviews you about your work. The interview is a chat with an AI.</li>
+    <li>It produces a ranked list of tasks worth automating.</li>
+    <li>It runs automations. An automation reads your data and prepares drafts. A draft can be an email, a document, or a proposed entry in a system you have connected, such as a bill in your accounting system or a row in a spreadsheet.</li>
+  </ul>
 
-  <h2>Limitation of liability for site use</h2>
-  <p><strong>To the extent the law allows, Steadywork isn't liable for losses that come from using this website or relying on its content.</strong> This section is about the free website — work we're hired to do is governed by the signed services agreement, not these terms.</p>
+  <h2 id="approval">Approval and your responsibility</h2>
+  <p>Nothing is sent, and nothing is changed in your systems, unless you approve that specific draft.</p>
+  <p>When you approve an email, you choose what happens to it. It can be sent from your own mailbox. It can be placed in your Drafts folder. Or you can send it yourself. Each action is logged.</p>
+  <p>AI output can be wrong. It can misread your data or say something you would not say. Each draft is labelled either "Written by AI" or as made by fixed steps or a fixed program with no AI. Read each draft before you approve it. You are responsible for what you approve, including the messages that go out and the entries that are made.</p>
 
-  <h2>Changes to these terms</h2>
-  <p>If we change these terms, we'll post the new version here with a new effective date. That's the whole process — no separate notice.</p>
+  <h2 id="advice">Not professional advice</h2>
+  <p>The app is not legal, tax, or accounting advice. Nothing it produces is. If you need that kind of advice, ask a qualified professional.</p>
 
-  <h2>Governing law</h2>
-  <p>These terms are governed by the laws of the State of Utah. Any dispute about this website belongs in the state or federal courts located in Weber County, Utah.</p>
+  <h2 id="data">Your data and connected systems</h2>
+  <p>The app works from files you upload or email to a private address we give you. You can also choose to connect QuickBooks, Microsoft 365 (Outlook), or Smartsheet. You connect through that company's own sign-in. A connection is read-only unless you grant a permission that lets the app write. You can disconnect at any time.</p>
+  <p>Your data stays yours. You give us permission to use it to run the app for you, and for nothing else. That includes sending it to the companies that help us run the app, as set out in the <a href="privacy.html">Privacy Policy</a>.</p>
+  <p>Only connect systems and upload data that you have the right to use. If your data includes information about other people, such as your customers, you are responsible for having the right to use it this way.</p>
+  <p>Steadywork may look at your account data to give you support. If you ask us for an audit or a report, we may look at it to prepare that.</p>
 
-  <h2>If part of these terms doesn't hold up</h2>
+  <h2 id="teams">Teams</h2>
+  <p>A team owner invites members with a team code. The team owner can read each member's interview write-up and the team's ranked list. Members are told this when they join. The team owner is responsible for the team's plan and for who is on the team.</p>
+
+  <h2 id="use">Acceptable use</h2>
+  <ul>
+    <li>Only connect systems and upload data you have the right to use.</li>
+    <li>Do not use the app to send unlawful messages or unsolicited bulk messages.</li>
+    <li>Do not use the app to break the law or to harm other people.</li>
+    <li>Do not try to get into another customer's account or data, or to disrupt the app.</li>
+  </ul>
+  <p>You are responsible for the messages you approve. We may suspend or close an account that breaks these terms.</p>
+
+  <h2 id="billing">Plans and billing</h2>
+  <p>The app is sold as a monthly subscription. The plans are Solo, Team, and a lower-priced version of each for customers who use their own AI key. Current prices are shown on <a href="index.html#pricing">this site</a>.</p>
+  <ul>
+    <li>The subscription runs month to month. It renews each month until you cancel.</li>
+    <li>Payments are handled by Stripe.</li>
+    <li>You can cancel at any time. Cancelling takes effect at the end of the period you have paid for.</li>
+    <li>We do not refund part months.</li>
+    <li>Prices can change. We will give you 30 days' notice before a new price applies to you.</li>
+  </ul>
+
+  <h2 id="credits">Credits</h2>
+  <p>A credit is a measure of AI use. Each plan includes a monthly allowance of credits.</p>
+  <ul>
+    <li>Monthly credits expire at the end of the month. They do not carry over.</li>
+    <li>You can buy top-up credits. Top-up credits do not expire while your account is open. They are not refundable.</li>
+    <li>When your credits run out, automations written by AI pause. Automations that run as fixed programs use no credits.</li>
+    <li>Nothing extra is charged unless you choose to buy a top-up.</li>
+  </ul>
+
+  <h2 id="ownkey">Using your own AI key</h2>
+  <p>You may choose to store your own Anthropic API key in the app. We store it encrypted. Your AI use is then billed to you by Anthropic, under your own agreement with Anthropic. Those charges are between you and Anthropic.</p>
+
+  <h2 id="cancel">Cancelling and closing an account</h2>
+  <p>You can cancel at any time. If you can't find the option in your account, email us and we will cancel it for you. You keep access until the end of the period you have paid for.</p>
+  <p>After you cancel, you can ask us to delete your account and your data. Email <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> and we will delete it. The <a href="privacy.html#keep">Privacy Policy</a> says more about this.</p>
+
+  <h2 id="consulting">Consulting work</h2>
+  <p>We still take on larger projects, starting with an audit. That work is sold under a separate written services agreement signed by both of us. That agreement governs the work, not these terms. For consulting, the price that counts is the one in a signed quote. Quotes are valid for 30 days.</p>
+
+  <h2 id="textback">Missed-Call Rescue</h2>
+  <p>Missed-Call Rescue is a separate text-back service for home-service businesses. It has its own terms, which are shown inside the app. Those terms apply to that service together with these.</p>
+
+  <h2 id="site">This website</h2>
+  <p>This site is general information about what we do. It isn't professional advice, and reading it doesn't make you a customer or a client.</p>
+  <p>The missed-call calculator on our home-services page produces an estimate from the numbers you put into it. It is not a prediction, a quote, or a promise of results.</p>
+  <p>Prices shown on this site are our current list prices, and they can change.</p>
+
+  <h2 id="content">Our content</h2>
+  <p>The words and design on this site and in the app belong to Steadywork. You're welcome to read, link, and share the site. Please don't copy our content and republish it as your own.</p>
+
+  <h2 id="third">Other companies' services</h2>
+  <p>The app and this site rely on services we don't run. Booking a call happens through cal.com. QuickBooks, Microsoft 365, and Smartsheet belong to their own companies. Each has its own terms and privacy policy. When you use those services, their rules apply. We are not responsible for them.</p>
+
+  <h2 id="warranty">No warranties</h2>
+  <p><strong>We work to keep the app and this site accurate and available, but we provide them as-is. We don't promise they will always be up, error-free, or current. We don't promise that a draft or a ranked list will be correct or right for your purpose.</strong></p>
+
+  <h2 id="liability">Limit of liability</h2>
+  <p><strong>To the extent the law allows, Steadywork's total liability for anything connected with the app is limited to the fees you paid us for the app in the three months before the claim arose.</strong></p>
+  <p><strong>To the extent the law allows, Steadywork isn't liable for losses that come from using this website or relying on its content.</strong></p>
+  <p>Work we're hired to do as consultants is governed by the signed services agreement, not this section.</p>
+
+  <h2 id="changes">Changes to these terms</h2>
+  <p>If we change these terms, we'll post the new version here with a new date. If you have an account and the change matters to you, we will also email you.</p>
+
+  <h2 id="law">Governing law</h2>
+  <p>These terms are governed by the laws of the State of Utah. Any dispute about the app or this website belongs in the state or federal courts located in Weber County, Utah.</p>
+
+  <h2 id="sever">If part of these terms doesn't hold up</h2>
   <p>If a court finds any part of these terms unenforceable, the rest still applies.</p>
 
-  <h2>Contact</h2>
+  <h2 id="contact">Contact</h2>
   <p>Questions about these terms? Email <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a>.</p>
 </main>
 
 <footer>
-  <div class="wrap">Steadywork · Your admin, on autopilot · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="home-services.html">For home services</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a></div>
+  <div class="wrap">Steadywork · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="home-services.html">Missed-call text-back for home services</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a></div>
 </footer>
 
 </body>

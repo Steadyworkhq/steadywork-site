@@ -4,34 +4,54 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Steadywork</title>
-<meta name="description" content="Steadywork's privacy policy: no cookies, no analytics, no trackers. What little we collect and what we do with it.">
+<meta name="description" content="Steadywork's privacy policy: what the app and this site collect, how AI processing works, which companies handle your data, and how to have it deleted.">
 <link rel="canonical" href="https://steadyworkhq.com/privacy.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e8641f'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='800' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <style>
-  :root{
-    --navy:#12283c; --navy2:#1b3a55; --orange:#e8641f; --orange-dark:#c9520f;
-    --paper:#faf8f5; --ink:#22303c; --muted:#5b6b78; --line:#e3ddd4;
-  }
+  :root{--navy:#12283c;--orange:#e8641f;--orange-dark:#c9520f;--paper:#fbfaf8;--ink:#1f2a35;--muted:#66747f;--line:#e8e3db;--soft:#f3f0ea}
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
-  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-  header{background:var(--navy);color:#fff;padding:18px 0;position:sticky;top:0;z-index:10}
-  .nav{display:flex;justify-content:space-between;align-items:center;gap:18px}
-  .logo{font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;color:#fff;text-decoration:none}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  a{color:var(--orange-dark)}
+
+  header{background:rgba(251,250,248,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;height:52px}
+  .logo{font-size:1.08rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);text-decoration:none}
   .logo span{color:var(--orange)}
-  .nav .links{display:flex;gap:22px;align-items:center}
-  .nav a.cta{background:var(--orange);color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:700;font-size:.95rem}
-  .nav a.cta:hover{background:var(--orange-dark)}
-  main{max-width:720px;margin:0 auto;padding:56px 24px 72px}
-  h1{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800;color:var(--navy);letter-spacing:-0.02em;line-height:1.15}
-  .dated{color:var(--muted);font-size:.95rem;margin:10px 0 28px}
-  .summary{background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:8px;padding:20px 22px;margin-bottom:36px}
-  .summary p{margin:0;font-weight:600;color:var(--navy)}
-  h2{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin:34px 0 10px}
-  main p{margin-bottom:14px}
-  main a{color:var(--orange-dark)}
-  footer{background:#0d1e2e;color:#7d92a5;font-size:.85rem;padding:26px 0;text-align:center}
-  footer a{color:#9fb2c2}
+  .links{display:flex;gap:2px;align-items:center}
+  .links a{color:var(--navy);text-decoration:none;font-size:.84rem;font-weight:600;padding:5px 11px;border-radius:999px;white-space:nowrap}
+  .links a:hover{background:var(--soft)}
+  .links a.cta{background:var(--orange);color:#fff;margin-left:6px}
+  .links a.cta:hover{background:var(--orange-dark)}
+  .links a.out{border:1px solid #cfd6dc}
+  @media(max-width:760px){.links a.sec{display:none}}
+  @media(max-width:360px){.wrap{padding:0 14px}.links a{padding:5px 8px;font-size:.76rem}.links a.cta{margin-left:3px}}
+
+  main{max-width:760px;margin:0 auto;padding:44px 20px 64px;overflow-wrap:break-word}
+  h1{font-size:clamp(1.8rem,4.5vw,2.4rem);font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.12}
+  .dated{color:var(--muted);font-size:.9rem;margin:8px 0 24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+  .card h2,.card h3{font-size:.96rem;color:var(--navy);letter-spacing:-.01em;margin:0 0 6px}
+  .card ul{margin-bottom:0}
+  .card li,.card p{font-size:.92rem}
+  .card p:last-child{margin-bottom:0}
+  .toc{font-size:.88rem}
+  .toc ol{columns:2;column-gap:28px;padding-left:20px;margin:0}
+  .toc li{margin-bottom:3px;break-inside:avoid}
+  .toc a{color:var(--navy);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:12px}
+  .grid2 .card{margin-bottom:0}
+  @media(max-width:560px){.toc ol{columns:1}.grid2{grid-template-columns:1fr}}
+  h2{font-size:1.15rem;font-weight:800;color:var(--navy);letter-spacing:-.01em;margin:34px 0 8px;scroll-margin-top:68px}
+  main p{margin-bottom:12px}
+  main ul{margin:0 0 12px;padding-left:22px}
+  main li{margin-bottom:6px}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--soft);border-radius:5px;padding:1px 5px}
+
+  footer{border-top:1px solid var(--line);padding:22px 0;font-size:.8rem;color:var(--muted);text-align:center}
+  footer a{color:var(--muted)}
 </style>
 </head>
 <body>
@@ -40,60 +60,161 @@
   <div class="wrap nav">
     <a class="logo" href="index.html">Steady<span>work</span></a>
     <div class="links">
-      <a class="cta" href="https://cal.com/alex-johnstun-l5cang">Book a call</a>
+      <a class="sec" href="index.html#how">How it works</a>
+      <a class="sec" href="index.html#pricing">Pricing</a>
+      <a class="sec" href="terms.html">Terms</a>
+      <a class="out" href="https://steadywork-rescue-ji0b.onrender.com/login">Log in</a>
+      <a class="cta" href="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A">Get an invitation</a>
     </div>
   </div>
 </header>
 
 <main>
   <h1>Privacy Policy</h1>
-  <p class="dated">Effective August 9, 2026</p>
+  <p class="dated">Last updated: November 14, 2026</p>
 
-  <div class="summary">
-    <p>The short version: we don't set cookies, we don't run analytics, and we don't track you. This site collects almost nothing. If you book a call or email us, we get what you send — and we use it to reply and schedule, never to sell.</p>
+  <div class="card">
+    <h2>The main points</h2>
+    <ul>
+      <li>We use your data to run the app for you. We do not sell personal data.</li>
+      <li>AI work is done by Anthropic. Your content is sent to Anthropic to produce results. Under Anthropic's commercial terms, it is not used to train Anthropic's models.</li>
+      <li>The app sets one cookie, to keep you signed in. There are no advertising cookies.</li>
+      <li>You can disconnect a connected system at any time, and you can ask us to delete your account and data.</li>
+    </ul>
   </div>
 
-  <h2>What we collect</h2>
-  <p>Almost nothing directly. This site is a static set of pages. There are only three ways information about you reaches us:</p>
-  <p><strong>Server logs.</strong> The site is hosted on GitHub Pages. GitHub, Inc. serves the pages and may log standard technical data like IP addresses, under its own privacy policy. We don't see or manage those logs.</p>
-  <p><strong>Bookings.</strong> If you book a call, that happens through cal.com, a third-party scheduling service. Whatever you enter there — name, email, notes — goes to cal.com and then to our calendar and email.</p>
-  <p><strong>Email.</strong> If you email <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a>, we receive that email.</p>
-  <p>Put in categories: the only personal information we ever hold is your name, your contact details, and whatever you write to us — through cal.com or by email. Server logs stay with GitHub; we don't have them. We share your information with no one beyond those two service providers.</p>
+  <nav class="card toc" aria-label="Sections">
+    <ol>
+      <li><a href="#who">Who we are</a></li>
+      <li><a href="#collect-app">What the app collects</a></li>
+      <li><a href="#collect-site">What this website collects</a></li>
+      <li><a href="#use">What we do with it</a></li>
+      <li><a href="#ai">AI processing</a></li>
+      <li><a href="#others">Companies that handle data for us</a></li>
+      <li><a href="#connections">Connected systems</a></li>
+      <li><a href="#teams">Teams</a></li>
+      <li><a href="#staff">Who at Steadywork can see your data</a></li>
+      <li><a href="#people">Other people's information in your data</a></li>
+      <li><a href="#cookies">Cookies</a></li>
+      <li><a href="#sell">Selling, tracking and opt-out signals</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#keep">Keeping and deleting data</a></li>
+      <li><a href="#choices">Your choices</a></li>
+      <li><a href="#textback">Missed-Call Rescue</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
 
-  <h2>What we do with it</h2>
-  <p>We use what you send to reply to you, schedule calls, and deliver services if you hire us. That's it. We never sell your contact information, and we never share it for marketing.</p>
+  <h2 id="who">Who we are</h2>
+  <p>Steadywork is a sole-proprietor business in Ogden, Utah. This policy covers the Steadywork app and this website, steadyworkhq.com. You can reach us at <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a>.</p>
+
+  <h2 id="collect-app">What the app collects</h2>
+  <ul>
+    <li><strong>Account details.</strong> Your email address, your password, and any name or business name you give us.</li>
+    <li><strong>Your interview.</strong> What you tell the AI in the interview chat, the write-up made from it, and your ranked list of tasks.</li>
+    <li><strong>Files you send in.</strong> Files you upload, and files you email to the private address we give you.</li>
+    <li><strong>Data from connected systems.</strong> If you connect QuickBooks, Microsoft 365 (Outlook), or Smartsheet, the app reads the data an automation needs from that system.</li>
+    <li><strong>Automations and drafts.</strong> The instructions you give, the drafts the app prepares, what you approve, and a log of each action.</li>
+    <li><strong>Connection details.</strong> The access tokens that let the app reach a system you connected. If you choose to use your own Anthropic API key, we store that key too.</li>
+    <li><strong>Billing details.</strong> Your plan, your credit use, and your payment history. Payments are handled by Stripe.</li>
+    <li><strong>Technical data.</strong> Standard server logs, such as IP addresses and the time of a request.</li>
+    <li><strong>Messages to us.</strong> Anything you send us by email.</li>
+  </ul>
+
+  <h2 id="collect-site">What this website collects</h2>
+  <p>Almost nothing. The website is a static set of pages, separate from the app.</p>
+  <p><strong>Server logs.</strong> The website is hosted on GitHub Pages. GitHub, Inc. serves the pages and may log standard technical data like IP addresses, under its own privacy policy. We don't see or manage those logs.</p>
+  <p><strong>Bookings.</strong> If you book a call, that happens through cal.com, a scheduling service we don't run. Whatever you enter there, such as your name, email, and notes, goes to cal.com and then to our calendar and email.</p>
+  <p><strong>Email.</strong> If you email <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a>, we receive that email.</p>
+  <p>The website sets no cookies and runs no analytics. The calculator on the home-services page keeps nothing. It does math on the numbers you enter.</p>
+
+  <h2 id="use">What we do with it</h2>
+  <p>We use your data to:</p>
+  <ul>
+    <li>run the interview, the ranked list, and your automations;</li>
+    <li>carry out what you approve, such as sending an email from your mailbox;</li>
+    <li>keep your account working, including sign-in and password reset;</li>
+    <li>bill you;</li>
+    <li>give you support, and prepare an audit or report if you ask for one;</li>
+    <li>reply to you and schedule calls;</li>
+    <li>keep the app secure and fix problems.</li>
+  </ul>
+  <p>We never sell your information, and we never share it for marketing.</p>
+
+  <h2 id="ai">AI processing</h2>
+  <p>The AI work in the app is done by Anthropic, through its Claude API. To produce an interview, a ranked list, or a draft, the app sends the content it needs to Anthropic. That can include what you said in the interview, the contents of your files, and data read from a connected system.</p>
+  <p>Under Anthropic's commercial terms, data sent through its API is not used to train its models.</p>
+  <p>Some automations upload a file to Anthropic for a run. Those files are deleted after the run.</p>
+  <p>If you use your own Anthropic API key, the same content is sent to Anthropic under your key. Your agreement with Anthropic then applies to that use.</p>
+  <p>Some automations run as fixed steps or a fixed program, with no AI. Each draft is labelled so you can tell which kind made it.</p>
+
+  <h2 id="others">Companies that handle data for us</h2>
+  <p>These companies handle data so that we can run the app. Each has its own privacy policy. We share your data with no one else, unless the law requires it.</p>
+  <div class="grid2">
+    <div class="card"><h3>Anthropic</h3><p>AI processing. Receives the content needed to produce your results.</p></div>
+    <div class="card"><h3>Render</h3><p>Hosts the app and its database, in the United States.</p></div>
+    <div class="card"><h3>Stripe</h3><p>Handles payments. Your card details go to Stripe, not to us.</p></div>
+    <div class="card"><h3>Resend</h3><p>Delivers email the app sends, such as password resets and notices.</p></div>
+    <div class="card"><h3>Twilio</h3><p>Sends and receives text messages. Used only for the Missed-Call Rescue text-back service.</p></div>
+    <div class="card"><h3>GitHub and cal.com</h3><p>GitHub Pages hosts this website. cal.com handles call bookings. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub privacy statement</a> and the <a href="https://cal.com/privacy">cal.com privacy policy</a>.</p></div>
+  </div>
+
+  <h2 id="connections">Connected systems</h2>
+  <p>Connecting a system is optional. You can connect QuickBooks, Microsoft 365 (Outlook), or Smartsheet. You sign in on that company's own page, so we never see your password for it.</p>
+  <p>A connection is read-only unless you grant a permission that lets the app write, such as sending email from your mailbox. Even then, nothing is sent or changed unless you approve that specific draft.</p>
+  <p>Access tokens are stored encrypted, with a key that is separate for each account. You can disconnect a system at any time. After that, the app can no longer reach it.</p>
+
+  <h2 id="teams">Teams</h2>
+  <p>If you join a team with a team code, the team owner can read your interview write-up and the team's ranked list. You are told this when you join. If you don't want the owner to read something, don't put it in the interview.</p>
+
+  <h2 id="staff">Who at Steadywork can see your data</h2>
+  <p>Steadywork may look at your account data to give you support. If you ask us for an audit or a report, we may look at it to prepare that. We don't look at it for any other reason.</p>
+
+  <h2 id="people">Other people's information in your data</h2>
+  <p>Your files and systems may hold information about other people, such as your customers' names, email addresses, and what they owe. We handle that information only to run the app for you, on your instructions. You are responsible for having the right to use it this way. If one of those people contacts us about their information, we will pass the request to you.</p>
+
+  <h2 id="cookies">Cookies</h2>
+  <p>The app sets one cookie, called <code>sw_session</code>. It keeps you signed in. The app cannot work without it. There are no advertising cookies and no tracking cookies.</p>
+  <p>This website sets no cookies.</p>
+
+  <h2 id="sell">Selling, tracking and opt-out signals</h2>
+  <p>We don't sell personal data. We don't use ad tech or data brokers.</p>
+  <p>We don't track you across other sites, so we don't respond to browser Do Not Track signals. There is no tracking for them to switch off. The same goes for Global Privacy Control: we don't sell or share personal information for advertising, so there's nothing for the signal to opt you out of.</p>
+
+  <h2 id="security">Security</h2>
+  <p>Each account's data is kept apart from every other account's. Access tokens for connected systems, and any Anthropic API key you store, are encrypted. No system is perfectly secure, and we can't promise that ours is.</p>
   <p>If a data breach ever affects your information, we'll notify you as Utah law requires (Utah Code § 13-44).</p>
 
-  <h2>What we don't do</h2>
-  <p>We don't set cookies. We don't run analytics. We don't use tracking scripts, ad tech, or data brokers. The only script on this site is the calculator on the home-services page, and it keeps nothing — it just does math on the numbers you move the sliders to.</p>
+  <h2 id="keep">Keeping and deleting data</h2>
+  <p>We keep your account data while your account is open. After you cancel, we delete your account and data when you ask us to. Email <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> to ask.</p>
+  <p>We may keep billing records where the law requires us to. We keep email you send us as long as we need it to handle your request and for our records.</p>
 
-  <h2>Do Not Track and other opt-out signals</h2>
-  <p>We don't track you on this site or across other sites, so we don't respond to browser Do Not Track signals — there's no tracking for them to switch off. The same goes for Global Privacy Control: we don't sell or share personal information with anyone for advertising, so there's nothing for the signal to opt you out of.</p>
-  <p>No third party collects information about your activity over time or across other websites through this site. GitHub serves the pages and cal.com handles bookings, each under its own policy linked below.</p>
+  <h2 id="choices">Your choices</h2>
+  <ul>
+    <li>You can disconnect a connected system at any time.</li>
+    <li>You can remove your own Anthropic API key.</li>
+    <li>You can ask what we hold about you.</li>
+    <li>You can ask us to delete your account and data, or your correspondence.</li>
+  </ul>
+  <p>For any of these, email <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a>. We'll handle it.</p>
 
-  <h2>Children</h2>
-  <p>This site isn't directed to children under 13, and we don't knowingly collect their information. If you believe a child has sent us personal information, email us and we'll delete it.</p>
+  <h2 id="textback">Missed-Call Rescue</h2>
+  <p>Missed-Call Rescue is a separate text-back service. It uses Twilio to send and receive text messages, so callers' phone numbers and the messages pass through Twilio. The service has its own terms inside the app.</p>
 
-  <h2>Third-party services</h2>
-  <p>Two outside companies are involved in this site, each with its own privacy policy:</p>
-  <p><strong>GitHub Pages</strong> hosts the site. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>.</p>
-  <p><strong>cal.com</strong> handles bookings. See the <a href="https://cal.com/privacy">cal.com privacy policy</a>.</p>
+  <h2 id="children">Children</h2>
+  <p>The app and this site aren't directed to children under 13, and we don't knowingly collect their information. If you believe a child has sent us personal information, email us and we'll delete it.</p>
 
-  <h2>How long we keep email</h2>
-  <p>We keep correspondence as long as we need it to handle your inquiry and for our records.</p>
+  <h2 id="changes">Changes</h2>
+  <p>If this policy changes, we'll post the new version here with a new date. If you have an account and the change matters to you, we will also email you.</p>
 
-  <h2>Your choices</h2>
-  <p>Want to know what we have about you, or want your correspondence deleted? Email <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> and ask. We'll handle it.</p>
-
-  <h2>Changes</h2>
-  <p>If this policy changes, we'll post the new version here with a new effective date.</p>
-
-  <h2>Contact</h2>
+  <h2 id="contact">Contact</h2>
   <p>Questions about privacy? Email <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a>.</p>
 </main>
 
 <footer>
-  <div class="wrap">Steadywork · Your admin, on autopilot · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="home-services.html">For home services</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a></div>
+  <div class="wrap">Steadywork · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="home-services.html">Missed-call text-back for home services</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a></div>
 </footer>
 
 </body>
