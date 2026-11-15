@@ -47,10 +47,9 @@
   /* hero: big, centred, two tones of the same colour */
   .hero{padding:64px 0 24px;text-align:center;overflow:hidden}
   .hero h1{font-size:clamp(2.5rem,8.6vw,4.9rem);line-height:1.04;font-weight:600;letter-spacing:-.045em;color:var(--navy)}
-  .hero h1 span{display:block;color:var(--navy-soft);font-weight:500}
-  .aside{position:relative;display:inline-block;margin-top:10px;font-family:"Segoe Script","Bradley Hand","Snell Roundhand","Brush Script MT",cursive;font-size:clamp(1.15rem,3.6vw,1.6rem);color:var(--navy);transform:rotate(-2deg)}
-  .aside svg{position:absolute;right:-46px;top:-14px;width:40px;height:56px}
-  @media(max-width:620px){.aside{display:block;padding:0 34px 0 8px}.aside svg{right:2px;top:-6px;width:26px;height:40px}}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .kicker{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:7px 14px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:.86rem;font-weight:600;color:var(--navy)}
+  .kicker:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--orange)}
   .hero p.sub{margin:26px auto 0;font-size:clamp(1.05rem,2.6vw,1.3rem);color:var(--navy-soft);max-width:620px;line-height:1.45}
   .ask{margin:30px auto 0;max-width:560px;display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px;box-shadow:0 10px 34px rgba(18,40,60,.07)}
   .ask input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:1rem;padding:0 16px;color:var(--ink)}
@@ -156,10 +155,8 @@
 
 <section class="hero">
   <div class="wrap">
-    <h1><span>You run the business.</span>It runs the busywork.</h1>
-    <div class="aside">(no, you don't need to know what to automate)
-      <svg viewBox="0 0 40 56" fill="none" stroke="#12283c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 4c12 12 12 30-6 44"/><path d="M14 38l2 10 10-3"/></svg>
-    </div>
+    <div class="kicker">You don't need to know what to automate</div>
+    <h1>You run the business.<br>It runs the <em>busywork.</em></h1>
     <p class="sub">Steadywork interviews you about your week, shows you what's worth handing over, then does it: the reminders, the follow-ups, the weekly reports.</p>
     <form class="ask" id="ask" action="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A">
       <input type="email" id="askmail" placeholder="you@yourbusiness.com" aria-label="Your email address" autocomplete="email">
