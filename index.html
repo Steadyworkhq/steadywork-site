@@ -54,6 +54,8 @@
   .ask{margin:30px auto 0;max-width:560px;display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px;box-shadow:0 10px 34px rgba(18,40,60,.07)}
   .ask input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:1rem;padding:0 16px;color:var(--ink)}
   .ask .pill{padding:13px 22px;font-size:.98rem}
+  .ask{scroll-margin-top:120px}.ask .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .askmsg{margin:14px auto 0;max-width:560px;font-size:.95rem;font-weight:600}.askmsg.good{color:#1d5a2b}.askmsg.bad{color:#8a1f14}
   .micro{margin-top:16px;font-size:.88rem;color:var(--muted)}
 
   /* the product picture: tiles that overlap, and one small chart */
@@ -148,7 +150,7 @@
       <a class="sec" href="#pricing">Pricing</a>
       <a class="sec" href="#questions">Questions</a>
       <a class="out" href="https://steadywork-rescue-ji0b.onrender.com/login">Log in</a>
-      <a class="cta" href="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A">Get an invitation</a>
+      <a class="cta" href="#ask">Get an invitation</a>
     </div>
   </div>
 </header>
@@ -158,10 +160,12 @@
     <div class="kicker">You don't need to know what to automate</div>
     <h1>You run the business.<br>It runs the <em>busywork.</em></h1>
     <p class="sub">Steadywork interviews you about your week, shows you what's worth handing over, then does it: the reminders, the follow-ups, the weekly reports.</p>
-    <form class="ask" id="ask" action="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A">
-      <input type="email" id="askmail" placeholder="you@yourbusiness.com" aria-label="Your email address" autocomplete="email">
+    <form class="ask" id="ask" method="post" action="https://steadywork-rescue-ji0b.onrender.com/waitlist">
+      <input type="email" id="askmail" name="email" required placeholder="you@yourbusiness.com" aria-label="Your email address" autocomplete="email">
+      <input type="text" name="company_site" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
       <button class="pill primary" type="submit">Get an invitation <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></button>
     </form>
+    <p class="askmsg" id="askmsg" role="status" aria-live="polite" hidden></p>
     <p class="micro">Early access, by invitation · Approve each one, or let it run · Month to month</p>
 
     <div class="show" aria-label="An example of the dashboard">
@@ -183,7 +187,23 @@
     </div>
   </div>
 </section>
-<script>document.getElementById('ask').addEventListener('submit',function(e){e.preventDefault();var m=document.getElementById('askmail').value.trim();location.href='mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A'+(m?encodeURIComponent('\n\nMy email: '+m):'');});</script>
+<script>
+(function(){
+  var f=document.getElementById('ask'),msg=document.getElementById('askmsg'),box=document.getElementById('askmail');
+  function say(ok,html){msg.hidden=false;msg.className='askmsg '+(ok?'good':'bad');msg.innerHTML=html;}
+  var links=document.querySelectorAll('a[href="#ask"]');
+  for(var i=0;i<links.length;i++)links[i].addEventListener('click',function(){setTimeout(function(){box.focus();},350);});
+  f.addEventListener('submit',function(e){
+    if(!window.fetch||!window.URLSearchParams)return;
+    e.preventDefault();
+    var btn=f.querySelector('button');btn.disabled=true;
+    fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new URLSearchParams(new FormData(f))})
+      .then(function(r){return r.json().then(function(j){return {ok:r.ok&&j.ok,m:j.message||''};});})
+      .then(function(x){var d=document.createElement('span');d.textContent=x.m;say(x.ok,d.innerHTML);btn.disabled=false;if(x.ok)f.reset();})
+      .catch(function(){say(false,'That did not go through. Please email <a href="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation">alex@steadyworkhq.com</a> and we will send your invitation.');btn.disabled=false;});
+  });
+})();
+</script>
 
 <section class="band" id="how">
   <div class="wrap">
@@ -287,7 +307,7 @@
   <div class="wrap">
     <h2>Find out what your week is hiding</h2>
     <p>Ask for an invitation, do the interview, and see your own ranked list of what's worth handing over.</p>
-    <a class="pill primary" href="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A">Get an invitation <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
+    <a class="pill primary" href="#ask">Get an invitation <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 11 3M5 3h6v6"/></svg></a>
   </div>
 </section>
 
