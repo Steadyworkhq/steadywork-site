@@ -5,7 +5,7 @@ Total time: ~20 minutes of clicking, then up to a day of waiting on DNS. Total c
 ## What's in this folder
 
 - `index.html` — the main Steadywork site
-- `home-services.html` — the missed-call campaign page (send HVAC/plumbing/electrical prospects here)
+- `home-services.html` — retired; it now sends visitors to the home page
 - `CNAME` — one-line file telling GitHub Pages your custom domain; don't delete it
 
 ## Before you deploy: two find-and-replaces
