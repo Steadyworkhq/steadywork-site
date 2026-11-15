@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sub-processors — Steadywork</title>
+<meta name="description" content="The companies that handle data for Steadywork, what each one does, what data it handles, and how changes to the list are announced.">
+<link rel="canonical" href="https://steadyworkhq.com/subprocessors.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e8641f'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='800' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+  :root{--navy:#12283c;--orange:#e8641f;--orange-dark:#c9520f;--paper:#fbfaf8;--ink:#1f2a35;--muted:#66747f;--line:#e8e3db;--soft:#f3f0ea}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  a{color:var(--orange-dark)}
+
+  header{background:rgba(251,250,248,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;height:52px}
+  .logo{font-size:1.08rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);text-decoration:none}
+  .logo span{color:var(--orange)}
+  .links{display:flex;gap:2px;align-items:center}
+  .links a{color:var(--navy);text-decoration:none;font-size:.84rem;font-weight:600;padding:5px 11px;border-radius:999px;white-space:nowrap}
+  .links a:hover{background:var(--soft)}
+  .links a.cta{background:var(--orange);color:#fff;margin-left:6px}
+  .links a.cta:hover{background:var(--orange-dark)}
+  .links a.out{border:1px solid #cfd6dc}
+  @media(max-width:760px){.links a.sec{display:none}}
+  @media(max-width:360px){.wrap{padding:0 14px}.links a{padding:5px 8px;font-size:.76rem}.links a.cta{margin-left:3px}}
+
+  main{max-width:760px;margin:0 auto;padding:44px 20px 64px;overflow-wrap:break-word}
+  h1{font-size:clamp(1.8rem,4.5vw,2.4rem);font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.12}
+  .dated{color:var(--muted);font-size:.9rem;margin:8px 0 24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+  .card h2,.card h3{font-size:.96rem;color:var(--navy);letter-spacing:-.01em;margin:0 0 6px}
+  .card ul{margin-bottom:0}
+  .card li,.card p{font-size:.92rem}
+  .card p:last-child{margin-bottom:0}
+  .toc{font-size:.88rem}
+  .toc ol{columns:2;column-gap:28px;padding-left:20px;margin:0}
+  .toc li{margin-bottom:3px;break-inside:avoid}
+  .toc a{color:var(--navy);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:12px}
+  .grid2 .card{margin-bottom:0}
+  @media(max-width:560px){.toc ol{columns:1}.grid2{grid-template-columns:1fr}}
+  h2{font-size:1.15rem;font-weight:800;color:var(--navy);letter-spacing:-.01em;margin:34px 0 8px;scroll-margin-top:68px}
+  main p{margin-bottom:12px}
+  main ul{margin:0 0 12px;padding-left:22px}
+  main li{margin-bottom:6px}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--soft);border-radius:5px;padding:1px 5px}
+
+  footer{border-top:1px solid var(--line);padding:22px 0;font-size:.8rem;color:var(--muted);text-align:center}
+  footer a{color:var(--muted)}
+  .tbl{padding:4px 18px}
+  table{width:100%;border-collapse:collapse;font-size:.92rem}
+  th,td{text-align:left;vertical-align:top;padding:11px 12px 11px 0;border-bottom:1px solid var(--line)}
+  th:last-child,td:last-child{padding-right:0}
+  thead th{font-size:.8rem;color:var(--muted);font-weight:700}
+  tbody th{color:var(--navy);font-weight:700;white-space:nowrap}
+  tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+  @media(max-width:640px){
+    thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+    table,tbody,tr,tbody th,td{display:block}
+    tr{padding:12px 0;border-bottom:1px solid var(--line)}
+    tbody tr:last-child{border-bottom:0}
+    tbody th,td{border:0;padding:0 0 4px;white-space:normal}
+    td::before{content:attr(data-label) ": ";font-weight:700;color:var(--muted);font-size:.8rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">Steady<span>work</span></a>
+    <div class="links">
+      <a class="sec" href="index.html#how">How it works</a>
+      <a class="sec" href="index.html#pricing">Pricing</a>
+      <a class="sec" href="terms.html">Terms</a>
+      <a class="sec" href="privacy.html">Privacy</a>
+      <a class="out" href="https://steadywork-rescue-ji0b.onrender.com/login">Log in</a>
+      <a class="cta" href="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A">Get an invitation</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h1>Sub-processors</h1>
+  <p class="dated">Last updated: November 15, 2026</p>
+
+  <div class="card">
+    <h2>What this page is</h2>
+    <p>A sub-processor is a company that handles data for Steadywork so that we can run the service. This page lists all of them.</p>
+  </div>
+
+  <h2 id="list">The list</h2>
+  <div class="card tbl">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Company</th>
+          <th scope="col">What it does for us</th>
+          <th scope="col">What data it handles</th>
+          <th scope="col">Where</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Anthropic</th>
+          <td data-label="What it does for us">AI processing, through its Claude API.</td>
+          <td data-label="What data it handles">The content needed to produce a result: what you say in the interview, the contents of your files, data read from a connected system, and messages from visitors to your website chat.</td>
+          <td data-label="Where">United States</td>
+        </tr>
+        <tr>
+          <th scope="row">Render</th>
+          <td data-label="What it does for us">Hosts the app and its database.</td>
+          <td data-label="What data it handles">Everything stored in your account.</td>
+          <td data-label="Where">United States</td>
+        </tr>
+        <tr>
+          <th scope="row">Stripe</th>
+          <td data-label="What it does for us">Handles payments.</td>
+          <td data-label="What data it handles">Your card details, which go to Stripe and not to us, and your payment history.</td>
+          <td data-label="Where">US company</td>
+        </tr>
+        <tr>
+          <th scope="row">Resend</th>
+          <td data-label="What it does for us">Sends email from the app. Receives the reports you email to your private address.</td>
+          <td data-label="What data it handles">Your email address, the emails the app sends you, and the emails and files you send to your private address.</td>
+          <td data-label="Where">US company</td>
+        </tr>
+        <tr>
+          <th scope="row">Twilio</th>
+          <td data-label="What it does for us">Sends and receives text messages. Used only for the separate Missed-Call Rescue text-back service.</td>
+          <td data-label="What data it handles">Callers' phone numbers and the text messages.</td>
+          <td data-label="Where">US company</td>
+        </tr>
+        <tr>
+          <th scope="row">GitHub</th>
+          <td data-label="What it does for us">Hosts this website and the app's source code.</td>
+          <td data-label="What data it handles">Standard technical logs from visits to this website, such as IP addresses. There is no customer data in the code.</td>
+          <td data-label="Where">US company</td>
+        </tr>
+        <tr>
+          <th scope="row">cal.com</th>
+          <td data-label="What it does for us">Booking calls from this website.</td>
+          <td data-label="What data it handles">What you enter when you book a call, such as your name, email address and notes.</td>
+          <td data-label="Where">US company</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>"US company" means the company is based in the United States. Each company has its own privacy policy, which says where it handles data.</p>
+  <p>If you use your own Anthropic API key, Anthropic handles your AI use under your own agreement with Anthropic.</p>
+
+  <h2 id="connected">Systems you connect</h2>
+  <p>You can choose to connect QuickBooks Online (Intuit), Microsoft 365, Google, or Smartsheet. Those are your own providers. You have your own account and agreement with each one. They are not Steadywork's sub-processors.</p>
+
+  <h2 id="changes">How changes are announced</h2>
+  <p>This page is updated when the list changes. If you have an account, we email you before a new sub-processor handles your data.</p>
+
+  <h2 id="more">Related pages</h2>
+  <ul>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="security.html">Security</a></li>
+    <li><a href="dpa.html">Data Processing Addendum</a></li>
+    <li><a href="terms.html">Terms of Use</a></li>
+  </ul>
+
+  <h2 id="contact">Contact</h2>
+  <p>Questions about this list? Email <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a>.</p>
+</main>
+
+<footer>
+  <div class="wrap">Steadywork · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="home-services.html">Missed-call text-back for home services</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="security.html">Security</a> · <a href="subprocessors.html">Sub-processors</a> · <a href="dpa.html">Data processing addendum</a> · <a href="accessibility.html">Accessibility</a></div>
+</footer>
+
+</body>
+</html>

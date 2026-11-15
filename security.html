@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security — Steadywork</title>
+<meta name="description" content="How Steadywork protects your data: what is in place, what you control, what we do not have yet, and how to report a security problem.">
+<link rel="canonical" href="https://steadyworkhq.com/security.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23e8641f'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='800' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+  :root{--navy:#12283c;--orange:#e8641f;--orange-dark:#c9520f;--paper:#fbfaf8;--ink:#1f2a35;--muted:#66747f;--line:#e8e3db;--soft:#f3f0ea}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  a{color:var(--orange-dark)}
+
+  header{background:rgba(251,250,248,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;height:52px}
+  .logo{font-size:1.08rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);text-decoration:none}
+  .logo span{color:var(--orange)}
+  .links{display:flex;gap:2px;align-items:center}
+  .links a{color:var(--navy);text-decoration:none;font-size:.84rem;font-weight:600;padding:5px 11px;border-radius:999px;white-space:nowrap}
+  .links a:hover{background:var(--soft)}
+  .links a.cta{background:var(--orange);color:#fff;margin-left:6px}
+  .links a.cta:hover{background:var(--orange-dark)}
+  .links a.out{border:1px solid #cfd6dc}
+  @media(max-width:760px){.links a.sec{display:none}}
+  @media(max-width:360px){.wrap{padding:0 14px}.links a{padding:5px 8px;font-size:.76rem}.links a.cta{margin-left:3px}}
+
+  main{max-width:760px;margin:0 auto;padding:44px 20px 64px;overflow-wrap:break-word}
+  h1{font-size:clamp(1.8rem,4.5vw,2.4rem);font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.12}
+  .dated{color:var(--muted);font-size:.9rem;margin:8px 0 24px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px}
+  .card h2,.card h3{font-size:.96rem;color:var(--navy);letter-spacing:-.01em;margin:0 0 6px}
+  .card ul{margin-bottom:0}
+  .card li,.card p{font-size:.92rem}
+  .card p:last-child{margin-bottom:0}
+  .toc{font-size:.88rem}
+  .toc ol{columns:2;column-gap:28px;padding-left:20px;margin:0}
+  .toc li{margin-bottom:3px;break-inside:avoid}
+  .toc a{color:var(--navy);text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+  .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:12px}
+  .grid2 .card{margin-bottom:0}
+  @media(max-width:560px){.toc ol{columns:1}.grid2{grid-template-columns:1fr}}
+  h2{font-size:1.15rem;font-weight:800;color:var(--navy);letter-spacing:-.01em;margin:34px 0 8px;scroll-margin-top:68px}
+  main p{margin-bottom:12px}
+  main ul{margin:0 0 12px;padding-left:22px}
+  main li{margin-bottom:6px}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.9em;background:var(--soft);border-radius:5px;padding:1px 5px}
+
+  footer{border-top:1px solid var(--line);padding:22px 0;font-size:.8rem;color:var(--muted);text-align:center}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">Steady<span>work</span></a>
+    <div class="links">
+      <a class="sec" href="index.html#how">How it works</a>
+      <a class="sec" href="index.html#pricing">Pricing</a>
+      <a class="sec" href="terms.html">Terms</a>
+      <a class="sec" href="privacy.html">Privacy</a>
+      <a class="out" href="https://steadywork-rescue-ji0b.onrender.com/login">Log in</a>
+      <a class="cta" href="mailto:alex@steadyworkhq.com?subject=Steadywork%20invitation&body=Business%20name%3A%0AWhat%20eats%20your%20week%3A">Get an invitation</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h1>How we protect your data</h1>
+  <p class="dated">Last updated: November 15, 2026</p>
+
+  <div class="card">
+    <h2>The main points</h2>
+    <ul>
+      <li>This page lists the security measures that are in place today.</li>
+      <li>It also lists what we do not have yet. We have no security certification and no outside penetration test.</li>
+      <li>You can download your data, delete your account, and disconnect any system yourself.</li>
+      <li>To report a security problem, email <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a>.</li>
+    </ul>
+  </div>
+
+  <nav class="card toc" aria-label="Sections">
+    <ol>
+      <li><a href="#inplace">What is in place</a></li>
+      <li><a href="#control">What you control</a></li>
+      <li><a href="#not">What we do not have yet</a></li>
+      <li><a href="#report">Reporting a security problem</a></li>
+      <li><a href="#incident">If there is an incident</a></li>
+      <li><a href="#more">Related pages</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="inplace">What is in place</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Signing in</h3>
+      <ul>
+        <li>All connections use HTTPS.</li>
+        <li>Passwords are stored hashed. We do not store the password itself.</li>
+        <li>Sign-in attempts are limited.</li>
+        <li>Two-step sign-in is available, with an authenticator app and recovery codes. It is optional.</li>
+        <li>You can sign out all your other devices.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Keeping accounts apart</h3>
+      <ul>
+        <li>Each account's data is separated from every other account's by rules in the database.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Stored access and keys</h3>
+      <ul>
+        <li>Stored access to your connected systems is encrypted.</li>
+        <li>A stored Anthropic API key is encrypted.</li>
+        <li>The encryption key is held outside the database. There is one for each account.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Programs the AI writes</h3>
+      <ul>
+        <li>They run in a sealed environment.</li>
+        <li>They have no network access and no file access.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Record of security events</h3>
+      <ul>
+        <li>The app records sign-ins, failed attempts, password resets, and connections added or removed.</li>
+        <li>You can read this record in your account.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Checks on our code and site</h3>
+      <ul>
+        <li>Every change is checked by automated tests, dependency checks, code scanning, and a scan for leaked secrets.</li>
+        <li>The live site is scanned from the outside every week.</li>
+      </ul>
+    </div>
+  </div>
+  <p>AI processing is done by Anthropic. Files uploaded to Anthropic for a run are deleted after the run. The <a href="privacy.html#ai">Privacy Policy</a> says more. The companies that handle data for us are on the <a href="subprocessors.html">Sub-processors</a> page.</p>
+
+  <h2 id="control">What you control</h2>
+  <ul>
+    <li><strong>Download your data.</strong> Your details, your interviews, your instructions and rules, your drafts, the names of your connections and reports, and the action log.</li>
+    <li><strong>Delete your account.</strong> You can delete your account, and everything in it, yourself.</li>
+    <li><strong>Disconnect a system.</strong> You can disconnect any connected system at any time. The <a href="privacy.html#connections">Privacy Policy</a> says what is deleted when you do.</li>
+    <li><strong>Two-step sign-in.</strong> You can switch it on or off.</li>
+  </ul>
+
+  <h2 id="not">What we do not have yet</h2>
+  <p>Steadywork is a one-person business. These things are not in place:</p>
+  <ul>
+    <li>No security certification. We do not have SOC 2 or ISO 27001.</li>
+    <li>No penetration test by an outside firm.</li>
+    <li>No uptime guarantee.</li>
+    <li>No bug bounty.</li>
+  </ul>
+  <p>No system is perfectly secure, and we can't promise that ours is.</p>
+
+  <h2 id="report">Reporting a security problem</h2>
+  <p>If you find a security problem, or think someone else has used your account, email <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a>. Say what you found and how to see it.</p>
+
+  <h2 id="incident">If there is an incident</h2>
+  <p>If a security incident affects your data, we will tell you without undue delay, and as the law requires, including Utah law (Utah Code § 13-44).</p>
+
+  <h2 id="more">Related pages</h2>
+  <ul>
+    <li><a href="privacy.html">Privacy Policy</a></li>
+    <li><a href="subprocessors.html">Sub-processors</a></li>
+    <li><a href="dpa.html">Data Processing Addendum</a></li>
+    <li><a href="terms.html">Terms of Use</a></li>
+  </ul>
+</main>
+
+<footer>
+  <div class="wrap">Steadywork · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="home-services.html">Missed-call text-back for home services</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="security.html">Security</a> · <a href="subprocessors.html">Sub-processors</a> · <a href="dpa.html">Data processing addendum</a> · <a href="accessibility.html">Accessibility</a></div>
+</footer>
+
+</body>
+</html>
