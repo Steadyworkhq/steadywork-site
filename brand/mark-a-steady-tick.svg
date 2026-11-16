@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Steadywork">
+  <rect width="64" height="64" rx="15" fill="#12283c"/>
+  <g fill="none" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 35H29" stroke="#fff"/>
+    <path d="M29 35l7.5 8.5L54 22" stroke="#e8641f"/>
+  </g>
+</svg>
