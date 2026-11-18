@@ -11,6 +11,7 @@ Colours: navy #12283c, orange #e8641f, paper #fbfaf8.
 | steadywork-mark-black.svg, steadywork-mark-white.svg | One-colour versions |
 | steadywork-icon.svg | Rounded tile: browser tab and app icon |
 | steadywork-profile-navy.png, steadywork-profile-light.png | 1024 x 1024 profile pictures, safe for a circular crop |
+| steadywork-youtube-banner.png | YouTube channel banner, 2560 x 1440, with the name and tagline inside the area every device shows |
 
 ## ideas/
 
