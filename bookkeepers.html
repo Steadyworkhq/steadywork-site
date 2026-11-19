@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For bookkeepers — Steadywork</title>
+<meta name="description" content="Look after your clients' office automations from one login: invoice emails, payment reminders, follow-ups and reports, each a draft until someone approves it. Every client decides what you may do.">
+<link rel="canonical" href="https://steadyworkhq.com/bookkeepers.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312283c'/%3E%3Cg transform='translate(32 33) scale(.7) translate(-32 -33)'%3E%3Cpath d='M27 14H37L49 46H15Z' fill='%23ffffff' stroke='%23ffffff' stroke-width='6' stroke-linejoin='round'/%3E%3Crect x='8' y='52' width='48' height='8' rx='4' fill='%23ffffff'/%3E%3Cpath d='M24 33l7.5 8L46.5 6' fill='none' stroke='%23e8641f' stroke-width='5.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root{
+    --navy:#12283c; --navy2:#1b3a55; --orange:#e8641f; --orange-dark:#c9520f;
+    --paper:#faf8f5; --ink:#22303c; --muted:#5b6b78; --line:#e3ddd4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  header{background:var(--navy);color:#fff;padding:18px 0;position:sticky;top:0;z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:18px}
+  .logo{font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;color:#fff;text-decoration:none}
+  .logo span{color:var(--orange)}
+  .nav .links{display:flex;gap:22px;align-items:center}
+  .nav a.cta{background:var(--orange);color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:700;font-size:.95rem}
+  .nav a.cta:hover{background:var(--orange-dark)}
+  main{max-width:720px;margin:0 auto;padding:56px 24px 72px}
+  h1{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800;color:var(--navy);letter-spacing:-0.02em;line-height:1.15}
+  .dated{color:var(--muted);font-size:.95rem;margin:10px 0 36px}
+  h2{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin:34px 0 10px}
+  main p{margin-bottom:14px}
+  main a{color:var(--orange-dark)}
+  footer{background:#0d1e2e;color:#7d92a5;font-size:.85rem;padding:26px 0;text-align:center}
+  footer a{color:#9fb2c2}
+  main ul{margin:0 0 14px 22px} main li{margin-bottom:6px}
+  .ask{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+  .ask input{flex:1 1 220px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:1rem;background:#fff}
+  .ask button{background:var(--orange);color:#fff;border:0;border-radius:8px;padding:12px 20px;font-weight:700;font-size:1rem;cursor:pointer}
+  .ask button:hover{background:var(--orange-dark)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .askmsg{font-weight:600} .askmsg.good{color:#2e7d4f} .askmsg.bad{color:#a33a1f}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">Steady<span>work</span></a>
+    <div class="links">
+      <a class="cta" href="#ask">Ask for an invitation</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h1>For bookkeepers</h1>
+  <p class="dated">Look after your clients' office busywork from one login.</p>
+
+  <p>Your clients ask you to chase their invoices, send their reminders and pull their weekly numbers together. Steadywork does that work as drafts: invoice emails, payment reminders, follow-ups, reports. Nothing goes out until someone approves it.</p>
+
+  <h2>One screen for all your clients</h2>
+  <ul>
+    <li>See every client at a glance: drafts waiting, automations, anything that needs attention.</li>
+    <li>Open a client and set up or adjust their automations from your own login, without their password.</li>
+    <li>Start them from ready-made automations, including a pack for contractors: lien waivers, insurance certificates, change orders, progress billing and retainage.</li>
+  </ul>
+
+  <h2>Your clients stay in charge</h2>
+  <ul>
+    <li>Each business gives you access from its own account, and chooses whether you may also approve and send drafts.</li>
+    <li>Billing, security and who may help stay with them.</li>
+    <li>Everything you do in their account is in their activity record, with your name.</li>
+    <li>If a client uses two-step sign-in, you need it too.</li>
+    <li>They can remove your access at any time, and it ends at once.</li>
+  </ul>
+
+  <h2>Bringing clients in</h2>
+  <p>Invite a client by email, or share your own link. A business that signs up through it is asked whether you may help them. Nothing is shared until they say yes.</p>
+
+  <h2 id="ask-h">Ask for an invitation</h2>
+  <p>Steadywork is opening to a small number of bookkeeping practices first. Tell us where to reach you.</p>
+  <form class="ask" id="ask" method="post" action="https://steadywork-rescue-ji0b.onrender.com/waitlist">
+    <input type="email" id="askmail" name="email" required placeholder="you@yourpractice.com" aria-label="Your email address" autocomplete="email">
+    <input type="text" name="business" placeholder="Your practice" aria-label="Your practice" autocomplete="organization">
+    <input type="hidden" name="note" value="Bookkeeper: interested in looking after clients' automations">
+    <input type="text" name="company_site" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+    <button type="submit">Ask for an invitation</button>
+  </form>
+  <p class="askmsg" id="askmsg" role="status" aria-live="polite" hidden></p>
+</main>
+<script>
+(function(){
+  var f=document.getElementById('ask'),msg=document.getElementById('askmsg');
+  function say(ok,text){msg.hidden=false;msg.className='askmsg '+(ok?'good':'bad');msg.textContent=text;}
+  f.addEventListener('submit',function(e){
+    if(!window.fetch||!window.URLSearchParams)return;
+    e.preventDefault();
+    var btn=f.querySelector('button');btn.disabled=true;
+    fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new URLSearchParams(new FormData(f))})
+      .then(function(r){return r.json().then(function(j){return {ok:r.ok&&j.ok,m:j.message||''};});})
+      .then(function(x){say(x.ok,x.ok?'Thank you. We will be in touch.':x.m);btn.disabled=false;if(x.ok)f.reset();})
+      .catch(function(){say(false,'That did not go through. Please email alex@steadyworkhq.com instead.');btn.disabled=false;});
+  });
+})();
+</script>
+
+<footer>
+  <div class="wrap">Steadywork · Your admin, on autopilot · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="guides/">Guides</a> · <a href="bookkeepers.html">For bookkeepers</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a></div>
+</footer>
+
+</body>
+</html>
