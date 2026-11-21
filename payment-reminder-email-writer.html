@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment reminder email writer for overdue invoices — Steadywork</title>
+<meta name="description" content="Fill in five details and copy a ready-to-send payment reminder email to a customer, first, second or final. It runs in your browser and nothing you type is sent anywhere.">
+<link rel="canonical" href="https://steadyworkhq.com/payment-reminder-email-writer.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Payment reminder email writer: fill in five details, copy the email">
+<meta property="og:description" content="Fill in five details and copy a ready-to-send payment reminder email to a customer, first, second or final. It runs in your browser and nothing you type is sent anywhere.">
+<meta property="og:url" content="https://steadyworkhq.com/payment-reminder-email-writer.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312283c'/%3E%3Cg transform='translate(32 33) scale(.7) translate(-32 -33)'%3E%3Cpath d='M27 14H37L49 46H15Z' fill='%23ffffff' stroke='%23ffffff' stroke-width='6' stroke-linejoin='round'/%3E%3Crect x='8' y='52' width='48' height='8' rx='4' fill='%23ffffff'/%3E%3Cpath d='M24 33l7.5 8L46.5 6' fill='none' stroke='%23e8641f' stroke-width='5.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
+<style>
+  :root{
+    --navy:#12283c; --navy2:#1b3a55; --orange:#e8641f; --orange-dark:#c9520f;
+    --paper:#fbfaf8; --ink:#22303c; --muted:#5b6b78; --line:#e3ddd4;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  header{background:var(--navy);color:#fff;padding:18px 0;position:sticky;top:0;z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:18px}
+  .logo{font-size:1.35rem;font-weight:800;letter-spacing:-0.02em;color:#fff;text-decoration:none}
+  .logo span{color:var(--orange)}
+  .nav .links{display:flex;gap:22px;align-items:center}
+  .nav a.cta{background:var(--orange);color:#fff;text-decoration:none;padding:10px 20px;border-radius:6px;font-weight:700;font-size:.95rem}
+  .nav a.cta:hover{background:var(--orange-dark)}
+  main{max-width:720px;margin:0 auto;padding:56px 24px 72px}
+  h1{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800;color:var(--navy);letter-spacing:-0.02em;line-height:1.15}
+  .dated{color:var(--muted);font-size:.95rem;margin:10px 0 36px}
+  h2{font-size:1.25rem;font-weight:800;color:var(--navy);letter-spacing:-0.01em;margin:34px 0 10px}
+  main p{margin-bottom:14px}
+  main a{color:var(--orange-dark)}
+  footer{background:#0d1e2e;color:#7d92a5;font-size:.85rem;padding:26px 0;text-align:center}
+  footer a{color:#9fb2c2}
+  main ul{margin:0 0 14px 22px} main li{margin-bottom:6px}
+  .ask{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+  .ask input{flex:1 1 220px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:1rem;background:#fff}
+  .ask button{background:var(--orange);color:#fff;border:0;border-radius:8px;padding:12px 20px;font-weight:700;font-size:1rem;cursor:pointer}
+  .ask button:hover{background:var(--orange-dark)}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .askmsg{font-weight:600} .askmsg.good{color:#2e7d4f} .askmsg.bad{color:#a33a1f}
+
+  .tool{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;margin:0 0 28px}
+  .tool .row{display:flex;flex-direction:column;margin-bottom:16px}
+  .tool label,.tool legend{font-weight:700;color:var(--navy);margin-bottom:6px;font-size:.95rem}
+  .tool .opt{font-weight:400;color:var(--muted)}
+  .tool input[type=text],.tool input[type=date]{padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:1rem;background:#fff;color:var(--ink);width:100%;font-family:inherit}
+  .tool input[aria-invalid=true]{border-color:#a33a1f}
+  .tool fieldset{border:0;margin:0 0 16px;padding:0}
+  .tool .choice{display:flex;align-items:center;gap:10px;margin-bottom:6px;min-height:36px}
+  .tool .choice input{width:20px;height:20px;accent-color:var(--orange-dark)}
+  .tool .choice label{margin:0;font-weight:400;color:var(--ink);font-size:1rem}
+  .tool .hint{color:var(--muted);font-size:.9rem;margin:0 0 14px}
+  button.go,button.copy{background:var(--orange);color:#fff;border:0;border-radius:8px;padding:12px 20px;font-weight:700;font-size:1rem;cursor:pointer;font-family:inherit}
+  button.go:hover,button.copy:hover{background:var(--orange-dark)}
+  button.copy{padding:8px 16px;font-size:.9rem}
+  a:focus-visible,button:focus-visible,input:focus-visible,.out:focus-visible{outline:3px solid var(--navy2);outline-offset:2px}
+  .formmsg{font-weight:600;color:#a33a1f;margin:12px 0 0}
+  .result h2{margin-top:0}
+  .outhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:18px 0 6px;flex-wrap:wrap}
+  .outhead h3{font-size:1rem;color:var(--navy)}
+  .out{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:1rem;line-height:1.55}
+  .copied{color:#2e7d4f;font-weight:600;font-size:.9rem}
+  .privacy-line{font-weight:600;color:var(--navy)}
+  @media (max-width:480px){main{padding:36px 16px 56px} .tool{padding:16px} .wrap{padding:0 16px} .nav .links a.cta{padding:9px 12px;font-size:.88rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html">Steady<span>work</span></a>
+    <div class="links">
+      <a class="cta" href="#ask">Join the waitlist</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <h1>Payment reminder email writer</h1>
+  <p class="dated">Fill in the details, copy the email. A first, second or final reminder to a customer.</p>
+  <p class="privacy-line">Nothing you type here leaves your browser.</p>
+
+  <form class="tool" id="tool" novalidate aria-label="Payment reminder details">
+    <div class="row">
+      <label for="f-customer">Customer's name</label>
+      <input type="text" id="f-customer" autocomplete="off" required aria-required="true">
+    </div>
+    <div class="row">
+      <label for="f-number">Invoice number <span class="opt">(optional)</span></label>
+      <input type="text" id="f-number" autocomplete="off">
+    </div>
+    <div class="row">
+      <label for="f-amount">Amount owed</label>
+      <input type="text" id="f-amount" autocomplete="off" placeholder="$1,250.00" required aria-required="true">
+    </div>
+    <div class="row">
+      <label for="f-due">Due date</label>
+      <input type="date" id="f-due" required aria-required="true">
+    </div>
+    <div class="row">
+      <label for="f-you">Your name or business</label>
+      <input type="text" id="f-you" autocomplete="off" required aria-required="true">
+    </div>
+    <div class="row">
+      <label for="f-pay">How to pay <span class="opt">(optional)</span></label>
+      <input type="text" id="f-pay" autocomplete="off" placeholder="by card at the link on the invoice">
+    </div>
+    <fieldset>
+      <legend>Which reminder</legend>
+      <div class="choice"><input type="radio" name="which" id="w1" value="first" checked><label for="w1">First (friendly)</label></div>
+      <div class="choice"><input type="radio" name="which" id="w2" value="second"><label for="w2">Second (firmer)</label></div>
+      <div class="choice"><input type="radio" name="which" id="w3" value="final"><label for="w3">Final</label></div>
+    </fieldset>
+    <p class="hint">If the due date is today or later, you get a polite heads-up and the choice above is ignored.</p>
+    <button class="go" type="submit">Write the email</button>
+    <p class="formmsg" id="formmsg" role="alert" hidden></p>
+  </form>
+
+  <div class="tool result" id="result" hidden aria-live="polite">
+    <h2>Your email</h2>
+    <div class="outhead"><h3 id="h-subj">Subject line</h3><span><span class="copied" id="c-subj" role="status"></span> <button type="button" class="copy" id="b-subj" aria-describedby="h-subj">Copy subject</button></span></div>
+    <div class="out" id="o-subj" tabindex="0" role="group" aria-labelledby="h-subj"></div>
+    <div class="outhead"><h3 id="h-body">Email body</h3><span><span class="copied" id="c-body" role="status"></span> <button type="button" class="copy" id="b-body" aria-describedby="h-body">Copy body</button></span></div>
+    <div class="out" id="o-body" tabindex="0" role="group" aria-labelledby="h-body"></div>
+  </div>
+
+  <h2>When to send each one</h2>
+  <p>Send the first reminder a few days after the due date. It assumes the invoice slipped through, so it stays light.</p>
+  <p>Send the second if the first got no answer, about a week later. It asks for a date or the reason for the delay. Send the final after that, when you need a firm answer. It sets a date a week out and asks for a reply. It makes no threats and mentions no fees or interest: those depend on your contract and your state, so this tool leaves them out.</p>
+  <p>These guides go further: <a href="guides/how-to-chase-overdue-invoices-by-email.html">how to chase overdue invoices by email</a>, <a href="guides/how-often-to-send-invoice-reminders.html">how often to send invoice reminders</a> and <a href="guides/how-to-ask-for-payment-politely.html">how to ask for payment politely</a>.</p>
+
+  <h2>Tired of writing these by hand?</h2>
+  <p>Steadywork prepares reminders like these as drafts from your unpaid-invoice report, and waits for your approval before anything goes out. It is not open yet: leave your email and we will write once, when it is.</p>
+  <form class="ask" id="ask" method="post" action="https://steadywork-rescue-ji0b.onrender.com/waitlist">
+    <input type="email" id="askmail" name="email" required placeholder="you@yourbusiness.com" aria-label="Your email address" autocomplete="email">
+    <input type="hidden" name="note" value="Payment reminder email writer page">
+    <input type="text" name="company_site" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+    <button type="submit">Join the waitlist</button>
+  </form>
+  <p class="askmsg" id="askmsg" role="status" aria-live="polite" hidden></p>
+</main>
+<script>
+(function(){
+  var f=document.getElementById('ask'),msg=document.getElementById('askmsg'),box=document.getElementById('askmail');
+  function say(ok,text){msg.hidden=false;msg.className='askmsg '+(ok?'good':'bad');msg.textContent=text;}
+  var links=document.querySelectorAll('a[href="#ask"]');
+  for(var i=0;i<links.length;i++)links[i].addEventListener('click',function(){setTimeout(function(){box.focus();},350);});
+  f.addEventListener('submit',function(e){
+    if(!window.fetch||!window.URLSearchParams)return;
+    e.preventDefault();
+    var btn=f.querySelector('button');btn.disabled=true;
+    fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new URLSearchParams(new FormData(f))})
+      .then(function(r){return r.json().then(function(j){return {ok:r.ok&&j.ok,m:j.message||''};});})
+      .then(function(x){say(x.ok,x.ok?'Thank you. We will be in touch.':x.m);btn.disabled=false;if(x.ok)f.reset();})
+      .catch(function(){say(false,'That did not go through. Please email alex@steadyworkhq.com instead.');btn.disabled=false;});
+  });
+})();
+</script>
+<script>
+(function(){
+  var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var tool=document.getElementById('tool'),formmsg=document.getElementById('formmsg'),result=document.getElementById('result');
+  var subjBox=document.getElementById('o-subj'),bodyBox=document.getElementById('o-body');
+  var current={subj:'',body:''};
+  function val(id){return document.getElementById(id).value.trim();}
+  function fmt(d){return MONTHS[d.getMonth()]+' '+d.getDate()+', '+d.getFullYear();}
+  function days(n){return n+(n===1?' day':' days');}
+  function build(){
+    var customer=val('f-customer'),num=val('f-number'),amount=val('f-amount'),dueStr=val('f-due'),you=val('f-you'),pay=val('f-pay');
+    var which=tool.querySelector('input[name=which]:checked').value;
+    var bad=[];
+    if(!customer)bad.push(['f-customer',"the customer's name"]);
+    if(!amount)bad.push(['f-amount','the amount owed']);
+    if(!dueStr)bad.push(['f-due','the due date']);
+    if(!you)bad.push(['f-you','your name or business']);
+    var ids=['f-customer','f-amount','f-due','f-you'];
+    for(var i=0;i<ids.length;i++)document.getElementById(ids[i]).removeAttribute('aria-invalid');
+    if(bad.length){
+      for(var j=0;j<bad.length;j++)document.getElementById(bad[j][0]).setAttribute('aria-invalid','true');
+      var names=bad.map(function(b){return b[1];});
+      formmsg.textContent='Please fill in '+names.join(', ')+'.';
+      formmsg.hidden=false;result.hidden=true;
+      document.getElementById(bad[0][0]).focus();
+      return;
+    }
+    var p=dueStr.split('-'),due=new Date(+p[0],+p[1]-1,+p[2]);
+    if(isNaN(due.getTime())){formmsg.textContent='Please check the due date.';formmsg.hidden=false;result.hidden=true;return;}
+    formmsg.hidden=true;
+    var now=new Date(),today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    var n=Math.round((today-due)/86400000);
+    var dueText=fmt(due),inv=num?'invoice '+num:'your invoice',Inv=num?'Invoice '+num:'Your invoice';
+    var payS=pay?' You can pay '+pay+'.':'';
+    var subj,body;
+    if(n<=0){
+      subj=Inv+' is due on '+dueText;
+      body='Hi '+customer+',\n\nA short note that '+inv+' for '+amount+' is due on '+dueText+'.'+payS+' Thank you.\n\n'+you;
+    }else if(which==='first'){
+      subj=Inv+' is past due';
+      body='Hi '+customer+',\n\nA quick reminder that '+inv+' for '+amount+' was due on '+dueText+', '+days(n)+' ago. It may simply have slipped through.'+payS+' If it is already on its way, thank you, and please ignore this.\n\n'+you;
+    }else if(which==='second'){
+      subj='Second reminder: '+inv+', '+amount;
+      body='Hi '+customer+',\n\nI am following up on '+inv+' for '+amount+', which was due on '+dueText+' and is now '+days(n)+' overdue. Could you let me know when to expect payment, or whether something is holding it up?'+payS+'\n\n'+you;
+    }else{
+      var by=new Date(today.getFullYear(),today.getMonth(),today.getDate()+7);
+      subj='Final reminder: '+inv+', '+days(n)+' overdue';
+      body='Hi '+customer+',\n\n'+Inv+' for '+amount+' was due on '+dueText+' and is now '+days(n)+' overdue. This is my final reminder. Please pay by '+fmt(by)+', or reply today so we can agree a date.'+payS+'\n\n'+you;
+    }
+    current.subj=subj;current.body=body;
+    subjBox.textContent=subj;bodyBox.textContent=body;
+    document.getElementById('c-subj').textContent='';document.getElementById('c-body').textContent='';
+    result.hidden=false;
+  }
+  tool.addEventListener('submit',function(e){e.preventDefault();build();});
+  function copyText(text,flag){
+    var done=function(ok){
+      var el=document.getElementById(flag);el.textContent=ok?'Copied':'Press Ctrl+C to copy';
+      setTimeout(function(){el.textContent='';},2500);
+    };
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){done(true);},function(){fallback();});
+    }else{fallback();}
+    function fallback(){
+      var t=document.createElement('textarea');t.value=text;t.setAttribute('readonly','');t.style.position='fixed';t.style.left='-9999px';
+      document.body.appendChild(t);t.select();var ok=false;
+      try{ok=document.execCommand('copy');}catch(err){ok=false;}
+      document.body.removeChild(t);done(ok);
+    }
+  }
+  document.getElementById('b-subj').addEventListener('click',function(){copyText(current.subj,'c-subj');});
+  document.getElementById('b-body').addEventListener('click',function(){copyText(current.body,'c-body');});
+})();
+</script>
+
+<footer>
+  <div class="wrap">Steadywork · Your admin, on autopilot · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="guides/">Guides</a> · <a href="bookkeepers.html">For bookkeepers</a> · <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="accessibility.html">Accessibility</a></div>
+</footer>
+
+</body>
+</html>
