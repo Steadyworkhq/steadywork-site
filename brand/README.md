@@ -4,6 +4,11 @@ The mark is a metronome (steady rhythm) whose swinging arm is a tick (work done)
 
 Colours: navy #12283c, orange #e8641f, paper #fbfaf8.
 
+These colours are copied into the `:root` line and the favicon line of each top-level page, the logo
+in `index.html`, and in steadywork-app `docs/site-guides/guides.py` (`CSS`) and
+`docs/site-guides/logo-mark.svg` (the guide pages' logo; their favicon is copied from `privacy.html`).
+Change them all together, then rerun `guides.py`. Changing this file alone changes nothing on the site.
+
 | File | Use |
 |---|---|
 | steadywork-mark.svg | The mark on light backgrounds |
