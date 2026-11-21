@@ -21,6 +21,21 @@
     <priority>0.2</priority>
   </url>
   <url>
+    <loc>https://steadyworkhq.com/tools/</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/tools/payment-reminder-generator.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/tools/invoice-due-date-calculator.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://steadyworkhq.com/guides/</loc>
     <lastmod>2026-11-21</lastmod>
     <priority>0.7</priority>

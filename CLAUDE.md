@@ -12,6 +12,7 @@ steadywork-app is the app's repository, next to this one. Some of this site is m
 |---|---|---|
 | `index.html`, `bookkeepers.html`, `terms.html`, `privacy.html`, `accessibility.html` | Hand-made pages | Yes |
 | `home-services.html` | Retired: sends visitors to the home page | No need |
+| `tools/` | Hand-made free tools (calculators, generators) | Yes |
 | `guides/` | Guide pages, generated in steadywork-app | Never |
 | `sitemap.xml` | Hand-made pages' entries kept by hand; guide entries generated | Hand-made entries only |
 | `brand/` | Logo files and the colours (`brand/README.md`) | Yes |
