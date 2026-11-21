@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Privacy & data retention — {{ brand }}{% endblock %}
+{% block body %}
+<div class="wrap narrow">
+  <h1>Privacy &amp; data retention</h1>
+  <p class="small muted">Draft — to be reviewed before launch.</p>
+  <h2>What we collect</h2>
+  <ul>
+    <li><b>Guest names and table assignments</b> you upload. If your file has other columns (addresses, meals, emails), we read only the name and table columns you confirm, and the original upload is discarded once you confirm columns.</li>
+    <li><b>Event details</b> you type: the names shown on the chart, date and optional venue.</li>
+    <li><b>Your email</b>, collected by our payment provider at checkout, for your receipt and support.</li>
+    <li>Basic counts of page steps (for example “preview viewed”) so we can improve the product. No advertising trackers.</li>
+  </ul>
+  <p>Card details are handled entirely by our payment provider (Stripe). We never see or store them.</p>
+  <h2>What we don't do</h2>
+  <ul><li>We don't send your guest list to any AI service.</li><li>We don't sell or share your list, or use it for marketing.</li><li>We don't ask for guest addresses, dietary needs or contact details.</li></ul>
+  <h2>Who can see what</h2>
+  <ul>
+    <li><b>Your management page</b> is private. It opens only with your private management link (or on the device you used). Anyone with that link can edit or delete your event, so keep it to yourself.</li>
+    <li><b>The guest page</b> (the QR code) can be opened by anyone with its link. It does not show the guest list. Visitors type a full name and see that guest's table. It's marked so search engines don't index it, and it can't change anything.</li>
+  </ul>
+  <h2>How long we keep it</h2>
+  <ul>
+    <li><b>Paid events:</b> the guest page stays online, and your data is kept, until <b>{{ retention_days }} days after your event date</b>. Then everything is deleted automatically.</li>
+    <li><b>Unpaid drafts:</b> deleted after {{ draft_days }} days without activity.</li>
+    <li><b>Delete any time:</b> your dashboard has a “Delete event” button that removes your list, files and guest page immediately.</li>
+    <li>We keep the payment amount and date for accounting. That record holds no guest names.</li>
+  </ul>
+  <h2>Contact</h2>
+  <p>{{ support_email }}</p>
+</div>
+{% endblock %}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Find your seat</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><div class="guest">
+  <p class="muted" style="margin:0">Welcome</p>
+  <h1>{{ ev.title }}</h1>
+  <h2 style="font-style:italic">Find your seat</h2>
+  {% if demo %}<div class="notice info small">Sample page with fictional guests. Try: {{ sample_names|join(', ') }}</div>{% endif %}
+  {% if error %}<div class="notice warn">{{ error }}</div>{% endif %}
+  {% if results is not none %}
+    {% if results %}
+      {% for r in results %}<div class="result"><div>{{ r.name }}</div><div class="tbl">{{ table_display(r.table_label) }}</div></div>{% endfor %}
+      {% if results|length > 1 %}<p class="small muted">More than one guest has this name.</p>{% endif %}
+    {% else %}
+      <div class="notice warn">We couldn't find “{{ query }}”. Try your full name as it appears on your invitation, or ask at the welcome table.</div>
+    {% endif %}
+  {% endif %}
+  <form method="post" class="card" style="text-align:left">
+    <label for="name">Your full name</label>
+    <input id="name" type="text" name="name" autocomplete="name" autocapitalize="words" required placeholder="First and last name" value="">
+    <button class="btn block" type="submit" style="margin-top:12px">Find my table</button>
+  </form>
+  <p class="small muted">No signal? Every name is also on the seating chart at the entrance.</p>
+</div></body></html>

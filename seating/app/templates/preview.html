@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Preview — {{ brand }}{% endblock %}
+{% block body %}
+<div class="wrap">
+  {% if not paid %}{% set current = 'Preview' %}{% include "_steps.html" %}{% endif %}
+  <h1>Your preview</h1>
+  {% if cancelled %}<div class="notice warn">Checkout was cancelled — you haven't been charged. Your draft is saved.</div>{% endif %}
+  <p class="muted">These images use your real names. The “PREVIEW” watermark and lower resolution are removed in the paid print files.</p>
+  {% for w in man.warnings %}<div class="notice warn">{{ w }}</div>{% endfor %}
+  <div class="card">
+    <p style="margin:0"><b>{{ st.guests|length }} guests</b> · {{ st.report.table_counts|length }} tables · {{ sizes[ev.chart_size][0] }} chart ({{ man.pages }} poster{{ 's' if man.pages > 1 }}) · {{ papers[ev.paper][0] }} place cards ({{ pages.cards - 1 }} sheets + guide)</p>
+    <p class="small muted" style="margin:.4em 0 0">Every guest appears on the chart, the alphabetical chart, a place card and the backup list. Name text on the chart: {{ '%.0f'|format(man.placed|map(attribute='size')|min) }}–{{ '%.0f'|format(man.font_size) }} pt.</p>
+  </div>
+  <div class="grid2">
+    <div>
+      <h3>Seating chart</h3>
+      {% for p in range(man.pages) %}<a href="/e/{{ ev.id }}/preview/chart.png?page={{ p }}" target="_blank"><img class="previewimg" src="/e/{{ ev.id }}/preview/chart.png?page={{ p }}&v={{ ev.version }}" alt="Seating chart preview page {{ p+1 }}"></a>{% endfor %}
+      <p class="small muted">Tap to open full size and zoom in to check names.</p>
+      <h3>Alphabetical version (included)</h3>
+      <a href="/e/{{ ev.id }}/preview/chart-alpha.png" target="_blank"><img class="previewimg" src="/e/{{ ev.id }}/preview/chart-alpha.png?v={{ ev.version }}" alt="Alphabetical chart preview" loading="lazy"></a>
+    </div>
+    <div>
+      <h3>Place cards</h3>
+      <img class="previewimg" src="/e/{{ ev.id }}/preview/cards.png?page=1&v={{ ev.version }}" alt="Place cards preview">
+      {% if pages.cards > 2 %}<p class="small muted">Showing sheet 1 of {{ pages.cards - 1 }}. <a href="/e/{{ ev.id }}/preview/cards.png?page={{ pages.cards - 1 }}" target="_blank">See the last sheet</a>.</p>{% endif %}
+      <h3>QR sign</h3>
+      <img class="previewimg" src="/e/{{ ev.id }}/preview/sign.png?v={{ ev.version }}" alt="QR sign preview" loading="lazy">
+      <p class="small muted">The QR code goes live after purchase.</p>
+    </div>
+  </div>
+  <div class="sticky-buy"><div class="wrap" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:0">
+    {% if paid %}
+      <a class="btn" href="/e/{{ ev.id }}">Back to dashboard &amp; downloads</a>
+    {% else %}
+      <span><a href="/e/{{ ev.id }}/review">Edit names</a> · <a href="/e/{{ ev.id }}/design">Change design</a></span>
+      <form method="post" action="/e/{{ ev.id }}/checkout" class="inline"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="btn" type="submit">Buy the full package — {{ price }}</button></form>
+    {% endif %}
+  </div></div>
+  {% if not paid %}<p class="small muted">Secure hosted checkout. Files unlock right after payment. Corrections included until your event. <a href="/terms">Refund terms</a>.</p>{% endif %}
+</div>
+{% endblock %}

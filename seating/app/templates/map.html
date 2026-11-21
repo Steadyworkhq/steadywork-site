@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Confirm columns — {{ brand }}{% endblock %}
+{% block body %}
+<div class="wrap">
+  {% set current = 'Columns' %}{% include "_steps.html" %}
+  <h1>Which column is which?</h1>
+  <p class="muted">We made a guess from your headings and contents. Please check it — nothing is final until you confirm.</p>
+  {% for w in raw.warnings %}<div class="notice warn">{{ w }}</div>{% endfor %}
+  {% if error %}<div class="notice bad">{{ error }}</div>{% endif %}
+  <form method="post" class="card" id="mapform">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <div class="row">
+      <label>Your names are in…</label>
+      <label class="choice" style="display:inline-block;margin-right:8px"><input type="radio" name="mode" value="full" {{ 'checked' if mapping.mode != 'split' }}> one column (full name)</label>
+      <label class="choice" style="display:inline-block"><input type="radio" name="mode" value="split" {{ 'checked' if mapping.mode == 'split' }}> two columns (first + last)</label>
+    </div>
+    <div class="grid2">
+      {% macro sel(name, label, val) %}
+      <div class="row"><label for="{{ name }}">{{ label }}</label><select id="{{ name }}" name="{{ name }}"><option value="">— none —</option>{% for h in raw.headers %}<option value="{{ loop.index0 }}" {{ 'selected' if val is not none and val == loop.index0 }}>{{ h }}</option>{% endfor %}</select></div>
+      {% endmacro %}
+      {{ sel('full', 'Full name column', mapping.full) }}
+      {{ sel('table', 'Table column', mapping.table) }}
+      {{ sel('first', 'First name column (two-column mode)', mapping.first) }}
+      {{ sel('last', 'Last name column (two-column mode)', mapping.last) }}
+    </div>
+    <div class="row"><label>Is the first row a heading?</label>
+      <select name="has_header"><option value="1" {{ 'selected' if raw.has_header }}>Yes, the first row is column titles</option><option value="0" {{ 'selected' if not raw.has_header }}>No, the first row is a guest</option></select></div>
+    <h3>Your file (first rows)</h3>
+    <div class="scroll"><table class="t"><tr>{% for h in raw.headers %}<th>{{ h }}</th>{% endfor %}</tr>
+      {% for r in raw.rows[:8] %}<tr>{% for c in r %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</table></div>
+    <p class="small muted">{{ raw.rows|length }} rows found.</p>
+    <h3>How we'll read it</h3>
+    <div class="scroll"><table class="t"><tr><th>Name (exactly as it will print)</th><th>Table</th></tr>
+      {% for g in preview_rows %}<tr><td>{{ g.name }}</td><td>{{ table_display(g.table) if g.table else '⚠ missing' }}</td></tr>{% endfor %}</table></div>
+    <p class="small muted">Table values like “5”, “Table 5” and “05” are treated as the same table. Named tables are kept as typed.</p>
+    <p><button class="btn secondary" type="submit" name="action" value="refresh">Update preview</button></p>
+    <button class="btn block" type="submit" name="action" value="confirm">Confirm columns</button>
+  </form>
+</div>
+{% endblock %}

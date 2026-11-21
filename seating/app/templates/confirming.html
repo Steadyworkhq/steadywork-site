@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Confirming payment — {{ brand }}{% endblock %}
+{% block body %}
+<div class="wrap narrow">
+  <h1>Confirming your payment…</h1>
+  <p class="muted">This usually takes a few seconds. Your files unlock as soon as the payment provider confirms.</p>
+  <p class="small muted" id="slow" hidden>Still waiting. You can safely refresh this page. If it doesn't unlock within a few minutes, email {{ support_email }} — you won't be charged twice.</p>
+</div>
+<script>
+let n=0;(function poll(){fetch('/e/{{ ev.id }}/status',{credentials:'same-origin'}).then(r=>r.json()).then(j=>{if(j.paid){location.href='/e/{{ ev.id }}?welcome=1'}else{n++;if(n>10)document.getElementById('slow').hidden=false;setTimeout(poll,1500)}}).catch(()=>setTimeout(poll,3000))})();
+</script>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Test checkout{% endblock %}
+{% block nav %}{% endblock %}
+{% block body %}
+<div class="wrap narrow">
+  <div class="notice warn"><b>Local test checkout.</b> This page stands in for the payment provider's hosted checkout while running the demo. It sends a signed test webhook through the same verification code used for real payments.</div>
+  <div class="card">
+    <h2>Wedding seating package — {{ price }}</h2>
+    <form method="post" action="/mock-checkout/{{ sid }}/pay">
+      <div class="row"><label for="email">Email</label><input id="email" type="email" name="email" value="test@example.com"></div>
+      <label class="small"><input type="checkbox" name="retry" value="1"> Also simulate a duplicate webhook delivery (should not double-fulfil)</label>
+      <button class="btn block" type="submit" style="margin-top:12px">Pay {{ price }} (test)</button>
+    </form>
+    <p class="small"><a href="/e/{{ event_id }}/preview?cancelled=1">Cancel and return</a></p>
+  </div>
+</div>
+{% endblock %}
