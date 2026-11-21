@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Can Outlook send automated emails? What it can do | Steadywork</title>
+<meta name="description" content="Outlook can schedule, auto-reply and use rules, but has no built-in recurring email. Here is what works, including Power Automate, and what it cannot do.">
+<link rel="canonical" href="https://steadyworkhq.com/guides/can-outlook-send-automated-emails.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Can Outlook send automated emails? What it can do">
+<meta property="og:description" content="Outlook can schedule, auto-reply and use rules, but has no built-in recurring email. Here is what works, including Power Automate, and what it cannot do.">
+<meta property="og:url" content="https://steadyworkhq.com/guides/can-outlook-send-automated-emails.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312283c'/%3E%3Cg transform='translate(32 33) scale(.7) translate(-32 -33)'%3E%3Cpath d='M27 14H37L49 46H15Z' fill='%23ffffff' stroke='%23ffffff' stroke-width='6' stroke-linejoin='round'/%3E%3Crect x='8' y='52' width='48' height='8' rx='4' fill='%23ffffff'/%3E%3Cpath d='M24 33l7.5 8L46.5 6' fill='none' stroke='%23e8641f' stroke-width='5.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Can Outlook send automated emails? What it can do", "description": "Outlook can schedule, auto-reply and use rules, but has no built-in recurring email. Here is what works, including Power Automate, and what it cannot do.", "datePublished": "2026-11-21", "dateModified": "2026-11-21", "mainEntityOfPage": "https://steadyworkhq.com/guides/can-outlook-send-automated-emails.html", "author": {"@type": "Organization", "name": "Steadywork"}, "publisher": {"@type": "Organization", "name": "Steadywork"}}</script>
+<style>
+  :root{--navy:#12283c;--orange:#e8641f;--orange-dark:#c9520f;--paper:#fbfaf8;--ink:#1f2a35;--muted:#66747f;--line:#e8e3db;--soft:#f3f0ea}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  a{color:var(--orange-dark)}
+  header{background:rgba(251,250,248,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;height:56px}
+  .logo{display:flex;align-items:center;gap:9px;font-size:1.08rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);text-decoration:none}
+  .logo svg{width:30px;height:30px;flex:none}
+  .logo span{color:var(--orange)}
+  .links{display:flex;gap:2px;align-items:center}
+  .links a{color:var(--navy);text-decoration:none;font-size:.86rem;font-weight:600;padding:6px 12px;border-radius:999px;white-space:nowrap}
+  .links a:hover{background:var(--soft)}
+  .links a.cta{background:var(--navy);color:#fff;margin-left:6px}
+  @media(max-width:520px){.links a.sec{display:none}}
+  main{max-width:720px;margin:0 auto;padding:40px 20px 64px;overflow-wrap:break-word}
+  .crumb{font-size:.85rem;color:var(--muted);margin-bottom:14px}.crumb a{color:var(--muted)}
+  h1{font-size:clamp(1.8rem,4.6vw,2.5rem);font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.14;margin-bottom:14px}
+  .lede{font-size:1.1rem;color:#3a4753;margin-bottom:8px}
+  .dated{color:var(--muted);font-size:.85rem;margin-bottom:26px}
+  h2{font-size:1.3rem;font-weight:800;color:var(--navy);letter-spacing:-.015em;margin:34px 0 10px}
+  h3{font-size:1.02rem;color:var(--navy);margin:20px 0 6px}
+  main p{margin-bottom:14px}
+  main ul,main ol{margin:0 0 14px;padding-left:24px}
+  main li{margin-bottom:7px}
+  .short{background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:16px 18px;margin:0 0 8px}
+  .short b{color:var(--navy)}.short p:last-child{margin-bottom:0}
+  .copy{background:#fff;border:1px solid var(--line);border-radius:12px;padding:44px 16px 14px;margin:0 0 14px;white-space:pre-wrap;font-size:.95rem;position:relative}
+  .copy button{position:absolute;top:10px;right:10px;font:inherit;font-size:.8rem;font-weight:700;border:1px solid #d6dbe0;background:var(--soft);color:var(--navy);border-radius:999px;padding:4px 12px;cursor:pointer}
+  .sw{background:var(--navy);color:#fff;border-radius:18px;padding:26px 24px;margin:38px 0 0}
+  .sw h2{color:#fff;margin:0 0 10px}.sw p,.sw li{color:#dfe6ec}.sw a{color:#fff}
+  .sw .soon{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+  .ask{margin:18px 0 0;display:flex;gap:6px;background:#fff;border-radius:999px;padding:6px}
+  .ask input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:1rem;padding:0 14px;color:var(--ink)}
+  .ask .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .ask button{font:inherit;font-weight:700;font-size:.95rem;border:0;border-radius:999px;background:var(--orange);color:#fff;padding:12px 20px;cursor:pointer;white-space:nowrap}
+  .askmsg{margin:12px 0 0;font-size:.95rem;font-weight:600;color:#fff}
+  .micro{font-size:.85rem;margin:12px 0 0!important}
+  .more{margin-top:38px}.more ul{list-style:none;padding:0}.more li{border-top:1px solid var(--line);padding:10px 0;margin:0}
+  .more a{color:var(--navy);font-weight:700;text-decoration:none}.more a:hover{text-decoration:underline}
+  .list a{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px;text-decoration:none;color:var(--ink)}
+  .list a b{display:block;color:var(--navy);font-size:1.05rem;margin-bottom:3px}.list a:hover{border-color:#cfd6dc}
+  footer{border-top:1px solid var(--line);padding:22px 0;font-size:.8rem;color:var(--muted);text-align:center}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M27 14H37L49 46H15Z" fill="#12283c" stroke="#12283c" stroke-width="6" stroke-linejoin="round"/><rect x="8" y="52" width="48" height="8" rx="4" fill="#12283c"/><path d="M24 33l7.5 8L46.5 6" fill="none" stroke="#e8641f" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round"/></svg><em style="font-style:normal">Steady<span>work</span></em></a>
+    <div class="links">
+      <a class="sec" href="../index.html#how">How it works</a>
+      <a class="sec" href="index.html">Guides</a>
+      <a class="cta" href="#steadywork">Join the waitlist</a>
+    </div>
+  </div>
+</header>
+<main>
+<p class="crumb"><a href="../index.html">Steadywork</a> › <a href="index.html">Guides</a></p>
+<h1>Can Outlook send automated emails?</h1>
+<p class="lede">Some, yes: Outlook can send later, auto-reply and sort mail by rule. Repeating emails need a workaround.</p>
+<p class="dated">Checked 2026-11-21. Menus in other products change, so a label may differ slightly on your screen.</p>
+<div class="short"><p><b>Short answer:</b> yes, in part. Outlook can send a message later (Schedule send), reply to incoming mail while you are away (automatic replies), and file or flag mail by rule. It has no built-in "send this every month" setting. For a repeating email you need a Power Automate flow, or a recurring calendar reminder that nudges you to send it yourself.</p></div>
+
+<h2>What Outlook does on its own</h2>
+<p>Menus differ a little between new Outlook for Windows, classic Outlook (the one with a File menu), Outlook on the web and Microsoft 365. Check which one you have first. If there is a File tab on the ribbon, you are on classic Outlook.</p>
+<h3>Send one email later</h3>
+<p>In new Outlook and Outlook on the web, write the message, select the arrow next to Send, then choose Schedule send. Pick a time and select Send. The message waits in Drafts. Microsoft says this is not available for IMAP or POP accounts.</p>
+<p>In classic Outlook, open the message, select the Options tab, then Delay Delivery (if you do not see it, look under More commands). Tick "Do not deliver before" and set the date and time. The message waits in the Outbox, and Outlook needs to be online and connected for it to go out on time.</p>
+<p>This sends one message once. It does not repeat.</p>
+<h3>Reply automatically while you are away</h3>
+<p>In new Outlook, on the View tab choose View settings, then Accounts, then Automatic replies. In Outlook on the web, select Settings (the gear), then Account, then Automatic replies. In classic Outlook, choose File, then Automatic Replies. Turn it on, set a start and end time, and write your message. For work accounts, sending replies outside your organization answers every sender, so Microsoft suggests limiting it to your contacts.</p>
+<h3>Rules</h3>
+<p>Rules act on mail as it arrives, such as moving messages from one sender into a folder. In new Outlook, open Settings, then Mail, then Rules. In classic Outlook, choose File, then Manage Rules &amp; Alerts. New Outlook does not support rules for Gmail, Yahoo or iCloud accounts. In classic Outlook, a rule can also delay everything you send by up to 120 minutes.</p>
+<h3>Quick Steps</h3>
+<p>A Quick Step does several things to a message in one click, such as move it and mark it done. In new Outlook, go to Mail, then Home, open the arrow next to Quick steps and choose Manage quick steps. Quick Steps work on messages you already have. They do not write a new email on a schedule.</p>
+<h3>Templates</h3>
+<p>Templates save wording you reuse. In new Outlook, open a new message, select the Message tab, then My Templates, then +Template. In classic Outlook, write the message, choose File, then Save As, and pick Outlook Template. You still open the template and press Send yourself. Microsoft says My Templates needs a qualifying Microsoft 365 subscription, and templates saved in classic Outlook do not appear in new Outlook.</p>
+
+<h2>Can you set a recurring email in Outlook?</h2>
+<p>Not directly. Outlook can repeat a meeting, an appointment or a task. It cannot repeat an outgoing email. There are two common ways around that.</p>
+
+<h2>Option 1: a calendar reminder (no extra tools)</h2>
+<p>This does not send anything for you. It makes sure you do not forget.</p>
+<ol>
+  <li>Write the email once and save it as a template.</li>
+  <li>In Calendar, create an appointment for the day you send it, such as the 1st of each month.</li>
+  <li>Set it to repeat, and turn on a reminder.</li>
+  <li>Put a note in the appointment, such as "Send the monthly statement. Use the Statement template."</li>
+  <li>When the reminder pops up, open the template, change what needs changing, and send.</li>
+</ol>
+
+<h2>Option 2: a Power Automate flow (sends on its own)</h2>
+<p>Power Automate is Microsoft's automation tool. A scheduled flow runs in the cloud, so it can send even when your computer is off. Here is the basic version.</p>
+<ol>
+  <li>Sign in at make.powerautomate.com.</li>
+  <li>Select My flows, then select the Cloud flows tab if it is not already selected.</li>
+  <li>Select Create from blank. This opens a blank flow with an Add a trigger box.</li>
+  <li>Select Add a trigger, type Recurrence in the search field, and select Recurrence.</li>
+  <li>Enter the Interval and Frequency. For once a month, use Interval 1 and Frequency Month. Microsoft says a monthly flow runs on the same date each month.</li>
+  <li>Enter a Start time in the format YYYY-MM-DDTHH:MM:SSZ, and choose your Time zone. Select Create.</li>
+  <li>Add an action. Search for Office 365 Outlook and choose Send an email (V2). Enter the recipient, subject and body.</li>
+  <li>Save the flow and run a test to your own address first.</li>
+</ol>
+<p>Microsoft's example flow sends from your own mailbox, and the message shows in your Sent Items.</p>
+<h3>Adding an attachment</h3>
+<p>The file has to be stored somewhere the flow can reach, such as OneDrive or SharePoint. Add a step before the email that gets the file's content (for example, Get file content from OneDrive). In the email step, open the advanced options, add an attachment, and use the file name and file content from that earlier step. Microsoft notes that sending several attachments at once can produce files that will not open, and gives a workaround that uses an array variable. The option names change from time to time, so follow what you see on screen.</p>
+<h3>Which plans include it</h3>
+<p>Microsoft lists limited Power Automate rights in Microsoft 365 Business Basic, Business Standard and Business Premium, and in the Office 365 E and F plans too. Those rights cover standard connectors only, and Microsoft names the Office 365 Outlook connector as standard. Premium connectors need a paid Power Automate plan. A personal Outlook.com account uses a different connector. Check your own plan in the Microsoft 365 admin center, or ask whoever manages your Microsoft account. We have not listed prices here because they change.</p>
+<p>Some limits to know. The flow sends the same text each time, and someone has to set it up and fix it when it breaks.</p>
+
+<h2>What none of these do</h2>
+<p>Every option above sends the same message, or reminds you to. None of them looks at your customers and writes a different email to each. A flow cannot know that Smith Plumbing is 12 days past due for $840 while Lopez Electric owes $215 and has already written back. For that, someone has to open the list, look up each customer and write each note by hand. Our guide on <a href="automate-follow-up-emails-in-outlook.html">automating follow-up emails in Outlook</a> shows how far the built-in tools stretch for follow-ups. If you wonder whether AI can write those per-customer emails, see <a href="can-ai-send-emails-for-me.html">can AI send emails for me</a>.</p>
+<p>If you do send reminder emails by hand, here is a simple wording to start from.</p>
+<div class="copy"><button type="button">Copy</button><span>Hi [name],
+
+This is a reminder that invoice [invoice number] for [amount] was due on [due date]. You can pay here: [pay link].
+
+If you have already paid, thank you, and please ignore this note. If something looks wrong, reply and let me know.
+
+Thanks,
+[your name]</span></div>
+<section class="sw" id="steadywork">
+  <div class="soon">Coming soon</div>
+  <h2>A different email for each customer, prepared for you to approve</h2>
+  <p>Steadywork prepares the office chores you describe as drafts, including follow-up emails.</p>
+<ul>
+  <li>It reads your data from a report you upload or from a connected system such as QuickBooks Online, Outlook/Microsoft 365, Gmail, Google Sheets or Smartsheet.</li>
+  <li>It writes each customer's email from their own details. Nothing goes out until you approve it, and approved emails go from your own mailbox.</li>
+  <li>A "never write to" list leaves any customer out. Follow-up steps wait the days you set and skip anyone emailed recently.</li>
+</ul>
+<p>It is not open yet. Plans will start at $39 a month, and you can join the waitlist below.</p>
+  <form class="ask" id="ask" method="post" action="https://steadywork-rescue-ji0b.onrender.com/waitlist">
+    <input type="email" name="email" required placeholder="you@yourbusiness.com" aria-label="Your email address" autocomplete="email">
+    <input type="text" name="company_site" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+    <button type="submit">Join the waitlist</button>
+  </form>
+  <p class="askmsg" id="askmsg" role="status" aria-live="polite" hidden></p>
+  <p class="micro">Steadywork is not open yet. Leave your email and we'll write once, when it is. Founding price from $39 a month, no contract. <a href="../index.html">See how it works</a>.</p>
+</section>
+<section class="more"><h2>Related guides</h2><ul><li><a href="automate-follow-up-emails-in-outlook.html">Outlook automatic follow-up email if no response: what works</a></li><li><a href="can-ai-send-emails-for-me.html">Can AI send emails for me?</a></li><li><a href="how-to-automate-repetitive-office-tasks.html">What office tasks can be automated in a small business</a></li><li><a href="how-to-chase-overdue-invoices-by-email.html">Payment reminder emails for overdue invoices (examples to copy)</a></li><li><a href="follow-up-email-after-quote.html">How to follow up on a quote, with emails to copy</a></li><li><a href="index.html"><b>All guides</b></a></li></ul></section>
+</main>
+<footer>
+  <div class="wrap">Steadywork · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="index.html">Guides</a> · <a href="../terms.html">Terms</a> · <a href="../privacy.html">Privacy</a> · <a href="../accessibility.html">Accessibility</a></div>
+</footer>
+<script>
+(function(){
+  var f=document.getElementById('ask');if(f){var msg=document.getElementById('askmsg');
+  f.addEventListener('submit',function(e){
+    if(!window.fetch||!window.URLSearchParams)return;
+    e.preventDefault();var btn=f.querySelector('button');btn.disabled=true;
+    function say(t){msg.hidden=false;msg.textContent=t;btn.disabled=false;}
+    fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new URLSearchParams(new FormData(f))})
+      .then(function(r){return r.json().then(function(j){return {ok:r.ok&&j.ok,m:j.message||''};});})
+      .then(function(x){say(x.m);if(x.ok)f.reset();})
+      .catch(function(){say('That did not go through. Please email alex@steadyworkhq.com and we will add you to the waitlist.');});
+  });}
+  var bs=document.querySelectorAll('.copy button');
+  for(var i=0;i<bs.length;i++)bs[i].addEventListener('click',function(){var b=this,t=b.parentNode.querySelector('span').textContent;
+    if(navigator.clipboard)navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1500);});});
+})();
+</script>
+</body>
+</html>

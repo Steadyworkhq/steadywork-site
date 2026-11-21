@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to automate follow-up emails in Outlook | Steadywork</title>
-<meta name="description" content="Outlook cannot send a follow-up on its own when nobody replies. Here is what it can do, the options for real automatic follow-ups, and how to choose.">
+<title>Outlook automatic follow-up email if no response | Steadywork</title>
+<meta name="description" content="Outlook cannot send an automatic follow-up email if there is no response. Here is what it can do: flags, Power Automate and add-ins, and where each falls short.">
 <link rel="canonical" href="https://steadyworkhq.com/guides/automate-follow-up-emails-in-outlook.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to automate follow-up emails in Outlook">
-<meta property="og:description" content="Outlook cannot send a follow-up on its own when nobody replies. Here is what it can do, the options for real automatic follow-ups, and how to choose.">
+<meta property="og:title" content="Outlook automatic follow-up email if no response">
+<meta property="og:description" content="Outlook cannot send an automatic follow-up email if there is no response. Here is what it can do: flags, Power Automate and add-ins, and where each falls short.">
 <meta property="og:url" content="https://steadyworkhq.com/guides/automate-follow-up-emails-in-outlook.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312283c'/%3E%3Cg transform='translate(32 33) scale(.7) translate(-32 -33)'%3E%3Cpath d='M27 14H37L49 46H15Z' fill='%23ffffff' stroke='%23ffffff' stroke-width='6' stroke-linejoin='round'/%3E%3Crect x='8' y='52' width='48' height='8' rx='4' fill='%23ffffff'/%3E%3Cpath d='M24 33l7.5 8L46.5 6' fill='none' stroke='%23e8641f' stroke-width='5.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to automate follow-up emails in Outlook", "description": "Outlook cannot send a follow-up on its own when nobody replies. Here is what it can do, the options for real automatic follow-ups, and how to choose.", "datePublished": "2026-11-18", "dateModified": "2026-11-18", "mainEntityOfPage": "https://steadyworkhq.com/guides/automate-follow-up-emails-in-outlook.html", "author": {"@type": "Organization", "name": "Steadywork"}, "publisher": {"@type": "Organization", "name": "Steadywork"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Outlook automatic follow-up email if no response", "description": "Outlook cannot send an automatic follow-up email if there is no response. Here is what it can do: flags, Power Automate and add-ins, and where each falls short.", "datePublished": "2026-11-18", "dateModified": "2026-11-21", "mainEntityOfPage": "https://steadyworkhq.com/guides/automate-follow-up-emails-in-outlook.html", "author": {"@type": "Organization", "name": "Steadywork"}, "publisher": {"@type": "Organization", "name": "Steadywork"}}</script>
 <style>
   :root{--navy:#12283c;--orange:#e8641f;--orange-dark:#c9520f;--paper:#fbfaf8;--ink:#1f2a35;--muted:#66747f;--line:#e8e3db;--soft:#f3f0ea}
   *{margin:0;padding:0;box-sizing:border-box}
@@ -73,51 +73,77 @@
 </header>
 <main>
 <p class="crumb"><a href="../index.html">Steadywork</a> › <a href="index.html">Guides</a></p>
-<h1>How to automate follow-up emails in Outlook</h1>
-<p class="lede">You send a quote, nobody replies, and a week later you have forgotten to chase it. Here is what Outlook can and cannot do about that.</p>
-<p class="dated">Checked 2026-11-18. Menus in other products change, so a label may differ slightly on your screen.</p>
-<div class="short"><p><b>Short answer:</b> Outlook has no built-in way to send a follow-up automatically when someone has not replied. Its follow-up flags remind you, not the other person. For real automatic follow-ups you need Power Automate, an add-in, or a tool that prepares the follow-ups for you to approve.</p></div>
+<h1>Outlook automatic follow-up email if no response: what works</h1>
+<p class="lede">Can you automate follow-up emails in Outlook when nobody replies? Not on its own, but there are ways around it.</p>
+<p class="dated">Checked 2026-11-21. Menus in other products change, so a label may differ slightly on your screen.</p>
+<div class="short"><p><b>Short answer:</b> no. Outlook cannot, on its own, send an automatic follow-up email if there is no response. It can flag a sent message and remind you to follow up, and it can send a message later, but it does not check for a reply. To get an automatic follow-up you need Power Automate, an add-in, or a tool that prepares the follow-ups for you to approve.</p></div>
 
 <h2>What Outlook can do on its own</h2>
-<ul>
-  <li><b>Flag a sent email for follow-up.</b> Right-click the message, choose Follow up, and pick a date. Outlook reminds you on that day. You still write and send the follow-up yourself.</li>
-  <li><b>Save your wording.</b> My Templates and Quick Parts hold a follow-up message you can drop in with two clicks.</li>
-  <li><b>Schedule send.</b> You can write the follow-up now and set it to go next week. It goes whether or not they have replied in the meantime, so you have to remember to cancel it.</li>
-</ul>
-<p>For a handful of follow-ups a week, flags plus a saved template are enough.</p>
+<p>Menus differ between classic Outlook (the one with a File tab), new Outlook and Outlook on the web. Check which one you have first.</p>
+<h3>Follow-up flags and reminders</h3>
+<p>This is the closest thing Outlook has to a follow-up if no one replies. In classic Outlook, Microsoft says to open the message, go to the Message tab, and in the Tags group select Follow Up. You can pick Today, Tomorrow, This Week, Next Week, No Date or Custom. To add a reminder, select Follow Up, then Add Reminder, check Flag for Me, set a due date, check Reminder and choose a time. Flagged messages show in the To-Do Bar, in Tasks and in the Calendar Daily Task List.</p>
+<p>Two limits. The reminder goes off whether or not the person has replied, so you still look and decide. And you can flag a message for the recipient too (Custom, then Flag for Recipients), but that only adds a to-do item if they also use Outlook. It does not send them a new email. Steps in new Outlook and on the web are not the same as the classic steps above, so follow what you see on screen.</p>
+<h3>Schedule send</h3>
+<p>You can write a follow-up now and set it to go later. It sends whether or not they replied, so you have to remember to cancel it. Our guide on <a href="can-outlook-send-automated-emails.html">whether Outlook can send automated emails</a> covers Schedule send, rules and Quick Steps, and what each cannot do.</p>
+<h3>Saved wording</h3>
+<p>My Templates (new Outlook) or an Outlook template (classic) holds your follow-up text. You still open it and press Send.</p>
+<p>For a handful of follow-ups a week, a flag with a reminder plus a saved template is enough.</p>
 
-<h2>Options for follow-ups that send themselves</h2>
-<h3>Power Automate</h3>
-<p>Power Automate comes with many Microsoft 365 plans and can send email on a schedule or when something changes in a spreadsheet. Checking whether a person has replied is the hard part: you have to build that logic yourself, and there is no ready-made switch for it. It suits someone comfortable with building flows.</p>
-<h3>Outlook add-ins</h3>
-<p>Several paid add-ins watch a sent message and send a follow-up if no reply arrives. They work one message at a time: you choose the follow-up when you send. They do not know who your customers are or what you quoted them.</p>
-<h3>A tool that works from your records</h3>
-<p>Often the list of who needs a follow-up is not in Outlook at all. It is in a spreadsheet of quotes, a job sheet, or your accounts. A tool that reads that list can work out who is due a follow-up and write it with the right details.</p>
+<h2>Option 1: a Power Automate flow that waits, then checks</h2>
+<p>Power Automate is Microsoft's automation tool. Many Microsoft 365 business plans include limited rights to it, and Microsoft lists the Office 365 Outlook connector as a standard one. Check your own plan with whoever manages your Microsoft account.</p>
+<p>The idea is simple: send the first email, wait a few days, look for a reply, and send the follow-up only if you find none. The last part is the fiddly one. A flow cannot notice that nothing arrived. It has to go and look. Here is what Microsoft documents:</p>
+<ul>
+  <li><b>Send an email (V2)</b> sends from your own mailbox. Microsoft notes there is no way to get the message ID of what it just sent, so the flow has to find your sent message again by other means, such as its subject.</li>
+  <li><b>Get emails (V3)</b> pulls messages from a folder. Its simple filters (such as From and Subject) only look at the first 250 emails in the folder, and a Search Query option searches the whole folder.</li>
+  <li><b>Condition</b> then asks whether it found anything.</li>
+  <li>A flow run can last up to 30 days, including waits, so a follow-up a week or two later fits.</li>
+</ul>
+<p>Microsoft published an example in 2017 of a flow that waits for a reply by subject and acts only when the wait times out, so screens differ now. Forum answers suggest matching on the subject or the conversation instead; we have not tested these.</p>
+<p><b>Where it goes wrong.</b> Customers change the subject line. Replies can come from a colleague or an out-of-office message. Matching on "Re: subject" can miss one or catch the wrong one. A wrong guess means a follow-up goes to someone who already answered. Someone also has to build it, test it and fix it when it breaks. If you try it, send the follow-up to your own address first, and consider having the flow save a draft instead of sending.</p>
+
+<h2>Option 2: an add-in from the Microsoft store</h2>
+<p>Several add-ins sold through Microsoft's store, or by their own makers, offer an automatic follow-up email in Outlook if there is no response. They come in a few kinds:</p>
+<ul>
+  <li><b>Reminder add-ins.</b> You turn it on when you send. If no reply arrives by your date, the add-in tells you.</li>
+  <li><b>Draft add-ins.</b> They prepare a reply on the original thread for you to read and send.</li>
+  <li><b>Sales tools with follow-up steps.</b> Part of a larger product aimed at sales teams.</li>
+</ul>
+<p>Check these before you install anything:</p>
+<ul>
+  <li><b>What it can read.</b> To spot a reply, an add-in must read your mail. Look at the permissions it asks for, and whether it passes any of your mail to the maker's own servers. Your IT person or the Microsoft admin may need to approve it.</li>
+  <li><b>Which Outlook it works in.</b> Older add-ins built for classic Outlook may not run in new Outlook or on the web. Microsoft says COM add-ins are not supported in new Outlook for Windows. Check the maker's own requirements page.</li>
+  <li><b>Does it send or only remind?</b> Many only remind.</li>
+  <li><b>What it costs, and who can cancel it.</b> Prices change, so read the listing.</li>
+</ul>
+<p>Add-ins work one message at a time. They do not know which quote it was or what you quoted.</p>
+
+<h2>Option 3: a tool that works from your list</h2>
+<p>Often the list of who needs a follow-up is not in Outlook at all. It lives in a spreadsheet of quotes, a job sheet or your accounts. A tool that reads that list can work out who is due, check for a reply, and write each message with the right details. For wording and timing, see our guide to a <a href="follow-up-email-after-quote.html">follow-up email after a quote</a>.</p>
 
 <h2>How to choose</h2>
 <ul>
-  <li><b>A few a week:</b> flags and a template.</li>
-  <li><b>You like building things:</b> Power Automate.</li>
-  <li><b>Follow-ups to individual emails as you send them:</b> an add-in.</li>
-  <li><b>Follow-ups driven by a list of quotes, jobs or invoices, and you want to read them first:</b> a tool like Steadywork.</li>
+  <li><b>A few a week:</b> a flag with a reminder, and a template.</li>
+  <li><b>You like building things:</b> Power Automate, with a draft rather than a send at first.</li>
+  <li><b>Follow-ups on individual emails as you send them:</b> an add-in, after checking what it can read.</li>
+  <li><b>Follow-ups driven by a list of quotes or invoices, and you want to read them first:</b> a tool that prepares them for you to approve, such as Steadywork (coming soon).</li>
 </ul>
 
 <h2>Two things to get right whichever you pick</h2>
 <ul>
-  <li><b>Stop when they reply.</b> A follow-up that arrives after the customer has already answered looks careless.</li>
+  <li><b>Stop when they reply.</b> A follow-up that arrives after the customer has answered looks careless. Check whether they called or texted, too.</li>
   <li><b>Space them out.</b> Leave several days between follow-ups, and stop after two or three.</li>
 </ul>
 <section class="sw" id="steadywork">
   <div class="soon">Coming soon</div>
   <h2>Follow-ups written from your own list, sent from your Outlook</h2>
   <p>You tell Steadywork, in plain words, who should be followed up and when. For example: "anyone I sent a quote to more than five days ago who hasn't answered".</p>
-  <ul>
-    <li>It reads your list, such as a spreadsheet, your accounts, or a connected app.</li>
-    <li>It writes each follow-up with that person's details.</li>
-    <li>You approve the drafts, and they go from your own Outlook address.</li>
-    <li>It holds back when someone has replied or was contacted recently.</li>
-  </ul>
-  <p>There are no flows to build. If you can describe the chore to a colleague, you can set it up.</p>
+<ul>
+  <li>It reads your list, such as a spreadsheet, your accounts, or a connected app such as Outlook or QuickBooks Online.</li>
+  <li>It writes each follow-up with that person's details, and you approve the drafts. They go from your own mailbox.</li>
+  <li>Follow-ups go out after set waits, never early. It skips anyone emailed recently, and flags when someone has written back.</li>
+  <li>A "never write to" list leaves any customer out. It tells you who has had all their follow-ups.</li>
+</ul>
+<p>There are no flows to build. It is not open yet: plans start at $39 a month and people join a waitlist.</p>
   <form class="ask" id="ask" method="post" action="https://steadywork-rescue-ji0b.onrender.com/waitlist">
     <input type="email" name="email" required placeholder="you@yourbusiness.com" aria-label="Your email address" autocomplete="email">
     <input type="text" name="company_site" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
@@ -126,7 +152,7 @@
   <p class="askmsg" id="askmsg" role="status" aria-live="polite" hidden></p>
   <p class="micro">Steadywork is not open yet. Leave your email and we'll write once, when it is. Founding price from $39 a month, no contract. <a href="../index.html">See how it works</a>.</p>
 </section>
-<section class="more"><h2>Related guides</h2><ul><li><a href="can-ai-send-emails-for-me.html">Can AI send emails for me?</a></li><li><a href="index.html"><b>All guides</b></a></li></ul></section>
+<section class="more"><h2>Related guides</h2><ul><li><a href="can-outlook-send-automated-emails.html">Can Outlook send automated emails?</a></li><li><a href="follow-up-email-after-quote.html">How to follow up on a quote, with emails to copy</a></li><li><a href="can-ai-send-emails-for-me.html">Can AI send emails for me?</a></li><li><a href="how-to-automate-repetitive-office-tasks.html">What office tasks can be automated in a small business</a></li><li><a href="index.html"><b>All guides</b></a></li></ul></section>
 </main>
 <footer>
   <div class="wrap">Steadywork · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="index.html">Guides</a> · <a href="../terms.html">Terms</a> · <a href="../privacy.html">Privacy</a> · <a href="../accessibility.html">Accessibility</a></div>

@@ -22,7 +22,7 @@
   </url>
   <url>
     <loc>https://steadyworkhq.com/guides/</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -32,17 +32,17 @@
   </url>
   <url>
     <loc>https://steadyworkhq.com/guides/automate-invoice-reminders-quickbooks-online.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://steadyworkhq.com/guides/how-to-chase-overdue-invoices-by-email.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://steadyworkhq.com/guides/automate-follow-up-emails-in-outlook.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -67,7 +67,7 @@
   </url>
   <url>
     <loc>https://steadyworkhq.com/guides/can-ai-send-emails-for-me.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -82,12 +82,77 @@
   </url>
   <url>
     <loc>https://steadyworkhq.com/guides/how-to-automate-repetitive-office-tasks.html</loc>
-    <lastmod>2026-11-18</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://steadyworkhq.com/bookkeepers.html</loc>
     <lastmod>2026-11-19</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/stop-quickbooks-invoice-reminders-for-one-customer.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/quickbooks-recurring-invoice-not-sending.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/can-outlook-send-automated-emails.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/smartsheet-automation-email-not-working.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/is-zapier-worth-it-for-small-business.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/payment-reminder-email-for-plumbers.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/payment-reminder-email-for-hvac-companies.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/payment-reminder-email-for-electricians.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/payment-reminder-email-for-cleaning-businesses.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/payment-reminder-email-for-landscapers.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/how-often-to-send-invoice-reminders.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/follow-up-email-after-quote.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://steadyworkhq.com/guides/how-to-ask-for-payment-politely.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>

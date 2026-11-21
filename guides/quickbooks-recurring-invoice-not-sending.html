@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QuickBooks recurring invoice not sending: what to check | Steadywork</title>
+<meta name="description" content="Why a recurring invoice in QuickBooks Online does not send: template type, auto-send setting, dates, email and junk folder. Plus how to pause or stop one.">
+<link rel="canonical" href="https://steadyworkhq.com/guides/quickbooks-recurring-invoice-not-sending.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QuickBooks recurring invoice not sending: what to check">
+<meta property="og:description" content="Why a recurring invoice in QuickBooks Online does not send: template type, auto-send setting, dates, email and junk folder. Plus how to pause or stop one.">
+<meta property="og:url" content="https://steadyworkhq.com/guides/quickbooks-recurring-invoice-not-sending.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312283c'/%3E%3Cg transform='translate(32 33) scale(.7) translate(-32 -33)'%3E%3Cpath d='M27 14H37L49 46H15Z' fill='%23ffffff' stroke='%23ffffff' stroke-width='6' stroke-linejoin='round'/%3E%3Crect x='8' y='52' width='48' height='8' rx='4' fill='%23ffffff'/%3E%3Cpath d='M24 33l7.5 8L46.5 6' fill='none' stroke='%23e8641f' stroke-width='5.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "QuickBooks recurring invoice not sending: what to check", "description": "Why a recurring invoice in QuickBooks Online does not send: template type, auto-send setting, dates, email and junk folder. Plus how to pause or stop one.", "datePublished": "2026-11-21", "dateModified": "2026-11-21", "mainEntityOfPage": "https://steadyworkhq.com/guides/quickbooks-recurring-invoice-not-sending.html", "author": {"@type": "Organization", "name": "Steadywork"}, "publisher": {"@type": "Organization", "name": "Steadywork"}}</script>
+<style>
+  :root{--navy:#12283c;--orange:#e8641f;--orange-dark:#c9520f;--paper:#fbfaf8;--ink:#1f2a35;--muted:#66747f;--line:#e8e3db;--soft:#f3f0ea}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:17px}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  a{color:var(--orange-dark)}
+  header{background:rgba(251,250,248,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+  .nav{display:flex;justify-content:space-between;align-items:center;gap:12px;height:56px}
+  .logo{display:flex;align-items:center;gap:9px;font-size:1.08rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);text-decoration:none}
+  .logo svg{width:30px;height:30px;flex:none}
+  .logo span{color:var(--orange)}
+  .links{display:flex;gap:2px;align-items:center}
+  .links a{color:var(--navy);text-decoration:none;font-size:.86rem;font-weight:600;padding:6px 12px;border-radius:999px;white-space:nowrap}
+  .links a:hover{background:var(--soft)}
+  .links a.cta{background:var(--navy);color:#fff;margin-left:6px}
+  @media(max-width:520px){.links a.sec{display:none}}
+  main{max-width:720px;margin:0 auto;padding:40px 20px 64px;overflow-wrap:break-word}
+  .crumb{font-size:.85rem;color:var(--muted);margin-bottom:14px}.crumb a{color:var(--muted)}
+  h1{font-size:clamp(1.8rem,4.6vw,2.5rem);font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.14;margin-bottom:14px}
+  .lede{font-size:1.1rem;color:#3a4753;margin-bottom:8px}
+  .dated{color:var(--muted);font-size:.85rem;margin-bottom:26px}
+  h2{font-size:1.3rem;font-weight:800;color:var(--navy);letter-spacing:-.015em;margin:34px 0 10px}
+  h3{font-size:1.02rem;color:var(--navy);margin:20px 0 6px}
+  main p{margin-bottom:14px}
+  main ul,main ol{margin:0 0 14px;padding-left:24px}
+  main li{margin-bottom:7px}
+  .short{background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:12px;padding:16px 18px;margin:0 0 8px}
+  .short b{color:var(--navy)}.short p:last-child{margin-bottom:0}
+  .copy{background:#fff;border:1px solid var(--line);border-radius:12px;padding:44px 16px 14px;margin:0 0 14px;white-space:pre-wrap;font-size:.95rem;position:relative}
+  .copy button{position:absolute;top:10px;right:10px;font:inherit;font-size:.8rem;font-weight:700;border:1px solid #d6dbe0;background:var(--soft);color:var(--navy);border-radius:999px;padding:4px 12px;cursor:pointer}
+  .sw{background:var(--navy);color:#fff;border-radius:18px;padding:26px 24px;margin:38px 0 0}
+  .sw h2{color:#fff;margin:0 0 10px}.sw p,.sw li{color:#dfe6ec}.sw a{color:#fff}
+  .sw .soon{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--orange);margin-bottom:8px}
+  .ask{margin:18px 0 0;display:flex;gap:6px;background:#fff;border-radius:999px;padding:6px}
+  .ask input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:1rem;padding:0 14px;color:var(--ink)}
+  .ask .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+  .ask button{font:inherit;font-weight:700;font-size:.95rem;border:0;border-radius:999px;background:var(--orange);color:#fff;padding:12px 20px;cursor:pointer;white-space:nowrap}
+  .askmsg{margin:12px 0 0;font-size:.95rem;font-weight:600;color:#fff}
+  .micro{font-size:.85rem;margin:12px 0 0!important}
+  .more{margin-top:38px}.more ul{list-style:none;padding:0}.more li{border-top:1px solid var(--line);padding:10px 0;margin:0}
+  .more a{color:var(--navy);font-weight:700;text-decoration:none}.more a:hover{text-decoration:underline}
+  .list a{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:12px;text-decoration:none;color:var(--ink)}
+  .list a b{display:block;color:var(--navy);font-size:1.05rem;margin-bottom:3px}.list a:hover{border-color:#cfd6dc}
+  footer{border-top:1px solid var(--line);padding:22px 0;font-size:.8rem;color:var(--muted);text-align:center}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M27 14H37L49 46H15Z" fill="#12283c" stroke="#12283c" stroke-width="6" stroke-linejoin="round"/><rect x="8" y="52" width="48" height="8" rx="4" fill="#12283c"/><path d="M24 33l7.5 8L46.5 6" fill="none" stroke="#e8641f" stroke-width="5.8" stroke-linecap="round" stroke-linejoin="round"/></svg><em style="font-style:normal">Steady<span>work</span></em></a>
+    <div class="links">
+      <a class="sec" href="../index.html#how">How it works</a>
+      <a class="sec" href="index.html">Guides</a>
+      <a class="cta" href="#steadywork">Join the waitlist</a>
+    </div>
+  </div>
+</header>
+<main>
+<p class="crumb"><a href="../index.html">Steadywork</a> › <a href="index.html">Guides</a></p>
+<h1>QuickBooks recurring invoice not sending: what to check</h1>
+<p class="lede">A recurring invoice that does not go out is usually one setting. Here is a checklist to find it, and how to pause or stop one.</p>
+<p class="dated">Checked 2026-11-21. Menus in other products change, so a label may differ slightly on your screen.</p>
+<div class="short"><p><b>Short answer:</b> a recurring invoice in QuickBooks Online usually fails to go out for one of a few reasons. The template type is not Scheduled, the setting that sends emails automatically is off, the template has passed its end date, or the customer's email is missing or wrong. Open Recurring transactions, check those four things first, then look in the customer's junk folder.</p></div>
+
+<h2>Where to look first</h2>
+<p>All the settings below live on the recurring template. Select the Settings gear, then Recurring transactions, in the Lists column. Some accounts reach it through All apps, then Accounting, then Recurring transactions. Find the customer's template, open the Action column and choose Edit. Screens differ a little between plans and change over time, so use the names here as a guide.</p>
+
+<h2>The checklist</h2>
+<h3>1. The template type is not Scheduled</h3>
+<p>This is the most common cause. Intuit describes three types. <b>Scheduled</b> creates and sends the transaction on its own. <b>Reminder</b> creates it at set times, but you edit and send it yourself. <b>Unscheduled</b> is only a saved template that you use by hand. Only Scheduled templates run by themselves. Check the Type box, set it to Scheduled, and select Save template.</p>
+
+<h3>2. The setting that sends emails automatically is off</h3>
+<p>A Scheduled template can still create an invoice and not email it. In the template settings, turn on <b>Automatically send emails</b> (some versions call it Send later). Save, then reopen the template to confirm it stuck, since some users report it switching back to off after edits.</p>
+
+<h3>3. The customer has no email, or the wrong one</h3>
+<p>Open the customer record (Sales, then Customers) and look at the Email field. A blank or mistyped address means nothing reaches them. Fix it, then check the template picked up the new address. Intuit's pages do not say exactly what QuickBooks does when the address is blank, so check it rather than assume.</p>
+
+<h3>4. The start date has not arrived, or the end date has passed</h3>
+<p>Templates only run automatically if the end setting has not been reached. Check the start date and the next date shown for the template. Under End, choose None, or a date or number of occurrences that has not passed. QuickBooks runs most transactions early in the morning Pacific time, but Intuit notes they can run later than expected, so give it until the end of the day before you worry.</p>
+
+<h3>5. The template is paused</h3>
+<p>If someone paused the template, it will not run. In the Recurring transactions list, open the Action dropdown. If it shows an option to resume, use it. Another way people stop a template is by switching it to Unscheduled, which takes you back to item 1. Intuit's pages do not document the pause option well, so confirm what you see on your screen.</p>
+
+<h3>6. The customer is inactive</h3>
+<p>If the customer was made inactive, open the customer list, choose to include inactive customers and make them active again. Then check the template.</p>
+
+<h3>7. The email went out but landed in junk</h3>
+<p>Intuit says this is a common reason customers do not get QuickBooks emails. Ask the customer to check their junk or spam folder and add your sending address to their safe senders list. Intuit also suggests sending yourself a test and retyping your own company email under Settings, then Account and settings, then Company, then Contact info. Customers whose mail is run by an IT company can ask them to allowlist QuickBooks mail servers; Intuit publishes the list.</p>
+
+<h3>8. Something is wrong with the template itself</h3>
+<p>If the next date moves forward but no invoice appears, open the template and select Save template. Saving can show the error. If nothing helps, Intuit's advice is to create a new Scheduled template with the same details, then delete the old one so you do not get duplicates.</p>
+
+<h2>Send the missed invoice by hand</h2>
+<p>Do not wait for the next cycle. In Recurring transactions, open the Action dropdown on the template and choose Use. Check the details, then save and send the invoice yourself. If you want a copy of the wording, here is a short note to the customer.</p>
+<div class="copy"><button type="button">Copy</button><span>Subject: Invoice [invoice number] for [amount]
+
+Hi [name],
+
+Your invoice [invoice number] for [amount] was meant to reach you on [date] and may not have arrived.
+
+I have attached it here. You can pay online: [pay link]
+It is due on [due date].
+
+Please let me know if you have any trouble.
+
+Thanks,
+[your name]</span></div>
+
+<h2>How to pause or stop a recurring invoice</h2>
+<p>There are three ways, from lightest to final.</p>
+<ol>
+  <li><b>Pause it.</b> In the Recurring transactions list, open the Action dropdown for the template and choose Pause. This is how Intuit's staff describe it in the community forum. You have to do it template by template.</li>
+  <li><b>Change the type to Unscheduled.</b> Select Edit, change Type to Unscheduled (Reminder also works), and select Save template. The template stays on file and you can switch it back to Scheduled later.</li>
+  <li><b>Delete it.</b> In the Action column, open the dropdown, choose Delete and confirm. Invoices already created stay as they are. Only future ones stop.</li>
+</ol>
+<p>If a customer has left, deleting the template is cleaner. It also lets you make the customer inactive afterward.</p>
+
+<h2>What the built-in tools cannot do</h2>
+<p>You may not notice a recurring invoice failed to send until a customer asks where it is. If you want to read each invoice before it goes out, use the Reminder type. The trade-off is that you send each one by hand. Either way, a short monthly look at the invoice list and Recurring transactions catches problems early. For how invoices and reminders fit together, see <a href="automate-invoices-in-quickbooks-online.html">how to automate invoices in QuickBooks Online</a> and <a href="automate-invoice-reminders-quickbooks-online.html">how to automate invoice reminders</a>.</p>
+<section class="sw" id="steadywork">
+  <div class="soon">Coming soon</div>
+  <h2>Invoices that go out reviewed, from your own mailbox</h2>
+  <p>Steadywork prepares each invoice email for you to check, so you see every one before it goes.</p>
+  <ul>
+    <li>It reads your invoices from QuickBooks Online and prepares one email per invoice, with the PDF and a pay link attached.</li>
+    <li>Nothing goes out until you approve it, and approved emails go from your own mailbox.</li>
+    <li>A "never write to" list leaves any customer out of every automation.</li>
+    <li>It prepares up to 25 at a time, most urgent first.</li>
+  </ul>
+  <form class="ask" id="ask" method="post" action="https://steadywork-rescue-ji0b.onrender.com/waitlist">
+    <input type="email" name="email" required placeholder="you@yourbusiness.com" aria-label="Your email address" autocomplete="email">
+    <input type="text" name="company_site" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+    <button type="submit">Join the waitlist</button>
+  </form>
+  <p class="askmsg" id="askmsg" role="status" aria-live="polite" hidden></p>
+  <p class="micro">Steadywork is not open yet. Leave your email and we'll write once, when it is. Founding price from $39 a month, no contract. <a href="../index.html">See how it works</a>.</p>
+</section>
+<section class="more"><h2>Related guides</h2><ul><li><a href="automate-invoices-in-quickbooks-online.html">How to automate invoices in QuickBooks Online</a></li><li><a href="automate-invoice-reminders-quickbooks-online.html">Can QuickBooks automatically send invoice reminders?</a></li><li><a href="stop-quickbooks-invoice-reminders-for-one-customer.html">How to stop QuickBooks invoice reminders for one customer</a></li><li><a href="email-quickbooks-online-invoices-from-outlook.html">How to email QuickBooks Online invoices from Outlook</a></li><li><a href="index.html"><b>All guides</b></a></li></ul></section>
+</main>
+<footer>
+  <div class="wrap">Steadywork · Ogden, Utah · <a href="mailto:alex@steadyworkhq.com">alex@steadyworkhq.com</a> · <a href="index.html">Guides</a> · <a href="../terms.html">Terms</a> · <a href="../privacy.html">Privacy</a> · <a href="../accessibility.html">Accessibility</a></div>
+</footer>
+<script>
+(function(){
+  var f=document.getElementById('ask');if(f){var msg=document.getElementById('askmsg');
+  f.addEventListener('submit',function(e){
+    if(!window.fetch||!window.URLSearchParams)return;
+    e.preventDefault();var btn=f.querySelector('button');btn.disabled=true;
+    function say(t){msg.hidden=false;msg.textContent=t;btn.disabled=false;}
+    fetch(f.action,{method:'POST',headers:{'Accept':'application/json'},body:new URLSearchParams(new FormData(f))})
+      .then(function(r){return r.json().then(function(j){return {ok:r.ok&&j.ok,m:j.message||''};});})
+      .then(function(x){say(x.m);if(x.ok)f.reset();})
+      .catch(function(){say('That did not go through. Please email alex@steadyworkhq.com and we will add you to the waitlist.');});
+  });}
+  var bs=document.querySelectorAll('.copy button');
+  for(var i=0;i<bs.length;i++)bs[i].addEventListener('click',function(){var b=this,t=b.parentNode.querySelector('span').textContent;
+    if(navigator.clipboard)navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1500);});});
+})();
+</script>
+</body>
+</html>
