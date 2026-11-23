@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Delete event{% endblock %}
+{% block body %}
+<div class="wrap narrow">
+  <h1>Delete “{{ ev.title or 'this event' }}”?</h1>
+  <p>This permanently deletes the guest list, all generated files and the guest page. The QR code will stop working. {% if ev.status == 'paid' %}You won't be able to download your files again.{% endif %}</p>
+  {% if error %}<div class="notice bad">{{ error }}</div>{% endif %}
+  <form method="post" class="card"><input type="hidden" name="csrf" value="{{ csrf }}">
+    <div class="row"><label for="confirm">Type DELETE to confirm</label><input id="confirm" type="text" name="confirm" autocomplete="off"></div>
+    <button class="btn danger" type="submit">Delete permanently</button> <a href="/e/{{ ev.id }}">Cancel</a>
+  </form>
+</div>
+{% endblock %}

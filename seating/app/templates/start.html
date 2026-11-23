@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Upload your guest list — {{ brand }}{% endblock %}
+{% block body %}
+<div class="wrap narrow">
+  {% set current = 'Upload' %}{% include "_steps.html" %}
+  <h1>Upload your guest list</h1>
+  <p class="muted">We need two things per guest: their name, and the table you've assigned them to. Anything else in your file (addresses, meals) is ignored and not stored.</p>
+  {% if error %}<div class="notice bad">{{ error }}</div>{% endif %}
+  <form method="post" enctype="multipart/form-data" class="card">
+    <input type="hidden" name="csrf" value="{{ csrf }}">
+    <div class="row"><label for="file">Spreadsheet (CSV or .xlsx)</label><input id="file" type="file" name="file" accept=".csv,.xlsx,.txt,.tsv,text/csv"></div>
+    <p class="muted small" style="text-align:center">— or —</p>
+    <div class="row"><label for="pasted">Paste your list</label>
+      <textarea id="pasted" name="pasted" placeholder="Guest Name, Table&#10;Ana López, 4&#10;Siobhán Ní Bhriain, Head Table&#10;&#10;(You can paste straight from Excel or Google Sheets.)"></textarea></div>
+    <button class="btn block" type="submit">Continue</button>
+    <p class="small muted" style="margin-top:10px">Up to {{ max_guests }} guests. Unpaid drafts are deleted after {{ draft_days }} days of inactivity.</p>
+  </form>
+</div>
+{% endblock %}

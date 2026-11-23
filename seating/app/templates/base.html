@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ brand }}{% endblock %}</title>
+{% block meta %}<meta name="description" content="Upload your guest list and get a print-ready seating chart, matching place cards, and a QR find-your-seat page. {{ price }} one time.">{% endblock %}
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="logo" href="/">{{ brand }}</a>{% block nav %}<a class="btn secondary small" href="/start">Start</a>{% endblock %}</div></header>
+{% if mock_mode %}<div class="notice warn wrap small" style="margin-top:8px">Demo mode: payments use a local test checkout. No real charges are possible.</div>{% endif %}
+<main>{% block body %}{% endblock %}</main>
+<footer><div class="wrap">
+  <a href="/privacy">Privacy &amp; data retention</a> · <a href="/terms">Terms &amp; refunds</a> · Questions: <a href="mailto:{{ support_email }}">{{ support_email }}</a>
+  <div class="small" style="margin-top:6px">Example charts on this site use fictional names.</div>
+</div></footer>
+</body>
+</html>

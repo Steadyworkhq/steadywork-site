@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}{{ ev.title }} — dashboard{% endblock %}
+{% block body %}
+<div class="wrap">
+  {% if welcome %}<div class="notice ok" style="margin-top:16px"><b>Payment confirmed — thank you!</b> Your files are ready below.</div>{% endif %}
+  <h1>{{ ev.title }}</h1>
+  <p class="muted">{{ ev.event_date }} · {{ st.guests|length }} guests · version {{ ev.version }}</p>
+
+  <div class="card">
+    <h2>1. Your private management link</h2>
+    {% if manage_url %}
+    <p>Bookmark this or save it in your notes. It's how you get back here to edit and re-download. <b>Don't share it</b> — anyone with it can edit or delete your event.</p>
+    <div class="copy"><input type="text" readonly value="{{ manage_url }}" onclick="this.select()" aria-label="Management link"><button class="btn secondary" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText('{{ manage_url }}');this.textContent='Copied'">Copy</button></div>
+    {% else %}
+    <p class="muted">You're signed in on this device. If you've lost your private link, create a new one (the old one stops working):</p>
+    {% endif %}
+    <form method="post" action="/e/{{ ev.id }}/new-link" style="margin-top:8px"><input type="hidden" name="csrf" value="{{ csrf }}"><button class="btn link small" type="submit">Replace my management link</button></form>
+  </div>
+
+  <div class="card">
+    <h2>2. Download your print files</h2>
+    <p><a class="btn" href="/e/{{ ev.id }}/download/all.zip">Download everything (.zip)</a></p>
+    <ul>
+      <li><a href="/e/{{ ev.id }}/download/chart.pdf">Seating chart</a> — {{ sizes[ev.chart_size][0] }}, {{ 'grouped by table' if ev.chart_layout=='table' else 'alphabetical' }}</li>
+      <li><a href="/e/{{ ev.id }}/download/chart-alpha.pdf">Seating chart, {{ 'alphabetical' if ev.chart_layout=='table' else 'grouped by table' }}</a></li>
+      <li><a href="/e/{{ ev.id }}/download/cards.pdf">Place cards</a> — {{ papers[ev.paper][0] }}, page 1 is the printing guide</li>
+      <li><a href="/e/{{ ev.id }}/download/sign.pdf">QR “find your seat” sign</a></li>
+      <li><a href="/e/{{ ev.id }}/download/backup.pdf">Backup guest list</a> — for the welcome table if phones have no signal</li>
+    </ul>
+    <p class="small muted">Print at 100% / “Actual size”. Files always reflect your latest edits.</p>
+  </div>
+
+  <div class="card">
+    <h2>3. Your guest page</h2>
+    <p>The QR sign opens this page. Guests type their full name to see their table.</p>
+    <div class="copy"><input type="text" readonly value="{{ guest_url }}" onclick="this.select()" aria-label="Guest link"><a class="btn secondary" href="{{ guest_url }}" target="_blank" rel="noopener">Open</a></div>
+    <p class="small muted" style="margin-top:8px"><b>Who can see it:</b> anyone who has this link. It doesn't show your full guest list, but someone who knows a guest's full name can look up that guest's table. It's hidden from search engines and can't be used to change anything.</p>
+    <p class="small muted">Online until <b>{{ delete_on }}</b> ({{ retention_days }} days after your event), then deleted automatically.</p>
+  </div>
+
+  <div class="card">
+    <h2>4. Make corrections</h2>
+    <p>Fix a spelling, move someone, add or remove a guest. Every file regenerates to match, and the guest page updates immediately. Reprint anything you'd already printed.</p>
+    <p><a class="btn secondary" href="/e/{{ ev.id }}/review">Edit names &amp; tables</a> <a class="btn secondary" href="/e/{{ ev.id }}/design">Change design or sizes</a> <a class="btn secondary" href="/e/{{ ev.id }}/preview">Preview</a></p>
+  </div>
+
+  <div class="card">
+    <h2>Delete this event</h2>
+    <p class="small muted">Permanently deletes your guest list, files and guest page now. This can't be undone.</p>
+    <a class="btn danger" href="/e/{{ ev.id }}/delete">Delete event…</a>
+  </div>
+</div>
+{% endblock %}

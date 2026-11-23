@@ -1,0 +1,40 @@
+# Render Blueprint for Kindly Seated.
+# If this file stays inside the steadywork-site repo, set rootDir: seating.
+# If the app moves to its own repo (recommended), delete the rootDir line.
+services:
+  - type: web
+    name: kindlyseated
+    runtime: python
+    rootDir: seating
+    plan: starter            # persistent disks need a paid plan
+    numInstances: 1          # SQLite on one disk: keep a single instance
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 2 -b 0.0.0.0:$PORT --timeout 60 'app.server:create_app()'
+    healthCheckPath: /healthz
+    disk:
+      name: data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: PRODUCTION
+        value: "1"
+      - key: DATA_DIR
+        value: /data
+      - key: BASE_URL
+        value: https://kindlyseatedco.com
+      - key: BRAND_NAME
+        value: Kindly Seated
+      - key: PAYMENTS_MODE
+        value: stripe
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: STRIPE_SECRET_KEY
+        sync: false          # paste sk_test_... in the Render dashboard
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false          # paste whsec_... in the Render dashboard
+      - key: SUPPORT_EMAIL
+        sync: false
